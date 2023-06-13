@@ -23,5 +23,12 @@ namespace Chemistry_app
         {
             InitializeComponent();
         }
+
+        private void ButtonReturnToAuentification_Click(object sender, RoutedEventArgs e)
+        {
+            AuthorizationWindow window = new AuthorizationWindow();
+            window.Show();
+            this.Hide();
+        }
     }
 }

@@ -20,6 +20,7 @@
                 <PasswordBox x:Name="textBoxPassword"/>
                 <TextBlock Text="Repeat Password"/>
                 <PasswordBox Name="textBoxRepeatPassword"/>
+                <Button Content="Вернуться к авторизации" Click="ButtonReturnToAuentification_Click"/>
             </StackPanel>
         </Border>
     </Grid>
