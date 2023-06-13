@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Chemistry_app.Controllers;
+using Chemistry_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +9,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
+using System.Windows.Forms.ComponentModel.Com2Interop;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -32,11 +35,20 @@ namespace Chemistry_app
             this.Hide();
         }
 
+        bool isUsers(string email, string password)
+        {
+            User authUser = null;
+            List<User> users = new List<User>();
+            users = UserJsonController.ReadFromJson("Users.json");
+
+            authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
+
+            if (authUser != null)
+            { return true; }
+            else { return false; }
+        }
         private void ButtonAuthorization_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow window = new MainWindow();
-            window.Show();
-            this.Hide();
             string email, password;
 
             email = textBoxEmail.Text.Trim();
@@ -58,6 +70,12 @@ namespace Chemistry_app
                 textBoxEmail.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight"); 
             }
 
+            if (isUsers(email, password)){
+                MainWindow window = new MainWindow();
+                window.Show();
+                this.Hide();
+            }
+            else MessageBox.Show("Пользователь не найден");
 
         }
 
