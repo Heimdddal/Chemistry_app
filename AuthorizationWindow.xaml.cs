@@ -55,6 +55,7 @@ namespace Chemistry_app
                 textBoxEmail.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight"); 
             }
 
+
         }
 
     }

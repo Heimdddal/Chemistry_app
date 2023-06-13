@@ -12,14 +12,12 @@
             <StackPanel>
                 <TextBlock Text="Регистрация"/>
                 <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint ="Name" Margin="5"/>
-                <TextBlock Text="Email"/>
-                <TextBox x:Name="textBoxEmail" Margin="5"/>
-                <TextBlock Text="Age"/>
-                <TextBox x:Name="textBoxAge" Margin="5"/>
-                <TextBlock Text="Password"/>
-                <PasswordBox x:Name="textBoxPassword"/>
-                <TextBlock Text="Repeat Password"/>
-                <PasswordBox Name="textBoxRepeatPassword"/>
+                <TextBox x:Name="textBoxEmail" Margin="5" materialDesign:HintAssist.Hint ="Email"/>
+                <TextBox x:Name="textBoxGender" Margin="5" materialDesign:HintAssist.Hint="Gender"/>
+                <TextBox x:Name="textBoxAge" Margin="5" materialDesign:HintAssist.Hint ="Age"/>
+                <PasswordBox x:Name="textBoxPassword" Margin="5" materialDesign:HintAssist.Hint ="Password"/>
+                <PasswordBox Name="textBoxRepeatPassword" Margin="5" materialDesign:HintAssist.Hint ="Repeat password"/>
+                <Button Content="Регистрация" Click="ButtonRegistration_Click"/>
                 <Button Content="Вернуться к авторизации" Click="ButtonReturnToAuentification_Click"/>
             </StackPanel>
         </Border>
