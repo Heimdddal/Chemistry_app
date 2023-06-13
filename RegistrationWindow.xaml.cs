@@ -36,6 +36,8 @@ namespace Chemistry_app
 
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
+            List<User> users = new List<User>();
+            users = UserJsonController.ReadFromJson("Users.json");
             string name, email, gender, password, repeatePassword;
             int age = 0;
             int passCount = 0;
@@ -100,14 +102,11 @@ namespace Chemistry_app
 
             if (passCount == 8) {
                 string fileName = "Users.json";
-                UserJsonController.CreateJsonFile(fileName);
                 User user = new User(name, email, age, gender, password);
-                List<User> users = new List<User>();
                 users = UserJsonController.ReadFromJson(fileName);
                 users.Add(user);
                 UserJsonController.WriteToJson(users,fileName);
             }
-
             }
     }
 }
