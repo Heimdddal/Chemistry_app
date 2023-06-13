@@ -1,5 +1,4 @@
-
-using Chemistry_app.ViewModel;
+﻿using Chemistry_app.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,20 +13,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Chemistry_app
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для testPage.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class testPage : Page
     {
-        public MainWindow()
+        public testPage()
         {
             InitializeComponent();
 
+            
         }
     }
 }
-
