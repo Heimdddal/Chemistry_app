@@ -37,7 +37,7 @@ namespace Chemistry_app
         {
             User regUser = null;
             List<User> users = new List<User>();
-            users = UserJsonController.ReadFromJson("Users.json");
+            users = UserJsonController.ReadFromJson("..\\Chemistry_app\\Users.json");
 
             regUser = users.Where(b => b.Email == email).FirstOrDefault();
 
@@ -114,7 +114,7 @@ namespace Chemistry_app
             if (passCount == 8) {
                 if (!isUsers(email))
                 {
-                    string fileName = "Users.json";
+                    string fileName = "..\\Chemistry_app\\Users.json";
                     User user = new User(name, email, age, gender, password);
                     users = UserJsonController.ReadFromJson(fileName);
                     users.Add(user);

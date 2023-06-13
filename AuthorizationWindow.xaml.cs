@@ -3,6 +3,7 @@ using Chemistry_app.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -37,9 +38,10 @@ namespace Chemistry_app
 
         bool isUsers(string email, string password)
         {
+            string fullFilePath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Assert" ,"Users.json");
             User authUser = null;
             List<User> users = new List<User>();
-            users = UserJsonController.ReadFromJson("Users.json");
+            users = UserJsonController.ReadFromJson(fullFilePath);
 
             authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
 
