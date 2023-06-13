@@ -34,8 +34,7 @@ namespace Chemistry_app
                 new Question("Question 3", "False2", "False3", "True", "False1")
             };
 
-            var testApplication = new TestApplication(questions);
-            MainGrid.Children.Add(testApplication.GetPanel());
+            var testApplication = new TestApplication(questions, ref MainGrid, "Тест");
         }
     }
 }
