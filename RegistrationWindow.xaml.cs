@@ -110,7 +110,7 @@ namespace Chemistry_app
                 textBoxRepeatPassword.ToolTip = "Пароли не совпадают";
             }
             else passCount++;
-
+            
             if (passCount == 8) {
                 if (!isUsers(email))
                 {
