@@ -8,10 +8,5 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid x:Name="MainGrid">
-        <ScrollViewer>
-            <StackPanel x:Name="MainStackPanel">
-
-            </StackPanel>
-        </ScrollViewer>
     </Grid>
 </Window>

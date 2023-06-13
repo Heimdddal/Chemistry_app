@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
+using System.Windows;
+using System;
 
 namespace Chemistry_app
 {
@@ -48,18 +46,17 @@ namespace Chemistry_app
             RadioButtonsGroup = new GroupBox()
             {
                 Margin = new Thickness(5),
-                Content = new ListBox(),
                 Header = questionText
             };
 
+            RadioButtonsGroup.Content = new StackPanel();
+
             foreach (var radioButton in radioButtonList)
             {
-                ((ListBox)RadioButtonsGroup.Content).Items.Add(radioButton);
+                ((StackPanel)RadioButtonsGroup.Content).Children.Add(radioButton);
             }
-
             questionStackPanel = new StackPanel();
-            questionStackPanel.Children.Add(this.RadioButtonsGroup);
+            questionStackPanel.Children.Add(RadioButtonsGroup);
         }
     }
 }
-
