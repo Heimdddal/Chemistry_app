@@ -34,6 +34,9 @@ namespace Chemistry_app
 
         private void ButtonAuthorization_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow window = new MainWindow();
+            window.Show();
+            this.Hide();
             string email, password;
 
             email = textBoxEmail.Text.Trim();
