@@ -12,10 +12,9 @@
             <StackPanel>
                 <TextBlock Text="Войдите в приложение"/>
                 <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Email" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
-                <PasswordBox x:Name="textBoxPassword" materialDesign:HintAssist.Hint="Password" Margin="5"/>
+                <PasswordBox x:Name="textBoxPassword" materialDesign:HintAssist.Hint="Password" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
                 <Button Content="Войти" Click="ButtonAuthorization_Click"/>
-                <TextBlock Text="Нет учетной записи?"/>
-                <Button Content="Зарегистрироваться" Click="ButtonRegistration_Click"/>
+                <TextBlock Text="Нет учетной записи?" MouseLeftButtonDown="ButtonRegistration_Click" Foreground="Blue" Cursor="Hand" MaxWidth="1000" HorizontalAlignment="Left"/>
             </StackPanel>
         </Border>
     </Grid>

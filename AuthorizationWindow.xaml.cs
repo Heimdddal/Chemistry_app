@@ -47,7 +47,15 @@ namespace Chemistry_app
                 textBoxEmail.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight");
             }
 
-            if (password)
+            if (password.Length < 5){
+                textBoxEmail.BorderBrush = Brushes.Red;
+                textBoxEmail.ToolTip = "Password введен неконектно";
+            }
+            else { 
+                textBoxEmail.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight"); 
+            }
+
         }
+
     }
 }
