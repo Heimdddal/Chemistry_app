@@ -31,7 +31,7 @@ namespace Chemistry_app
         {
             AuthorizationWindow window = new AuthorizationWindow();
             window.Show();
-            this.Hide();
+            Hide();
         }
         bool isUsers(string email)
         {
