@@ -6,19 +6,15 @@ using System.Threading.Tasks;
 
 namespace Chemistry_app.Models
 {
-    internal class User
+    public class User
     {
-        private string Name { get; }  
-        private string Email { get; }
-        private int Age { get; }
-        private string Gender { get; }
-        private string Password { get; }
+        public string Name { get; set; }  
+        public string Email { get; set; }
+        public int Age { get; set; }
+        public string Gender { get; set; }
+        public string Password { get; set; }
 
-
-        User() {
-        }
-
-        User(string name,
+        public User(string name,
             string email,
             int age,
             string gender,
