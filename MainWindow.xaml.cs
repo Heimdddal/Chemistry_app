@@ -1,4 +1,5 @@
-﻿using Chemistry_app.ViewModel;
+
+using Chemistry_app.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,3 +39,4 @@ namespace Chemistry_app
         }
     }
 }
+
