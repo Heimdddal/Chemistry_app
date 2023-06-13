@@ -6,16 +6,19 @@
         xmlns:local="clr-namespace:Chemistry_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="900" Width="1800">
+        Title="MainWindow" Height="800" Width="1400" Background="#242424">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="3.2*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="1" Margin="30,40" CornerRadius="30" Background="#363636">
-            <Frame Padding="40" Source="MendeleevTablePage.xaml">
-                
+        <Border Grid.Column="2" Margin="30,40,30,40" CornerRadius="30" Background="#363636">
+            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden">
+
             </Frame>
+        </Border>
+        <Border Background="#343434">
+            <Button Click="ButtonMendeleevTable_Click" Content="MendeleevTable"/>
         </Border>
     </Grid>
 </Window>

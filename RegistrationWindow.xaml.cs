@@ -33,7 +33,18 @@ namespace Chemistry_app
             window.Show();
             this.Hide();
         }
+        bool isUsers(string email)
+        {
+            User regUser = null;
+            List<User> users = new List<User>();
+            users = UserJsonController.ReadFromJson("Users.json");
 
+            regUser = users.Where(b => b.Email == email).FirstOrDefault();
+
+            if (regUser != null)
+            { return true; }
+            else { return false; }
+        }
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
             List<User> users = new List<User>();
@@ -101,11 +112,15 @@ namespace Chemistry_app
             else passCount++;
 
             if (passCount == 8) {
-                string fileName = "Users.json";
-                User user = new User(name, email, age, gender, password);
-                users = UserJsonController.ReadFromJson(fileName);
-                users.Add(user);
-                UserJsonController.WriteToJson(users,fileName);
+                if (!isUsers(email))
+                {
+                    string fileName = "Users.json";
+                    User user = new User(name, email, age, gender, password);
+                    users = UserJsonController.ReadFromJson(fileName);
+                    users.Add(user);
+                    UserJsonController.WriteToJson(users, fileName);
+                }
+                else MessageBox.Show("Пользователь уже существует");
             }
             }
     }
