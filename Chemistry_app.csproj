@@ -74,7 +74,7 @@
     </ApplicationDefinition>
     <Compile Include="ViewModel\TestApplication.cs" />
     <Compile Include="View\QuestionView.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="MainWindow.xaml"/>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
