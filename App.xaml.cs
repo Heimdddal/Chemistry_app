@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Chemistry_app
 {
@@ -13,5 +14,6 @@ namespace Chemistry_app
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }
