@@ -45,18 +45,18 @@ namespace Chemistry_app
         }
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
-            List<User> users = new List<User>();
-            users = UserJsonController.ReadFromJson("Users.json");
+            List<User> users = UserJsonController.ReadFromJson("..\\Assert\\Users.json");
             string name, email, gender, password, repeatePassword;
             int age = 0;
             int passCount = 0;
-
+            #region checkName
             name = textBoxName.Text.Trim();
             if (!string.IsNullOrWhiteSpace(name)) {
                 passCount++;
             }
             else textBoxName.ToolTip = "Введите значение";
-
+            #endregion
+            #region checkEmail
             email = textBoxEmail.Text.Trim();
             if (!string.IsNullOrWhiteSpace(email)){
                 passCount++;
@@ -72,14 +72,17 @@ namespace Chemistry_app
             {
                 passCount++;
             }
-
+            #endregion
+            #region checkGender
             gender = textBoxAge.Text.Trim();
             if (!string.IsNullOrWhiteSpace(gender)) {
                 passCount++;
             }
             else textBoxGender.ToolTip = "Введите значение";
-
-            try {
+            #endregion
+            #region checkAge
+            try
+            {
                 age = int.Parse(textBoxAge.Text);
                 if (age <= 100 && age >= 1)
                     passCount++;
@@ -87,14 +90,16 @@ namespace Chemistry_app
             catch {
                 textBoxAge.ToolTip = "Возраст указан неверно";
             }
-
+            #endregion
+            #region checkPassword
             password = textBoxPassword.Password;
             if (!string.IsNullOrWhiteSpace(password))
             {
                 passCount++;
             }
             else textBoxPassword.ToolTip = "Введите значение";
-
+            #endregion
+            #region checkRepeatePassword
             repeatePassword = textBoxRepeatPassword.Password;
             if (!string.IsNullOrWhiteSpace(repeatePassword))
             {
@@ -108,7 +113,7 @@ namespace Chemistry_app
                 textBoxRepeatPassword.ToolTip = "Пароли не совпадают";
             }
             else passCount++;
-            
+            #endregion
             if (passCount == 8) {
                 if (!isUsers(email))
                 {

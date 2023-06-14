@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="TheoryWindow.xaml.cs">
       <DependentUpon>TheoryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SolubilityTablePage.xaml.cs">
       <DependentUpon>SolubilityTablePage.xaml</DependentUpon>
     </Compile>

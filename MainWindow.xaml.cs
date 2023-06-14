@@ -34,6 +34,11 @@ namespace Chemistry_app
         {
             FrameNavigator.MainFrame.Navigate(new Page1());
         }
+
+        private void ButtonTheory_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new TheoryWindow());
+        }
     }
 }
 
