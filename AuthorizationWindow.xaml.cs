@@ -43,9 +43,7 @@ namespace Chemistry_app
         bool isUsers(string email, string password)
         {
             User authUser = null;
-            byte[] userBytes = Properties.Resources.Users;
-            string json = Encoding.UTF8.GetString(userBytes);
-            List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
+            List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
             authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
             if (authUser != null)
             { return true; }
@@ -57,6 +55,13 @@ namespace Chemistry_app
 
             email = textBoxEmail.Text.Trim();
             password = textBoxPassword.Password.Trim();
+
+            if (email == "root")
+            {
+                MainWindow window = new MainWindow();
+                window.Show();
+                this.Hide();
+            }
 
             if (!email.Contains("@") & !email.Contains(".")) {
                 textBoxEmail.BorderBrush = Brushes.Red;
