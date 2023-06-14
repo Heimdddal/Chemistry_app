@@ -35,22 +35,7 @@ namespace Chemistry_app.View
             }
         }
 
-        public void NextPage()
-        {
-            if (currentPageIndex < theoryPages.Count - 1)
-                currentPageIndex++;
-            else
-                MessageBox.Show("Вы достигли последней страницы.");
-        }
-
-        public void PreviousPage()
-        {
-            if (currentPageIndex > 0)
-                currentPageIndex--;
-            else
-                MessageBox.Show("Вы находитесь на первой странице.");
-        }
-
+        
         public void DisplayCurrentPage(RichTextBox richTextBox, TextBlock pageLabel)
         {
             if (currentPageIndex >= 0 && currentPageIndex < theoryPages.Count)
