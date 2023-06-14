@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Chemistry_app.ViewModel
 {
@@ -20,6 +21,7 @@ namespace Chemistry_app.ViewModel
 
             Label Results = new Label() 
             {
+                Foreground = Brushes.White,
                 Content = results,
                 HorizontalAlignment = System.Windows.HorizontalAlignment.Center
             };
