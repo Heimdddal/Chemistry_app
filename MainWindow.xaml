@@ -25,6 +25,9 @@
             <Button Content="Theory"
                     Click="ButtonTheory_Click" />
 
+            <Button Content="Tests"
+                    Click="ButtonTests_Click"/>
+
             <Button Content="Mendeleev Table"
                     Click="ButtonMendeleevTable_Click" />
 

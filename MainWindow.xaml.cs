@@ -30,7 +30,11 @@ namespace Chemistry_app
 
             FrameNavigator.MainFrame = MainFrame;
         }
-
+        
+        private void ButtonTests_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new PageForTest());
+        }
         private void ButtonMendeleevTable_Click(object sender, RoutedEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
