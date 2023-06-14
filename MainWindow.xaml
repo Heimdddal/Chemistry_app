@@ -17,8 +17,9 @@
 
             </Frame>
         </Border>
-        <Border Background="#343434">
-            <Button Click="ButtonMendeleevTable_Click" Content="MendeleevTable"/>
-        </Border>
+        <StackPanel>
+        <Button Click="ButtonTheory_Click"/>
+        <Button Click="ButtonMendeleevTable_Click" Content="MendeleevTable"/>
+        </StackPanel>
     </Grid>
 </Window>
