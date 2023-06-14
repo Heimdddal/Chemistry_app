@@ -77,6 +77,18 @@
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PageForTest.xaml.cs">
+      <DependentUpon>PageForTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MetalActivity.xaml.cs">
+      <DependentUpon>MetalActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TheoryWindow.xaml.cs">
+      <DependentUpon>TheoryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SolubilityTablePage.xaml.cs">
       <DependentUpon>SolubilityTablePage.xaml</DependentUpon>
     </Compile>
@@ -84,6 +96,7 @@
       <DependentUpon>TheorysPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\TestApplication.cs" />
+    <Compile Include="ViewModel\TestResults.cs" />
     <Compile Include="View\QuestionView.cs" />
     <Compile Include="View\TheoryData.cs" />
     <Compile Include="View\TheoryPage.cs" />
@@ -108,6 +121,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MendeleevTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageForTest.xaml"/>
+    <Page Include="MetalActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:Chemistry_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
+
         Title="MainWindow" Height="800" Width="1400" Background="#242424">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -18,8 +19,28 @@
             </Frame>
         </Border>
         <StackPanel>
-        <Button Click="ButtonTheory_Click"/>
-        <Button Click="ButtonMendeleevTable_Click" Content="MendeleevTable"/>
+            <Button Content="Profile" 
+                    Click="ButtonProfile_Click"/>
+            
+            <Button Content="Theory"
+                    Click="ButtonTheory_Click" />
+
+            <Button Content="Tests"
+                    Click="ButtonTests_Click"/>
+
+            <Button Content="Mendeleev Table"
+                    Click="ButtonMendeleevTable_Click" />
+
+            <Button Content="Solubillity Table"
+                    Click="ButtonSolubillityTable_Click"/>
+
+            <Button Content="Metal Activity Table"
+                    Click="ButtonMetalActivityTable_Click"/>
+
+            <Button Content="Settings"
+                    Click="ButtonSettings_Click"/>
+            
         </StackPanel>
+
     </Grid>
 </Window>

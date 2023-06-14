@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
+
+namespace Chemistry_app.ViewModel
+{
+    internal class TestResults
+    {
+        private Grid grid;
+        private string results;
+
+        public TestResults(ref Grid grid, string results)
+        {
+            this.grid = grid;
+            this.grid.Children.Clear();
+            this.results = results;
+
+            Label Results = new Label() 
+            {
+                Foreground = Brushes.White,
+                Content = results,
+                HorizontalAlignment = System.Windows.HorizontalAlignment.Center
+            };
+
+            this.grid.Children.Add(Results);
+
+
+
+        }
+    }
+}

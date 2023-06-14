@@ -37,7 +37,7 @@ namespace Chemistry_app
         bool isUsers(string email)
         {
             User regUser = null;
-            List<User> users = UserJsonController.ReadFromJson("..\\Assert\\Users.json");
+            List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
             regUser = users.Where(b => b.Email == email).FirstOrDefault();
             if (regUser != null)
             { return true; }
@@ -45,7 +45,7 @@ namespace Chemistry_app
         }
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
         {
-            List<User> users = UserJsonController.ReadFromJson("..\\Assert\\Users.json");
+            List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
             string name, email, gender, password, repeatePassword;
             int age = 0;
             int passCount = 0;
@@ -63,7 +63,7 @@ namespace Chemistry_app
             }
             else textBoxEmail.ToolTip = "Введите значение";
 
-            if (!email.Contains("@") & !email.Contains("."))
+            if (!email.Contains("@") & !email.Contains(".") || email.Count(c => c == '@') > 1)
             {
                 textBoxEmail.BorderBrush = Brushes.Red;
                 textBoxEmail.ToolTip = "Email введен неверно";
@@ -93,7 +93,7 @@ namespace Chemistry_app
             #endregion
             #region checkPassword
             password = textBoxPassword.Password;
-            if (!string.IsNullOrWhiteSpace(password))
+            if (!string.IsNullOrWhiteSpace(password) & password.Length >= 5)
             {
                 passCount++;
             }
