@@ -79,6 +79,12 @@
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MetalActivity.xaml.cs">
+      <DependentUpon>MetalActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TheoryWindow.xaml.cs">
       <DependentUpon>TheoryWindow.xaml</DependentUpon>
     </Compile>
@@ -112,6 +118,14 @@
     </Compile>
     <Page Include="Page1.xaml">
     <Page Include="MendeleevTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MetalActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
