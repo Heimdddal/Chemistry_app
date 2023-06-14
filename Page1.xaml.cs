@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chemistry_app.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,16 @@ namespace Chemistry_app
         public Page1()
         {
             InitializeComponent();
+
+            var questions = new List<Question>()
+            {
+                new Question("Question 1", "True", "False1", "False2", "False3"),
+                new Question("Question 2", "False1", "False2", "False3", "True"),
+                new Question("Question 3", "False2", "False3", "True", "False1")
+            };
+
+            var testApplication = new TestApplication(questions, ref MainGrid, "Тест", "klim");
+
         }
     }
 }
