@@ -13,22 +13,17 @@ namespace Chemistry_app.Controllers
     {
         public static void WriteToJson(List<User> users, string filename)
         {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename);
             string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            File.WriteAllText(filename, json);
+            File.WriteAllText(filePath, json);
         }
 
         public static List<User> ReadFromJson(string filename)
         {
-            string json = File.ReadAllText(filename);
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, filename);
+            string json = File.ReadAllText(filePath);
             List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             return users;
-        }
-
-        public static void CreateJsonFile(string filename)
-        {
-            var users = new List<User>();
-            string json = JsonConvert.SerializeObject(users, Formatting.Indented);
-            File.WriteAllText(filename, json);
         }
     }
 }

@@ -59,15 +59,5 @@ namespace Chemistry_app.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Поиск локализованного ресурса типа System.Byte[].
-        /// </summary>
-        public static byte[] Users {
-            get {
-                object obj = ResourceManager.GetObject("Users", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
     }
 }
