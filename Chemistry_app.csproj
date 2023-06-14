@@ -80,6 +80,12 @@
     <Compile Include="PageForTest.xaml.cs">
       <DependentUpon>PageForTest.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MetalActivity.xaml.cs">
+      <DependentUpon>MetalActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TheoryWindow.xaml.cs">
       <DependentUpon>TheoryWindow.xaml</DependentUpon>
     </Compile>
@@ -115,7 +121,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageForTest.xaml">
+    <Page Include="PageForTest.xaml"/>
+    <Page Include="MetalActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
