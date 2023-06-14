@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace Chemistry_app.ViewModel
 {
@@ -14,7 +15,10 @@ namespace Chemistry_app.ViewModel
     {
         private StackPanel panel = new StackPanel();
         private ScrollViewer scrollViewer = new ScrollViewer();
-        private Button button = new Button();
+        private Button button = new Button()
+        {
+            Foreground = Brushes.White
+        };
         private int numberOfQuestions;
         private List<Question> questionList;
         private string userName;
@@ -29,7 +33,8 @@ namespace Chemistry_app.ViewModel
             questionList = questions;
             panel.Children.Add(new TextBlock() 
             {
-                HorizontalAlignment=HorizontalAlignment.Center,
+                Foreground = Brushes.White,
+                HorizontalAlignment =HorizontalAlignment.Center,
                 Text=testName
             });
             for (int i = 0; i < questions.Count; i++)

@@ -41,6 +41,7 @@ namespace Chemistry_app
             FrameNavigator.MainFrame.Navigate(new TheoryWindow());
         }
 
+
         private void ButtonProfile_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("XUI");

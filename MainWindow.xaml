@@ -14,7 +14,7 @@
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="2" Margin="30,40,30,40" CornerRadius="30" Background="#363636">
-            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden">
+            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden" Source="PageForTest.xaml">
 
             </Frame>
         </Border>

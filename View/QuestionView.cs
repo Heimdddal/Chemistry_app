@@ -3,6 +3,7 @@ using System.Linq;
 using System.Windows.Controls;
 using System.Windows;
 using System;
+using System.Windows.Media;
 
 namespace Chemistry_app
 {
@@ -21,21 +22,25 @@ namespace Chemistry_app
             RadioButtonTrue = new RadioButton()
             {
                 Margin = new Thickness(5, 0, 0, 0),
+                Foreground = Brushes.White,
                 Content = trueAnswerText
             };
             RadioButtonFalse1 = new RadioButton()
             {
                 Margin = new Thickness(5, 0, 0, 0),
+                Foreground = Brushes.White,
                 Content = falseAnswer1Text
             };
             RadioButtonFalse2 = new RadioButton()
             {
                 Margin = new Thickness(5, 0, 0, 0),
+                Foreground = Brushes.White,
                 Content = falseAnswer2Text
             };
             RadioButtonFalse3 = new RadioButton()
             {
                 Margin = new Thickness(5, 0, 0, 0),
+                Foreground = Brushes.White,
                 Content = falseAnswer3Text
             };
 
@@ -46,7 +51,8 @@ namespace Chemistry_app
             RadioButtonsGroup = new GroupBox()
             {
                 Margin = new Thickness(5),
-                Header = questionText
+                Header = questionText,
+                Foreground = Brushes.White,
             };
 
             RadioButtonsGroup.Content = new StackPanel();
