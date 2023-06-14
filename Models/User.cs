@@ -26,5 +26,10 @@ namespace Chemistry_app.Models
             Gender = gender;
             Password = password;
         }
+
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }

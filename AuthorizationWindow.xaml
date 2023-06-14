@@ -17,5 +17,6 @@
                 <TextBlock Text="Нет учетной записи?" MouseLeftButtonDown="ButtonRegistration_Click" Foreground="Blue" Cursor="Hand" MaxWidth="1000" HorizontalAlignment="Left"/>
             </StackPanel>
         </Border>
+        
     </Grid>
 </Window>

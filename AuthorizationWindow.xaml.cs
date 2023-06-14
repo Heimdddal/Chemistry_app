@@ -1,8 +1,11 @@
 ﻿using Chemistry_app.Controllers;
 using Chemistry_app.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,12 +13,13 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
-using System.Windows.Forms.ComponentModel.Com2Interop;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using System.Windows.Resources;
 using System.Windows.Shapes;
+using System.Xml;
 
 namespace Chemistry_app
 {
@@ -38,13 +42,11 @@ namespace Chemistry_app
 
         bool isUsers(string email, string password)
         {
-            string fullFilePath = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "Assert" ,"Users.json");
             User authUser = null;
-            List<User> users = new List<User>();
-            users = UserJsonController.ReadFromJson(fullFilePath);
-
+            byte[] userBytes = Properties.Resources.Users;
+            string json = Encoding.UTF8.GetString(userBytes);
+            List<User> users = JsonConvert.DeserializeObject<List<User>>(json);
             authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
-
             if (authUser != null)
             { return true; }
             else { return false; }
