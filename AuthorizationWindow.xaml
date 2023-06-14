@@ -1,0 +1,22 @@
+﻿<Window x:Class="Chemistry_app.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chemistry_app"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="AuthorizationWindow" Height="450" Width="400" ResizeMode="NoResize">
+    <Grid>
+        <Border Margin="20" >
+            <StackPanel>
+                <TextBlock Text="Войдите в приложение"/>
+                <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Email" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
+                <PasswordBox x:Name="textBoxPassword" materialDesign:HintAssist.Hint="Password" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
+                <Button Content="Войти" Click="ButtonAuthorization_Click"/>
+                <TextBlock Text="Нет учетной записи?" MouseLeftButtonDown="ButtonRegistration_Click" Foreground="Blue" Cursor="Hand" MaxWidth="1000" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </Border>
+        
+    </Grid>
+</Window>

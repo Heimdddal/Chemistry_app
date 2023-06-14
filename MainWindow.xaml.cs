@@ -1,4 +1,6 @@
-﻿using Chemistry_app.ViewModel;
+
+using Chemistry_app.Controllers;
+using Chemistry_app.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +27,19 @@ namespace Chemistry_app
         public MainWindow()
         {
             InitializeComponent();
+
+            FrameNavigator.MainFrame = MainFrame;
+        }
+
+        private void ButtonMendeleevTable_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new Page1());
+        }
+
+        private void ButtonTheory_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new TheoryWindow());
         }
     }
 }
+

@@ -1,0 +1,27 @@
+﻿<Window x:Class="Chemistry_app.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemasc:\users\emil\source\repos\chemistry_app\registrationwindow.xaml
+c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
+.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chemistry_app"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="RegistrationWindow" Height="450" Width="400">
+    <Grid>
+        <Border Margin="20" >
+            <StackPanel>
+                <TextBlock Text="Регистрация"/>
+                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint ="Name" Margin="5"/>
+                <TextBox x:Name="textBoxEmail" Margin="5" materialDesign:HintAssist.Hint ="Email"/>
+                <TextBox x:Name="textBoxGender" Margin="5" materialDesign:HintAssist.Hint="Gender"/>
+                <TextBox x:Name="textBoxAge" Margin="5" materialDesign:HintAssist.Hint ="Age"/>
+                <PasswordBox x:Name="textBoxPassword" Margin="5" materialDesign:HintAssist.Hint ="Password"/>
+                <PasswordBox Name="textBoxRepeatPassword" Margin="5" materialDesign:HintAssist.Hint ="Repeat password"/>
+                <Button Content="Регистрация" Click="ButtonRegistration_Click"/>
+                <Button Content="Вернуться к авторизации" Click="ButtonReturnToAuentification_Click"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
