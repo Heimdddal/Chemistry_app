@@ -79,6 +79,7 @@
     </Compile>
     <Compile Include="TheoryWindow.xaml.cs">
       <DependentUpon>TheoryWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="SolubilityTablePage.xaml.cs">
       <DependentUpon>SolubilityTablePage.xaml</DependentUpon>
     </Compile>
@@ -143,6 +144,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Assert\Theory.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -84,7 +84,7 @@ namespace Chemistry_app
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            string jsonFilePath = "C:/Users/emil/Desktop/Theory.json";
+            string jsonFilePath = "..\\Assert\\Theory.json";
             LoadTheoryData(jsonFilePath);
         }
     }
