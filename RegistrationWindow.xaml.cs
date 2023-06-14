@@ -1,5 +1,6 @@
 ﻿using Chemistry_app.Controllers;
 using Chemistry_app.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,11 +37,8 @@ namespace Chemistry_app
         bool isUsers(string email)
         {
             User regUser = null;
-            List<User> users = new List<User>();
-            users = UserJsonController.ReadFromJson("..\\Chemistry_app\\Users.json");
-
+            List<User> users = UserJsonController.ReadFromJson("..\\Assert\\Users.json");
             regUser = users.Where(b => b.Email == email).FirstOrDefault();
-
             if (regUser != null)
             { return true; }
             else { return false; }
