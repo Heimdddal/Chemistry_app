@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -16,8 +17,14 @@ namespace Chemistry_app.ViewModel
         private Button button = new Button();
         private int numberOfQuestions;
         private List<Question> questionList;
-        public TestApplication(List<Question> questions, ref Grid grid, string testName)
+        private string userName;
+        private Grid grid;
+        public TestApplication(List<Question> questions, ref Grid grid, string testName, string userName)
         {
+            this.grid = grid;
+
+
+            this.userName= userName;
             numberOfQuestions = questions.Count;
             questionList = questions;
             panel.Children.Add(new TextBlock() 
@@ -40,7 +47,7 @@ namespace Chemistry_app.ViewModel
             button.Click += ShowResults;
             panel.Children.Add(button);
             scrollViewer.Content = panel;
-            grid.Children.Add(scrollViewer);
+            this.grid.Children.Add(scrollViewer);
         }
 
         private int CountCorrectAnswers()
@@ -60,7 +67,17 @@ namespace Chemistry_app.ViewModel
 
         private void ShowResults(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show($"You have answered {CountCorrectAnswers()} out of {numberOfQuestions} questions correctly.");
+            TestResults testResults = new TestResults(ref grid, $"Вы правильно ответили на {CountCorrectAnswers()}  из  {numberOfQuestions} вопросов");
+            string jsonResult = $"{userName}:{CountCorrectAnswers()}\n";
+            try
+            {
+                File.AppendAllText("results.json", jsonResult + Environment.NewLine);
+            }
+            catch (Exception ex)
+            {
+                // обработка ошибок записи в файл
+                MessageBox.Show($"Error writing to file: {ex.Message}");
+            }
         }
     }
 }

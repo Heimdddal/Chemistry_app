@@ -27,6 +27,7 @@ namespace Chemistry_app
         public MainWindow()
         {
             InitializeComponent();
+
             FrameNavigator.MainFrame = MainFrame;
         }
 

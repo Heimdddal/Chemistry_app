@@ -72,6 +72,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Page1.xaml.cs">
+      <DependentUpon>Page1.xaml</DependentUpon>
     <Compile Include="Controllers\FrameNavigator.cs" />
     <Compile Include="Controllers\UserJsonController.cs" />
     <Compile Include="MendeleevTablePage.xaml.cs">
@@ -84,6 +86,7 @@
       <DependentUpon>SolubilityTablePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\TestApplication.cs" />
+    <Compile Include="ViewModel\TestResults.cs" />
     <Compile Include="View\QuestionView.cs" />
     <Compile Include="View\TheoryData.cs" />
     <Compile Include="View\TheoryPage.cs" />
@@ -107,6 +110,7 @@
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Page1.xaml">
     <Page Include="MendeleevTablePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
