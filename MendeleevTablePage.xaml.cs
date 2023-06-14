@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Chemistry_app
 {
     /// <summary>
-    /// Логика взаимодействия для Page1.xaml
+    /// Логика взаимодействия для MendeleevTablePage.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class MendeleevTablePage : Page
     {
-        public Page1()
+        public MendeleevTablePage()
         {
             InitializeComponent();
         }
