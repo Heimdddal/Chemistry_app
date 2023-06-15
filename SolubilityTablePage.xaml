@@ -5,6 +5,10 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chemistry_app"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      TextElement.FontSize="28"
+      TextElement.Foreground="#FFFFFF"
+      TextBlock.TextAlignment="Center"
+      TextBlock.FontStretch="UltraCondensed"
       mc:Ignorable="d" 
       d:DesignHeight="800" d:DesignWidth="1300"
       Title="Page1">
@@ -44,10 +48,7 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition></ColumnDefinition>
+                    
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition></RowDefinition>
@@ -66,11 +67,104 @@
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
                     <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
+                <TextBlock Grid.Row="1">
+                    <Span>
+                        I
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="2">
+                    <Span>
+                        Br
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="3">
+                    <Span>
+                        Cl
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="4">
+                    <Span>
+                        <Run Text="NO"/>
+                        <Run Text="3" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="5">
+                    <Span>
+                        <Run Text="SO"/>
+                        <Run Text="3" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="6">
+                    <Span>
+                        <Run Text="SO"/>
+                        <Run Text="3" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="7">
+                    <Span>
+                        <Run Text="F"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="8">
+                    <Span>
+                        <Run Text="NO"/>
+                        <Run Text="2" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="9">
+                    <Span>
+                        <Run Text="HCOO"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="10" >
+                    <Span>
+                        <Run Text="CH"/>
+                        <Run Text="2" FontSize="16"/>
+                        <Run Text="COO"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="11">
+                    <Span>
+                        <Run Text="PO"/>
+                        <Run Text="4" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">3-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="12">
+                    <Span>
+                        <Run Text="CO"/>
+                        <Run Text="3" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="13">
+                    <Span>
+                        <Run Text="S"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="14">
+                    <Span>
+                        <Run Text="SiO"/>
+                        <Run Text="3" FontSize="16"/>
+                        <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
+                    </Span>
+                </TextBlock>
+                <TextBlock Grid.Row="15">
+                    OH
+                </TextBlock>
+                
             </Grid>
         </StackPanel>
     </Grid>

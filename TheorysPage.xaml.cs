@@ -19,11 +19,11 @@ using Chemistry_app.View;
 namespace Chemistry_app
 {
     /// <summary>
-    /// Логика взаимодействия для TheoryWindow.xaml
+    /// Логика взаимодействия для TheorysPage.xaml
     /// </summary>
-    public partial class TheoryWindow : Page
+    public partial class TheorysPage : Page
     {
-        public TheoryWindow()
+        public TheorysPage()
         {
             InitializeComponent();
             Loaded += MainWindow_Loaded;
@@ -84,7 +84,7 @@ namespace Chemistry_app
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            string jsonFilePath = "..\\Assert\\Theory.json";
+            string jsonFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assert\\Theory.json");
             LoadTheoryData(jsonFilePath);
         }
     }

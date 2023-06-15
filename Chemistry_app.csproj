@@ -119,11 +119,17 @@
     <Compile Include="PageForTest.xaml.cs">
       <DependentUpon>PageForTest.xaml</DependentUpon>
     </Compile>
-    <Compile Include="TheoryWindow.xaml.cs">
-      <DependentUpon>TheoryWindow.xaml</DependentUpon>
+    <Compile Include="MetalActivity.xaml.cs">
+      <DependentUpon>MetalActivity.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
     <Compile Include="SolubilityTablePage.xaml.cs">
       <DependentUpon>SolubilityTablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TheorysPage.xaml.cs">
+      <DependentUpon>TheorysPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\TestApplication.cs" />
     <Compile Include="ViewModel\TestResults.cs" />
@@ -154,7 +160,12 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PageForTest.xaml">
+    <Page Include="PageForTest.xaml" />
+    <Page Include="MetalActivity.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Settings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,7 +177,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="TheoryWindow.xaml">
+    <Page Include="TheorysPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -212,7 +223,7 @@
   <Import Project="packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets'))" />
   </Target>

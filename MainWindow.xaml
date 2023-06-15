@@ -14,13 +14,32 @@
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="2" Margin="30,40,30,40" CornerRadius="30" Background="#363636">
-            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden" Source="PageForTest.xaml">
+            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden">
 
             </Frame>
         </Border>
         <StackPanel>
-        <Button Click="ButtonTheory_Click"/>
-        <Button Click="ButtonMendeleevTable_Click" Content="MendeleevTable"/>
+            <Button Content="Profile" 
+                    Click="ButtonProfile_Click"/>
+            
+            <Button Content="Theory"
+                    Click="ButtonTheory_Click" />
+
+            <Button Content="Tests"
+                    Click="ButtonTests_Click"/>
+
+            <Button Content="Mendeleev Table"
+                    Click="ButtonMendeleevTable_Click" />
+
+            <Button Content="Solubillity Table"
+                    Click="ButtonSolubillityTable_Click"/>
+
+            <Button Content="Metal Activity Table"
+                    Click="ButtonMetalActivityTable_Click"/>
+
+            <Button Content="Settings"
+                    Click="ButtonSettings_Click"/>
+            
         </StackPanel>
 
     </Grid>
