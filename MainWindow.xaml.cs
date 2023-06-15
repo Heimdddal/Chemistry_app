@@ -1,5 +1,6 @@
 
 using Chemistry_app.Controllers;
+using Chemistry_app.Models;
 using Chemistry_app.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -22,14 +23,17 @@ namespace Chemistry_app
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : System.Windows.Window
     {
-        public MainWindow()
+        public User user { get; set; }
+        public MainWindow(User user)
         {
             InitializeComponent();
-
+            this.user = user;
+            textBoxNameUser.Text = user.Name;
+            textBoxEmailUser.Text = user.Email;
             FrameNavigator.MainFrame = MainFrame;
-            EmailSender.SendCode("NNNdwdw", "bearshunter321@gmail.com");
+            
         }
 
         private void ButtonTests_Click(object sender, RoutedEventArgs e)
@@ -47,12 +51,6 @@ namespace Chemistry_app
             FrameNavigator.MainFrame.Navigate(new TheorysPage());
         }
 
-
-        private void ButtonProfile_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("XUI");
-        }
-
         private void ButtonSolubillityTable_Click(object sender, RoutedEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new Page1());
@@ -61,11 +59,6 @@ namespace Chemistry_app
         private void ButtonMetalActivityTable_Click(object sender, RoutedEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MetalActivity());
-        }
-
-        private void ButtonSettings_Click(object sender, RoutedEventArgs e)
-        {
-            FrameNavigator.MainFrame.Navigate(new Settings());
         }
     }
 }

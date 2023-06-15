@@ -40,6 +40,13 @@ namespace Chemistry_app
             this.Hide();
         }
 
+        User authUsers(string email, string password)
+        {
+            User authUser = null;
+            List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
+            authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
+            return authUser;
+        }
         bool isUsers(string email, string password)
         {
             User authUser = null;
@@ -59,7 +66,7 @@ namespace Chemistry_app
             #region rootUser
             if (email == "root")
             {
-                MainWindow window = new MainWindow();
+                MainWindow window = new MainWindow(new User());
                 window.Show();
                 this.Hide();
             }
@@ -90,7 +97,7 @@ namespace Chemistry_app
             {
                 if (isUsers(email, password))
                 {
-                    MainWindow window = new MainWindow();
+                    MainWindow window = new MainWindow(authUsers(email,password));
                     window.Show();
                     this.Hide();
                 }
@@ -99,5 +106,11 @@ namespace Chemistry_app
 
         }
 
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow window = new MainWindow(new User());
+            window.Show();
+            this.Hide();
+        }
     }
 }
