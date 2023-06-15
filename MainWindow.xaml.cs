@@ -29,8 +29,9 @@ namespace Chemistry_app
             InitializeComponent();
 
             FrameNavigator.MainFrame = MainFrame;
+            EmailSender.SendCode("NNNdwdw", "bearshunter321@gmail.com");
         }
-
+        
         private void ButtonMendeleevTable_Click(object sender, RoutedEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new Page1());

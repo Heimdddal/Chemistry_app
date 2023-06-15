@@ -15,14 +15,72 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Net;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
+using System.IO;
+using System.Net.Mail;
+using Google.Apis.Util.Store;
 
 namespace Chemistry_app
 {
+
     /// <summary>
     /// Логика взаимодействия для RegistrationWindow.xaml
     /// </summary>
     public partial class RegistrationWindow : Window
     {
+        [Obsolete]
+        public static void SendEmail(string toAddress, string subject, string body)
+        {
+            UserCredential credential;
+
+            // Путь к файлу учетных данных, который вы скачали из Google Cloud Console
+            using (var stream = new FileStream("path/to/your/credentials.json", FileMode.Open, FileAccess.Read))
+            {
+                string credPath = "path/to/your/token.json";
+                credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
+                    GoogleClientSecrets.Load(stream).Secrets,
+                    new[] { GmailService.Scope.GmailSend },
+                    "user",
+                    System.Threading.CancellationToken.None,
+                    new FileDataStore(credPath, true)).Result;
+            }
+
+            // Создание сервиса Gmail API
+            var service = new GmailService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "Your application name",
+            });
+
+            // Создание сообщения
+            var message = new MailMessage();
+            message.From = new MailAddress("youremail@gmail.com");
+            message.To.Add(toAddress);
+            message.Subject = subject;
+            message.Body = body;
+
+            // Кодирование сообщения в формат MIME
+            var mimeMessage = MimeKit.MimeMessage.CreateFromMailMessage(message);
+            var rawMessage = Base64UrlEncode(mimeMessage.ToString());
+
+            // Отправка сообщения
+            var gmailMessage = new Message();
+            gmailMessage.Raw = rawMessage;
+            service.Users.Messages.Send(gmailMessage, "me").Execute();
+        }
+
+        private static string Base64UrlEncode(string input)
+        {
+            var inputBytes = System.Text.Encoding.UTF8.GetBytes(input);
+            return System.Convert.ToBase64String(inputBytes)
+                .Replace('+', '-')
+                .Replace('/', '_')
+                .Replace("=", "");
+        }
         public RegistrationWindow()
         {
             InitializeComponent();
