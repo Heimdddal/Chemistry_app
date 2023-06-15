@@ -112,6 +112,9 @@
     </ApplicationDefinition>
     <Compile Include="Controllers\FrameNavigator.cs" />
     <Compile Include="Controllers\UserJsonController.cs" />
+    <Compile Include="EmailConfirmation.xaml.cs">
+      <DependentUpon>EmailConfirmation.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EmailSender.cs" />
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
@@ -137,6 +140,10 @@
     <Compile Include="View\TheoryData.cs" />
     <Compile Include="View\TheoryPage.cs" />
     <Compile Include="View\TheoryPager.cs" />
+    <Page Include="EmailConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

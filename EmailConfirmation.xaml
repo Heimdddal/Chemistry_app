@@ -1,0 +1,24 @@
+﻿<Window x:Class="Chemistry_app.EmailConfirmation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:Chemistry_app"
+        mc:Ignorable="d"
+        Title="EmailConfirmation" Height="300" Width="400" Background="#242424">
+    <Grid>
+        <Border Margin="30" Background="#363636">
+            <StackPanel>
+                <TextBlock Text="Подтвердите адрес электронной почты"
+                           Foreground="White"
+                           FontSize="25"
+                           TextWrapping="Wrap"/>
+
+                <TextBox materialDesign:HintAssist.Hint="Код" FontSize="25" Name="textBoxCode"/>
+                <Button Content="Finish"  Click="Button_Click"/>
+                <Button Content="Back" Click="Button_Click_1"/>
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
