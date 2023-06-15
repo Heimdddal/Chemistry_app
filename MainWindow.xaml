@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chemistry_app"
+        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
 
@@ -19,27 +20,46 @@
             </Frame>
         </Border>
         <StackPanel>
-            <Button Content="Profile" 
-                    Click="ButtonProfile_Click"/>
+            <TextBlock x:Name="textBoxNameUser" FontSize="20" Foreground="White"/>
             
-            <Button Content="Theory"
-                    Click="ButtonTheory_Click" />
-
-            <Button Content="Tests"
-                    Click="ButtonTests_Click"/>
-
-            <Button Content="Mendeleev Table"
-                    Click="ButtonMendeleevTable_Click" />
-
-            <Button Content="Solubillity Table"
-                    Click="ButtonSolubillityTable_Click"/>
-
-            <Button Content="Metal Activity Table"
-                    Click="ButtonMetalActivityTable_Click"/>
-
-            <Button Content="Settings"
-                    Click="ButtonSettings_Click"/>
+            <TextBlock x:Name="textBoxEmailUser" FontSize="20" Foreground="White"/>
             
+
+            <Button Click="ButtonTheory_Click" >
+                <StackPanel>
+                    <TextBlock Text="Теория"/>
+                </StackPanel>
+            </Button>
+
+            <Button Click="ButtonTests_Click">
+                <StackPanel>
+                    <TextBlock Text="Пройти тестирование"/>
+                </StackPanel>
+            </Button>
+
+            <Button Click="ButtonMendeleevTable_Click" >
+                <StackPanel>
+                    <TextBlock Text="Таблица Менделеева"/>
+                </StackPanel>
+            </Button>
+
+            <Button Click="ButtonSolubillityTable_Click">
+                <StackPanel>
+                    <TextBlock Text="Таблица растворимости"/>
+                </StackPanel>
+            </Button>
+
+            <Button Click="ButtonMetalActivityTable_Click">
+                <StackPanel>
+                    <TextBlock Text="Таблица активности элементов"/>
+                </StackPanel>
+            </Button>
+
+            <Button>
+                <StackPanel>
+                    <TextBlock Text="Выйти"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
     </Grid>

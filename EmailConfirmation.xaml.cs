@@ -47,7 +47,7 @@ namespace Chemistry_app
                 List<User> users = UserJsonController.ReadFromJson(fileName);
                 users.Add(user);
                 UserJsonController.WriteToJson(users, fileName);
-                MainWindow window = new MainWindow();
+                MainWindow window = new MainWindow(user);
                 window.Show();
                 Hide();
             }

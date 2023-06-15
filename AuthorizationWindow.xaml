@@ -14,7 +14,14 @@
                 <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Email" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
                 <PasswordBox x:Name="textBoxPassword" materialDesign:HintAssist.Hint="Password" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
                 <Button Content="Войти" Click="ButtonAuthorization_Click"/>
-                <TextBlock Text="Нет учетной записи?" MouseLeftButtonDown="ButtonRegistration_Click" Foreground="Blue" Cursor="Hand" MaxWidth="1000" HorizontalAlignment="Left"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Нет учетной записи?" MouseLeftButtonDown="ButtonRegistration_Click" Foreground="Blue" Cursor="Hand" MaxWidth="1000" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Войти как гость" Cursor="Hand" MaxWidth="1000" Foreground="Blue" HorizontalAlignment="Right" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+                </Grid>
+                
             </StackPanel>
         </Border>
         
