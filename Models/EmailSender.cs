@@ -8,8 +8,13 @@ using System.Threading.Tasks;
 
 namespace Chemistry_app
 {
-    static class EmailSender
+    internal class EmailSender
     {
+        public EmailSender()
+        {
+
+        }
+
         public static void SendCode(string code, string toEmail)
         {
             string smtpServer = "smtp.mail.ru";

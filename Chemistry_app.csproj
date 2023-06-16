@@ -115,7 +115,7 @@
     <Compile Include="EmailConfirmation.xaml.cs">
       <DependentUpon>EmailConfirmation.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EmailSender.cs" />
+    <Compile Include="Models\EmailSender.cs" />
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
     </Compile>
