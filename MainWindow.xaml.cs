@@ -38,7 +38,7 @@ namespace Chemistry_app
 
         private void ButtonTests_Click(object sender, RoutedEventArgs e)
         {
-            FrameNavigator.MainFrame.Navigate(new PageForTest());
+            FrameNavigator.MainFrame.Navigate(new PageForTest(user));
         }
 
 

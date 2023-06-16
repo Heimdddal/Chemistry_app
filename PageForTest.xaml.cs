@@ -1,4 +1,5 @@
-﻿using Chemistry_app.ViewModel;
+﻿using Chemistry_app.Models;
+using Chemistry_app.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace Chemistry_app
     /// </summary>
     public partial class PageForTest : Page
     {
-        public PageForTest()
+        public PageForTest(User user)
         {
             InitializeComponent();
 
@@ -33,7 +34,7 @@ namespace Chemistry_app
             questions.Add(new Question("What is the pH of a neutral solution?", "7", "1", "14", "0"));
             questions.Add(new Question("What is the process of converting a solid into a gas without passing through the liquid state called?", "Sublimation", "Evaporation", "Condensation", "Freezing"));
 
-            var testApplication = new TestApplication(questions, ref MainGrid, "Chemistry test", "Klim");
+            var testApplication = new TestApplication(questions, ref MainGrid, "Chemistry test", user.Name);
         }
     }
 }

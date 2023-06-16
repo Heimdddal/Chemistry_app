@@ -23,10 +23,11 @@ namespace Chemistry_app.ViewModel
         private List<Question> questionList;
         private string userName;
         private Grid grid;
+        private string nameOfTest;
         public TestApplication(List<Question> questions, ref Grid grid, string testName, string userName)
         {
             this.grid = grid;
-
+            this.nameOfTest = testName;
 
             this.userName= userName;
             numberOfQuestions = questions.Count;
@@ -72,7 +73,7 @@ namespace Chemistry_app.ViewModel
 
         private void ShowResults(object sender, RoutedEventArgs e)
         {
-            TestResults testResults = new TestResults(ref grid, $"Вы правильно ответили на {CountCorrectAnswers()}  из  {numberOfQuestions} вопросов");
+            TestResults testResults = new TestResults(ref grid, CountCorrectAnswers(), numberOfQuestions, userName, nameOfTest);
             string jsonResult = $"{userName}:{CountCorrectAnswers()}\n";
             try
             {
