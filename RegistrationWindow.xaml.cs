@@ -23,7 +23,6 @@ using Google.Apis.Services;
 using System.IO;
 using System.Net.Mail;
 using Google.Apis.Util.Store;
-using static Org.BouncyCastle.Asn1.Cmp.Challenge;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
@@ -36,15 +35,18 @@ namespace Chemistry_app
     /// </summary>
     public partial class RegistrationWindow : System.Windows.Window
     {
+        public string Gender { get; set; }
         public RegistrationWindow()
         {
             InitializeComponent();
+            MaleRadioButton.Checked += RadioButton_Checked;
+            FemaleRadioButton.Checked += RadioButton_Checked;
         }
 
         public void EmailConfirmation(User user) {;
             Chemistry_app.EmailConfirmation window = new EmailConfirmation(user);
             window.Show();
-            Hide();
+            this.Close();
         }
         bool isUsers(string email)
         {
@@ -86,11 +88,12 @@ namespace Chemistry_app
             }
             #endregion
             #region checkGender
-            gender = " ";
-            if (!string.IsNullOrWhiteSpace(gender)) {
+            gender = Gender;
+            if (!string.IsNullOrWhiteSpace(gender))
+            {
                 passCount++;
             }
-            else //todo
+            else textBoxGender.ToolTip = "Неверный гендер";
             #endregion
             #region checkAge
             try
@@ -141,6 +144,21 @@ namespace Chemistry_app
             AuthorizationWindow window = new AuthorizationWindow();
             window.Show();
             this.Close();
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (sender is RadioButton radio)
+            {
+                if (radio.Name == "MaleRadioButton")
+                {
+                    Gender = "Муж";
+                }
+                else if (radio.Name == "FemaleRadioButton")
+                {
+                    Gender = "Жен";
+                }
+            }
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Chemistry_app
         {
             RegistrationWindow window = new RegistrationWindow();
             window.Show();
-            this.Hide();
+            this.Close();
         }
 
         User authUsers(string email, string password)
@@ -63,14 +63,6 @@ namespace Chemistry_app
 
             email = textBoxEmail.Text.Trim();
             password = textBoxPassword.Password.Trim();
-            #region rootUser
-            if (email == "root")
-            {
-                MainWindow window = new MainWindow(new User());
-                window.Show();
-                this.Hide();
-            }
-            #endregion
             #region checkEmail
             if (!email.Contains("@") & !email.Contains(".")) {
                 textBoxEmail.BorderBrush = Brushes.Red;
@@ -99,7 +91,7 @@ namespace Chemistry_app
                 {
                     MainWindow window = new MainWindow(authUsers(email,password));
                     window.Show();
-                    this.Hide();
+                    this.Close();
                 }
                 else MessageBox.Show("Пользователь не найден");
             }
@@ -110,7 +102,7 @@ namespace Chemistry_app
         {
             MainWindow window = new MainWindow(new User());
             window.Show();
-            this.Hide();
+            this.Close();
         }
     }
 }

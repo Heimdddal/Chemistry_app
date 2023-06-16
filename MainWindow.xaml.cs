@@ -36,17 +36,14 @@ namespace Chemistry_app
             
         }
 
-        private void ButtonTests_Click(object sender, RoutedEventArgs e)
+        private void ButtonTests_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new PageForTest());
         }
-
-
-        private void ButtonTheory_Click(object sender, RoutedEventArgs e)
+        private void ButtonTheory_Click(object sender, MouseButtonEventArgs e)
         {
-            FrameNavigator.MainFrame.Navigate(new TheorysPage());
+            FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
         }
-
         private void ButtonMendeleevTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
@@ -60,6 +57,11 @@ namespace Chemistry_app
         private void ButtonMetalActivityTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MetalActivity());
+        }
+
+        private void StackPanel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
         }
     }
 }

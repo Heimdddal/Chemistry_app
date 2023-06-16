@@ -22,16 +22,22 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                          Margin="10" 
                          materialDesign:HintAssist.Hint ="Email"/>
                 <TextBlock Text="Пол" 
-                         Margin="10" Foreground="#60FFFFFF"/>
+                         Margin="10" 
+                         Name="textBoxGender"
+                         Foreground="#60FFFFFF"/>
                 
                 <StackPanel
                   Margin="4"
                   Orientation="Horizontal">
                     <RadioButton
+                        x:Name="MaleRadioButton"
+                        Checked="RadioButton_Checked"
                         HorizontalAlignment="Center"
                         Margin="4"
                         IsChecked="True"
-                        Style="{StaticResource MaterialDesignTabRadioButton}">
+                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                        Foreground="{DynamicResource TextColor}"
+                        BorderBrush="{DynamicResource ActiveElements}">
                         <StackPanel>
                             <materialDesign:PackIcon
                                 HorizontalAlignment="Center"
@@ -42,10 +48,14 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                         </StackPanel>
                     </RadioButton>
                     <RadioButton
+                        x:Name="FemaleRadioButton"
+                        Checked="RadioButton_Checked"
                         HorizontalAlignment="Center"
                         Margin="4"
                         IsChecked="False"
-                        Style="{StaticResource MaterialDesignTabRadioButton}">
+                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                        Foreground="{DynamicResource TextColor}"
+                        BorderBrush="{DynamicResource ActiveElements}">
                         <StackPanel>
                             <materialDesign:PackIcon
                                 HorizontalAlignment="Center"
@@ -59,7 +69,7 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                 <TextBlock Text="Возраст"
                            Margin="10,5,0,10" Foreground="#60FFFFFF"/>
                 
-                <Grid >
+                <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
@@ -93,7 +103,7 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                         MinHeight="40"
                         materialDesign:ButtonAssist.CornerRadius ="10"
                         Margin="10,0,10,0"/>
-                <TextBlock Text="Войти как гость" 
+                <TextBlock Text="Назад" 
                             Cursor="Hand" 
                             MaxWidth="1000" 
                             Foreground="#66E39C" 
