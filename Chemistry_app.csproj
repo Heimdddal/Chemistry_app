@@ -97,7 +97,6 @@
     <Compile Include="View\QuestionView.cs" />
     <Compile Include="View\TheoryData.cs" />
     <Compile Include="View\TheoryPage.cs" />
-    <Compile Include="View\TheoryPager.cs" />
     <Page Include="MainWindow.xaml" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

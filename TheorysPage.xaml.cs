@@ -78,15 +78,7 @@ namespace Chemistry_app
             grid4.Visibility = Visibility.Collapsed;
             grid5.Visibility = Visibility.Collapsed;
             grid6.Visibility = Visibility.Collapsed;
-            //// Скрыть все RichTextBox, кроме выбранного
-            //foreach (UIElement element in grid.Children)
-            //{
-            //    if (element is Grid richTextBox && richTextBox != sender as Grid)
-            //    {
-            //        richTextBox.Visibility = Visibility.Collapsed;
-            //    }
-            //}
-           
+            returnButton.Visibility = Visibility.Visible;
             if (sender is MaterialDesignThemes.Wpf.Card card)
             {
                 if (card.Name == "grid1")
@@ -139,178 +131,10 @@ namespace Chemistry_app
                 }
                 
             }
-            returnButton.Visibility = Visibility.Visible;
-            //richTextBox1.Visibility = Visibility.Visible;
-            //if (((UIElement)sender).ToString() == "grid1") {
-            //    richTextBox1.Visibility = Visibility.Visible;
-            //    Grid.SetRow(richTextBox1, 0);
-            //    Grid.SetColumn(richTextBox1, 0);
-            //    Grid.SetRowSpan(richTextBox1, 3);
-            //    Grid.SetColumnSpan(richTextBox1, 3);
-            //}
-            //int row = Grid.GetRow((UIElement)sender);
-            //int column = Grid.GetColumn((UIElement)sender);
-
-            //DoubleAnimation animation = new DoubleAnimation();
-            //animation.From = 2; // начальный размер
-            //animation.To = 470; // конечный размер
-            //animation.Duration = TimeSpan.FromSeconds(10); // продолжительность анимации в секундах
-
-            //((UIElement)sender).BeginAnimation(RichTextBox.HeightProperty, animation);
-
-            //DoubleAnimation animation2 = new DoubleAnimation();
-            //animation2.From = 2; // начальный размер
-            //animation2.To = 880; // конечный размер
-            //animation2.Duration = TimeSpan.FromSeconds(10); // продолжительность анимации в секундах
-
-            //((UIElement)sender).BeginAnimation(RichTextBox.WidthProperty, animation2);
-
-            //Int32Animation rowAnimation = new Int32Animation(row, 3, TimeSpan.FromSeconds(100));
-            //Int32Animation colAnimation = new Int32Animation(column, 3, TimeSpan.FromSeconds(10));
-            //Grid.SetRow((UIElement)sender, 0);
-            //Grid.SetColumn((UIElement)sender, 0);
-            //Grid.SetRowSpan((UIElement)sender, 3);
-            //Grid.SetColumnSpan((UIElement)sender, 3);
-            //grid.BeginAnimation(Grid.RowProperty, rowAnimation);
-            //grid.BeginAnimation(Grid.ColumnProperty, colAnimation);
-
-            //grid1.Visibility = Visibility.Visible;
-            //grid2.Visibility = Visibility.Visible;
-            //grid3.Visibility = Visibility.Visible;
-            //grid4.Visibility = Visibility.Visible;
-            //grid5.Visibility = Visibility.Visible;
-            //grid6.Visibility = Visibility.Visible;
-            //// Создаем экземпляр Storyboard
-            //var storyboard = new Grid();
-
-            //// Создаем ScaleTransform, чтобы изменить размеры элемента управления
-            //var scaleTransform = new ScaleTransform(1, 1);
-
-            //// Создаем анимацию для ScaleTransform
-            //var scaleAnimation = new DoubleAnimation
-            //{
-            //    Duration = TimeSpan.FromSeconds(1),
-            //    From = 1,
-            //    To = 500,
-            //    //AutoReverse = true
-            //};
-
-            //// Добавляем анимацию к Storyboard
-            ////((UIElement)sender).Children.Add(scaleAnimation);
-
-            //// Указываем свойства, которые будут анимироваться (в данном случае - RenderTransform)
-            //Storyboard.SetTargetProperty(scaleAnimation, new PropertyPath("RenderTransform.ScaleX"));
-            //Storyboard.SetTargetProperty(scaleAnimation, new PropertyPath("RenderTransform.ScaleY"));
-
-            //// Указываем элемент управления, который будет анимироваться
-            //Storyboard.SetTarget(scaleAnimation, (UIElement)sender);
-
-            //// Запускаем анимацию
-            //((UIElement)sender).BeginAnimation(RichTextBox.HeightProperty, scaleAnimation);
-
-            //// Установить размеры и расположение выбранного RichTextBox
-            //returnButton.Visibility = Visibility.Visible;
-            //Grid.SetRow((UIElement)sender, 0);
-            //Grid.SetColumn((UIElement)sender, 0);
-            //Grid.SetRowSpan((UIElement)sender, 3);
-            //Grid.SetColumnSpan((UIElement)sender, 3);
-
-            //TransformGroup transformGroup = new TransformGroup();
-            //ScaleTransform scaleTransform = new ScaleTransform();
-            //transformGroup.Children.Add(scaleTransform);
-
-            //((UIElement)sender).RenderTransform = transformGroup;
-
-            ////scaleTransform.CenterX = ((UIElement)sender).Ce;
-            ////scaleTransform.CenterY = richTextBox.ActualHeight / 2;
-
-            //((UIElement)sender).RenderTransformOrigin = new Point(0.5, 0.5);
-
-            //DoubleAnimation animation = new DoubleAnimation();
-            ////Grid.Column = "2" Grid.Row = "1"
-            //animation.From = 2; // начальный размер
-            //animation.To = 470; // конечный размер
-            //animation.Duration = TimeSpan.FromSeconds(1); // продолжительность анимации в секундах
-            //((UIElement)sender).BeginAnimation(RichTextBox.HeightProperty, animation);
-
-            //DoubleAnimation animation2 = new DoubleAnimation();
-            //animation2.From = 2; // начальный размер
-            //animation2.To = 880; // конечный размер
-            //animation2.Duration = TimeSpan.FromSeconds(1); // продолжительность анимации в секундах
-
-            //((UIElement)sender).BeginAnimation(RichTextBox.WidthProperty, animation2);
         }
-
-
-        //private void richTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        //{
-        //    //richTextBox2.Visibility = Visibility.Collapsed;
-        //    TransformGroup transformGroup = new TransformGroup();
-        //    ScaleTransform scaleTransform = new ScaleTransform();
-        //    transformGroup.Children.Add(scaleTransform);
-
-        //    richTextBox.RenderTransform = transformGroup;
-
-        //    scaleTransform.CenterX = richTextBox.ActualWidth / 2;
-        //    scaleTransform.CenterY = richTextBox.ActualHeight / 2;
-
-        //    richTextBox.RenderTransformOrigin = new Point(0.5, 0.5);
-
-        //    DoubleAnimation animation = new DoubleAnimation();
-        //    //Grid.Column = "2" Grid.Row = "1"
-        //    animation.From = 2; // начальный размер
-        //    animation.To = 470; // конечный размер
-        //    animation.Duration = TimeSpan.FromSeconds(1); // продолжительность анимации в секундах
-        //    richTextBox.BeginAnimation(RichTextBox.HeightProperty, animation);
-
-        //    DoubleAnimation animation2 = new DoubleAnimation();
-        //    animation2.From = 2; // начальный размер
-        //    animation2.To = 880; // конечный размер
-        //    animation2.Duration = TimeSpan.FromSeconds(1); // продолжительность анимации в секундах
-
-        //    richTextBox.BeginAnimation(RichTextBox.WidthProperty, animation2);
-        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //// Показать все RichTextBox
-            //foreach (UIElement element in grid.Children)
-            //{
-            //    if (element is RichTextBox richTextBox)
-            //    {
-            //        richTextBox.Visibility = Visibility.Visible;
-            //    }
-            //}
-            // Получаем строку и столбец элемента
-            //int row = Grid.GetRow((UIElement)sender);
-            //int column = Grid.GetColumn((UIElement)sender);
-
-            //// Создаем обратную анимацию для высоты RichTextBox
-            //DoubleAnimation heightAnimation = new DoubleAnimation();
-            //heightAnimation.From = 470; // конечный размер в оригинальной анимации
-            //heightAnimation.To = 2; // начальный размер
-            //heightAnimation.Duration = TimeSpan.FromSeconds(10); // продолжительность анимации в секундах
-            //((UIElement)sender).BeginAnimation(RichTextBox.HeightProperty, heightAnimation);
-
-            //// Создаем обратную анимацию для ширины RichTextBox
-            //DoubleAnimation widthAnimation = new DoubleAnimation();
-            //widthAnimation.From = 880; // конечный размер в оригинальной анимации
-            //widthAnimation.To = 2; // начальный размер
-            //widthAnimation.Duration = TimeSpan.FromSeconds(10); // продолжительность анимации в секундах
-            //((UIElement)sender).BeginAnimation(RichTextBox.WidthProperty, widthAnimation);
-
-            //// Создаем обратные анимации для строки и столбца элемента
-            //Int32Animation rowAnimation = new Int32Animation(3, row, TimeSpan.FromSeconds(100));
-            //Int32Animation colAnimation = new Int32Animation(3, column, TimeSpan.FromSeconds(10));
-            //grid.BeginAnimation(Grid.RowProperty, rowAnimation);
-            //grid.BeginAnimation(Grid.ColumnProperty, colAnimation);
-
-            // Возвращаем элемент на исходную позицию и размер
-            //Grid.SetRow((UIElement)sender, row);
-            //Grid.SetColumn((UIElement)sender, column);
-            //Grid.SetRowSpan((UIElement)sender, 1);
-            //Grid.SetColumnSpan((UIElement)sender, 1);
-
             grid1.Visibility = Visibility.Visible;
             grid2.Visibility = Visibility.Visible;
             grid3.Visibility = Visibility.Visible;
@@ -355,34 +179,6 @@ namespace Chemistry_app
             richTextBox5.Visibility = Visibility.Collapsed;
             richTextBox6.Visibility = Visibility.Collapsed;
             returnButton.Visibility = Visibility.Collapsed;
-        }
-
-        //private void richTextBox2_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        //{
-        //    TransformGroup transformGroup = new TransformGroup();
-        //    ScaleTransform scaleTransform = new ScaleTransform();
-        //    transformGroup.Children.Add(scaleTransform);
-
-        //    richTextBox2.RenderTransform = transformGroup;
-
-        //    scaleTransform.CenterX = richTextBox2.ActualWidth / 2;
-        //    scaleTransform.CenterY = richTextBox2.ActualHeight / 2;
-
-        //    richTextBox2.RenderTransformOrigin = new Point(0.5, 0.5);
-
-        //    DoubleAnimation animation = new DoubleAnimation();
-        //    animation.From = 2; // начальный размер
-        //    animation.To = 470; // конечный размер
-        //    animation.Duration = TimeSpan.FromSeconds(1); // продолжительность анимации в секундах
-
-        //    richTextBox2.BeginAnimation(RichTextBox.HeightProperty, animation);
-
-        //    DoubleAnimation animation2 = new DoubleAnimation();
-        //    animation2.From = 2; // начальный размер
-        //    animation2.To = 880; // конечный размер
-        //    animation2.Duration = TimeSpan.FromSeconds(1); // продолжительность анимации в секундах
-
-        //    richTextBox2.BeginAnimation(RichTextBox.WidthProperty, animation2);
-        //}
+        }   
     }
 }

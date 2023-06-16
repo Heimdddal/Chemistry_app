@@ -9,7 +9,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="1500" d:DesignWidth="1100"
       Title="TheorysPage" >
-    <Grid x:Name="grid">
+        <Grid x:Name="grid">
         <Grid.RowDefinitions>
             <RowDefinition Height="100*" />
             <RowDefinition Height="100*" />
@@ -82,7 +82,7 @@
         </materialDesign:Card>
         <RichTextBox Grid.Row="0" Grid.Column="0" Name="richTextBox1" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
         <RichTextBox Grid.Row="0" Grid.Column="1" Name="richTextBox2" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
-        <RichTextBox Grid.Column="0" Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick" Margin="-20,310,20,130" Grid.RowSpan="2"/>
+        <RichTextBox Grid.Row="1" Grid.Column="0" Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
         <RichTextBox Grid.Row="1" Grid.Column="1" Name="richTextBox4" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
         <RichTextBox Grid.Row="2" Grid.Column="0" Name="richTextBox5" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
         <RichTextBox Grid.Row="2" Grid.Column="1" Name="richTextBox6" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
