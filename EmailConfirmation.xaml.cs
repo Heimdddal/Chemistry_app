@@ -63,7 +63,7 @@ namespace Chemistry_app
         {
             RegistrationWindow window = new RegistrationWindow();
             window.Show();
-            Hide();
+            this.Close();
         }
     }
 }

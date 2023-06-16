@@ -6,18 +6,30 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Chemistry_app"
         mc:Ignorable="d"
-        Title="EmailConfirmation" Height="300" Width="400" Background="#242424">
+        Title="EmailConfirmation" Height="300" Width="400" Background="#242424" Foreground="White" FontSize="19">
     <Grid>
-        <Border Margin="30" Background="#363636">
+        <Border Margin="30" Background="#363636" CornerRadius="10">
             <StackPanel>
                 <TextBlock Text="Подтвердите адрес электронной почты"
                            Foreground="White"
-                           FontSize="25"
+                           FontSize="30" 
+                           Margin="5"
                            TextWrapping="Wrap"/>
 
-                <TextBox materialDesign:HintAssist.Hint="Код" FontSize="25" Name="textBoxCode"/>
-                <Button Content="Finish"  Click="Button_Click"/>
-                <Button Content="Back" Click="Button_Click_1"/>
+                <TextBox materialDesign:HintAssist.Hint="Код" FontSize="25" Name="textBoxCode" Margin="10"/>
+                <Button Content="Finish"  Click="Button_Click"
+                        Background="#66E39C"
+                        MinHeight="40"
+                        materialDesign:ButtonAssist.CornerRadius ="10"
+                        Margin="10,0,10,0"/>
+                <TextBlock Text="Назад" 
+                            Cursor="Hand" 
+                            MaxWidth="1000" 
+                            Foreground="#66E39C" 
+                            HorizontalAlignment="Left" 
+                            MouseLeftButtonDown="Button_Click_1"
+                            Margin="10,5,0,0"
+                            FontSize="15"/>
             </StackPanel>
         </Border>
     </Grid>
