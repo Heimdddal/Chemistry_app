@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
@@ -70,77 +71,24 @@ namespace Chemistry_app
         }
         private void AnionTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            switch (AnionTextbox.Text.ToString().ToUpper())
+            string text = AnionTextbox.Text.ToString().ToUpper();
+            List<ColorZone> colorZones = new List<ColorZone>
             {
-                case "I":
-                    removeAnionsColors();
-                    I.BorderBrush = outline;
-                    break;
-                case "BR":
-                    removeAnionsColors();
-                    Br.BorderBrush = outline;
-                    break;
-                case "CL":
-                    removeAnionsColors();
-                    Cl.BorderBrush = outline;
-                    break;
-                case "NO3":
-                    removeAnionsColors();
-                    NO3.BorderBrush = outline;
-                    break;
-                case "SO3":
-                    removeAnionsColors();
-                    SO3.BorderBrush = outline;
-                    break;
-                case "SO4":
-                    removeAnionsColors();
-                    SO4.BorderBrush = outline;
-                    break;
-                case "F":
-                    removeAnionsColors();
-                    F.BorderBrush = outline;
-                    break;
-                case "NO2":
-                    removeAnionsColors();
-                    NO2.BorderBrush = outline;
-                    break;
-                case "HCOO":
-                    removeAnionsColors();
-                    HCOO.BorderBrush = outline;
-                    break;
-                case "CH2COO":
-                    removeAnionsColors();
-                    CH2COO.BorderBrush = outline;
-                    break;
-                case "PO4":
-                    removeAnionsColors();
-                    PO4.BorderBrush = outline;
-                    break;
-                case "CO3":
-                    removeAnionsColors();
-                    CO3.BorderBrush = outline;
-                    break;
-                case "S":
-                    removeAnionsColors();
-                    S.BorderBrush = outline;
-                    break;
-                case "SIO3":
-                    removeAnionsColors();
-                    SiO3.BorderBrush = outline;
-                    break;
-                case "OH":
-                    removeAnionsColors();
-                    OH.BorderBrush = outline;
-                    break;
-                default:
-                    removeAnionsColors();
-                    break;
+                I,Br,Cl,NO3,SO3,SO4,F,NO2,HCOO,CH2COO,PO4,CO3,S,SiO3,OH
+            };
+            colorZones = colorZones.Where(cz=>cz.Name.ToUpper().Contains(text) && text != "").ToList();
+            removeAnionsColors();
+            foreach (var cz in colorZones)
+            {
+                cz.BorderBrush = outline;
             }
+
         }
+
 
         private void CationTextbox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            switch (CationTextbox.Text.ToString().ToUpper())
+            /*switch (CationTextbox.Text.ToString().ToUpper())
             {
                 case "K":
                     removeCationColors();
@@ -213,7 +161,19 @@ namespace Chemistry_app
                 default:
                     removeCationColors();
                     break;
+            }*/
+            string text = CationTextbox.Text.ToString().ToUpper();
+            List<ColorZone> colorZones = new List<ColorZone>
+            {
+                K,Na,Ba,Ca,NH4,Ag,Mg,Pb,Mn, Fe2,Zn,Cu,Hg,Al,Fe3,Cr,H
+            };
+            colorZones = colorZones.Where(cz => cz.Name.ToUpper().Contains(text) && text != "").ToList();
+            removeCationColors();
+            foreach (var cz in colorZones)
+            {
+                cz.BorderBrush = outline;
             }
+
         }
     }
 }
