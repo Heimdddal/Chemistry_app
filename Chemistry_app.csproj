@@ -178,8 +178,24 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Assert\Введение.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Простые реакции.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Соединения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Разложения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Замещения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Обмена.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -4,54 +4,101 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chemistry_app"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       TextElement.Foreground="#FFFFFF"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="TheorysPage">
-
-    <Grid Margin="0,0,0,-6" x:Name="theoryPageGrid">
-        <RichTextBox x:Name="richTextBox"  Margin="10,10,10,72" IsReadOnly="True" FontSize="16" />
-        <TextBlock x:Name="pageLabel" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,38,32" FontSize="16"/>
-        <Button Content="Предыдущая" Click="PreviousButton_Click" HorizontalAlignment="Left"  
-                VerticalAlignment="Bottom" 
-                Margin="266,0,0,27" 
+      d:DesignHeight="1500" d:DesignWidth="1100"
+      Title="TheorysPage" >
+    <Grid x:Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <materialDesign:Card x:Name="grid1" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="0" Margin="20" Background="#00000000">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Введение.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Ввдение"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid2" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="1" Margin="20">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Простые реакции.png" Stretch="UniformToFill"></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Простые реакции"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid3" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="1" Grid.Column="0" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Соединения.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Cоединения"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid4" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="1" Grid.Column="1" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Разложения.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Разложения"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid5" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="2" Grid.Column="0" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Замещения.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Замещения"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card  x:Name="grid6" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="2" Grid.Column="1" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Обмена.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Обмена"/>
+            </Grid>
+        </materialDesign:Card>
+        <RichTextBox Grid.Row="0" Grid.Column="0" Name="richTextBox1" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="0" Grid.Column="1" Name="richTextBox2" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Column="0" Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick" Margin="-20,310,20,130" Grid.RowSpan="2"/>
+        <RichTextBox Grid.Row="1" Grid.Column="1" Name="richTextBox4" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="2" Grid.Column="0" Name="richTextBox5" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="2" Grid.Column="1" Name="richTextBox6" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <StackPanel x:Name="returnStackPanel" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,0">
+            <Button Content="Вернуться" Name="returnButton" Click="Button_Click" 
+                Margin="380,10,380,0"
                 Background="#2196F3" 
                 Foreground="White" 
                 BorderThickness="0" 
                 Padding="12, 6"
-                FontSize="14"
-                FontWeight="Bold" 
-                Width="121">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity=".5"/>
-            </Button.Effect>
-        </Button>
-        <Button Content="Следующая" Click="NextButton_Click" HorizontalAlignment="Left"  
-                VerticalAlignment="Bottom" 
-                Margin="392,0,0,27"
-                Background="#2196F3" 
-                Foreground="White" 
-                BorderThickness="0" 
-                Padding="12, 6"
-                FontSize="14"
-                FontWeight="Bold"
-                Width="121">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity=".5"/>
-            </Button.Effect>
-        </Button>
-        <Button Content="Назад"  HorizontalAlignment="Left"  
-                VerticalAlignment="Bottom" 
-                Margin="10,0,0,27"
-                Background="#2196F3" 
-                Foreground="White" 
-                BorderThickness="0" 
-                Padding="12, 6"
-                FontSize="14"
-                FontWeight="Bold">
-            <Button.Effect>
-                <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity=".5"/>
-            </Button.Effect>
-        </Button>
+                FontSize="20"
+                FontWeight="Bold" Grid.ColumnSpan="2" Height="50">
+                <Button.Effect>
+                    <DropShadowEffect ShadowDepth="0" BlurRadius="15" Opacity=".5"/>
+                </Button.Effect>
+            </Button>
+        </StackPanel>
     </Grid>
 </Page>
