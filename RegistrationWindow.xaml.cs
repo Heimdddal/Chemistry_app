@@ -41,13 +41,6 @@ namespace Chemistry_app
             InitializeComponent();
         }
 
-        private void ButtonReturnToAuentification_Click(object sender, RoutedEventArgs e)
-        {
-            AuthorizationWindow window = new AuthorizationWindow();
-            window.Show();
-            Hide();
-        }
-
         public void EmailConfirmation(User user) {;
             Chemistry_app.EmailConfirmation window = new EmailConfirmation(user);
             window.Show();
@@ -93,11 +86,11 @@ namespace Chemistry_app
             }
             #endregion
             #region checkGender
-            gender = textBoxAge.Text.Trim();
+            gender = " ";
             if (!string.IsNullOrWhiteSpace(gender)) {
                 passCount++;
             }
-            else textBoxGender.ToolTip = "Введите значение";
+            else //todo
             #endregion
             #region checkAge
             try
@@ -141,6 +134,13 @@ namespace Chemistry_app
                 }
                 else MessageBox.Show("Пользователь уже существует");
             }
+        }
+
+        private void ButtonReturnToAuentification_Click(object sender, MouseButtonEventArgs e)
+        {
+            AuthorizationWindow window = new AuthorizationWindow();
+            window.Show();
+            this.Close();
         }
     }
 }
