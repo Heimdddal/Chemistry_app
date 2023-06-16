@@ -4,23 +4,66 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chemistry_app"
+        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
 
-        Title="MainWindow" Height="800" Width="1400" Background="#242424">
+        Title="MainWindow" Height="800" Width="1400" Background="#242424" Foreground="white">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="2" Margin="30,40,30,40" CornerRadius="30" Background="#363636">
-            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden" Source="PageForTest.xaml">
+            <Frame Padding="20" Name = "MainFrame" NavigationUIVisibility="Hidden">
 
             </Frame>
         </Border>
         <StackPanel>
-        <Button Click="ButtonTheory_Click"/>
-        <Button Click="ButtonMendeleevTable_Click" Content="MendeleevTable"/>
+            <TextBlock x:Name="textBoxNameUser" FontSize="20" Foreground="White"/>
+            
+            <TextBlock x:Name="textBoxEmailUser" FontSize="20" Foreground="White"/>
+            
+
+            <Button Click="ButtonTheory_Click" >
+                <StackPanel>
+                    <TextBlock Text="Теория"/>
+                </StackPanel>
+            </Button>
+
+            <Button Click="ButtonTests_Click">
+                <StackPanel>
+                    <TextBlock Text="Пройти тестирование"/>
+                </StackPanel>
+            </Button>
+
+            <TreeView >
+                <TreeViewItem
+                    Header="Таблицы"
+                    IsExpanded="False"
+                    Foreground="White">
+                    <TreeViewItem
+                        Header="Таблица менделеева" 
+                        Foreground="white"
+                        PreviewMouseLeftButtonDown="ButtonMendeleevTable_Click">
+                    </TreeViewItem>
+                    <TreeViewItem
+                        Header="Таблица растворимости"
+                        Foreground="White"
+                        PreviewMouseLeftButtonDown="ButtonSolubillityTable_Click">
+                    </TreeViewItem>
+                    <TreeViewItem
+                        Header="Таблица активности металлов"
+                        Foreground="White"
+                        PreviewMouseLeftButtonDown ="ButtonMetalActivityTable_Click"/>
+                </TreeViewItem>
+            </TreeView>         
+
+            <Button>
+                <StackPanel>
+                    <TextBlock Text="Выйти"/>
+                </StackPanel>
+            </Button>
         </StackPanel>
 
     </Grid>

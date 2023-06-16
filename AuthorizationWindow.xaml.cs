@@ -40,6 +40,13 @@ namespace Chemistry_app
             this.Hide();
         }
 
+        User authUsers(string email, string password)
+        {
+            User authUser = null;
+            List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
+            authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
+            return authUser;
+        }
         bool isUsers(string email, string password)
         {
             User authUser = null;
@@ -51,42 +58,59 @@ namespace Chemistry_app
         }
         private void ButtonAuthorization_Click(object sender, RoutedEventArgs e)
         {
+            int passCount = 0;
             string email, password;
 
             email = textBoxEmail.Text.Trim();
             password = textBoxPassword.Password.Trim();
-
+            #region rootUser
             if (email == "root")
             {
-                MainWindow window = new MainWindow();
+                MainWindow window = new MainWindow(new User());
                 window.Show();
                 this.Hide();
             }
-
+            #endregion
+            #region checkEmail
             if (!email.Contains("@") & !email.Contains(".")) {
                 textBoxEmail.BorderBrush = Brushes.Red;
-                textBoxEmail.ToolTip = "Email введен неверно";
+                textBoxEmail.ToolTip = "Почта введена неверно";
             }
             else {
+                passCount++;
                 textBoxEmail.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight");
+                textBoxEmail.ToolTip = "";
             }
-
+            #endregion
+            #region checkPassword
             if (password.Length < 5){
-                textBoxEmail.BorderBrush = Brushes.Red;
-                textBoxEmail.ToolTip = "Password введен неконектно";
+                textBoxPassword.BorderBrush = Brushes.Red;
+                textBoxPassword.ToolTip = "Пароль введен неконектно";
             }
             else { 
-                textBoxEmail.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight"); 
+                passCount++;
+                textBoxPassword.SetResourceReference(TextBox.BorderBrushProperty, "UnderLineLight");
+                textBoxPassword.ToolTip = "";
             }
-
-            if (isUsers(email, password)){
-                MainWindow window = new MainWindow();
-                window.Show();
-                this.Hide();
+            #endregion
+            if (passCount == 2)
+            {
+                if (isUsers(email, password))
+                {
+                    MainWindow window = new MainWindow(authUsers(email,password));
+                    window.Show();
+                    this.Hide();
+                }
+                else MessageBox.Show("Пользователь не найден");
             }
-            else MessageBox.Show("Пользователь не найден");
 
         }
 
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            MainWindow window = new MainWindow(new User());
+            window.Show();
+            this.Hide();
+        }
     }
 }

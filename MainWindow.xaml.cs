@@ -1,5 +1,6 @@
 
 using Chemistry_app.Controllers;
+using Chemistry_app.Models;
 using Chemistry_app.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -22,24 +23,43 @@ namespace Chemistry_app
     /// <summary>
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class MainWindow
+    public partial class MainWindow : System.Windows.Window
     {
-        public MainWindow()
+        public User user { get; set; }
+        public MainWindow(User user)
         {
             InitializeComponent();
-
+            this.user = user;
+            textBoxNameUser.Text = user.Name;
+            textBoxEmailUser.Text = user.Email;
             FrameNavigator.MainFrame = MainFrame;
-            EmailSender.SendCode("NNNdwdw", "bearshunter321@gmail.com");
+            
         }
-        
-        private void ButtonMendeleevTable_Click(object sender, RoutedEventArgs e)
+
+        private void ButtonTests_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new PageForTest());
+        }
+
+
+        private void ButtonTheory_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new TheorysPage());
+        }
+
+        private void ButtonMendeleevTable_Click(object sender, MouseButtonEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
+        }
+
+        private void ButtonSolubillityTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new Page1());
         }
 
-        private void ButtonTheory_Click(object sender, RoutedEventArgs e)
+        private void ButtonMetalActivityTable_Click(object sender, MouseButtonEventArgs e)
         {
-            FrameNavigator.MainFrame.Navigate(new TheoryWindow());
+            FrameNavigator.MainFrame.Navigate(new MetalActivity());
         }
     }
 }
