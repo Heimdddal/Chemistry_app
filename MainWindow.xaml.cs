@@ -41,8 +41,6 @@ namespace Chemistry_app
         {
             FrameNavigator.MainFrame.Navigate(new TheoryWindow());
         }
-
-
     }
 }
 
