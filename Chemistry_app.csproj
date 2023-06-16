@@ -119,10 +119,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CertificateGenerator.cs" />
     <Compile Include="Controllers\FrameNavigator.cs" />
     <Compile Include="Controllers\UserJsonController.cs" />
-    <Compile Include="EmailSender.cs" />
     <Compile Include="ForCertificate\BronzeBackGround.cs" />
     <Compile Include="ForCertificate\CertificateGenerator.cs" />
     <Compile Include="ForCertificate\GoldBackGround.cs" />
