@@ -15,24 +15,38 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Net;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Gmail.v1;
+using Google.Apis.Gmail.v1.Data;
+using Google.Apis.Services;
+using System.IO;
+using System.Net.Mail;
+using Google.Apis.Util.Store;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Xml.Linq;
 
 namespace Chemistry_app
 {
+
     /// <summary>
     /// Логика взаимодействия для RegistrationWindow.xaml
     /// </summary>
-    public partial class RegistrationWindow : Window
+    public partial class RegistrationWindow : System.Windows.Window
     {
+        public string Gender { get; set; }
         public RegistrationWindow()
         {
             InitializeComponent();
+            MaleRadioButton.Checked += RadioButton_Checked;
+            FemaleRadioButton.Checked += RadioButton_Checked;
         }
 
-        private void ButtonReturnToAuentification_Click(object sender, RoutedEventArgs e)
-        {
-            AuthorizationWindow window = new AuthorizationWindow();
+        public void EmailConfirmation(User user) {;
+            Chemistry_app.EmailConfirmation window = new EmailConfirmation(user);
             window.Show();
-            Hide();
+            this.Close();
         }
         bool isUsers(string email)
         {
@@ -74,11 +88,12 @@ namespace Chemistry_app
             }
             #endregion
             #region checkGender
-            gender = textBoxAge.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(gender)) {
+            gender = Gender;
+            if (!string.IsNullOrWhiteSpace(gender))
+            {
                 passCount++;
             }
-            else textBoxGender.ToolTip = "Введите значение";
+            else textBoxGender.ToolTip = "Неверный гендер";
             #endregion
             #region checkAge
             try
@@ -117,14 +132,33 @@ namespace Chemistry_app
             if (passCount == 8) {
                 if (!isUsers(email))
                 {
-                    string fileName = "..\\Chemistry_app\\Users.json";
                     User user = new User(name, email, age, gender, password);
-                    users = UserJsonController.ReadFromJson(fileName);
-                    users.Add(user);
-                    UserJsonController.WriteToJson(users, fileName);
+                    EmailConfirmation(user);
                 }
                 else MessageBox.Show("Пользователь уже существует");
             }
+        }
+
+        private void ButtonReturnToAuentification_Click(object sender, MouseButtonEventArgs e)
+        {
+            AuthorizationWindow window = new AuthorizationWindow();
+            window.Show();
+            this.Close();
+        }
+
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (sender is RadioButton radio)
+            {
+                if (radio.Name == "MaleRadioButton")
+                {
+                    Gender = "Муж";
+                }
+                else if (radio.Name == "FemaleRadioButton")
+                {
+                    Gender = "Жен";
+                }
             }
+        }
     }
 }

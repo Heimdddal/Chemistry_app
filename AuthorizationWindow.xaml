@@ -6,15 +6,49 @@
         xmlns:local="clr-namespace:Chemistry_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="450" Width="400" ResizeMode="NoResize">
+        Title="AuthorizationWindow" Height="370" Width="400" ResizeMode="NoResize" Background="#242424" Foreground="White">
     <Grid>
-        <Border Margin="20" >
+        <Border Margin="20" Background="#363636" CornerRadius="10">
             <StackPanel>
-                <TextBlock Text="Войдите в приложение"/>
-                <TextBox x:Name="textBoxEmail" materialDesign:HintAssist.Hint="Email" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
-                <PasswordBox x:Name="textBoxPassword" materialDesign:HintAssist.Hint="Password" Margin="5" BorderBrush="{DynamicResource UnderLineLight}"/>
-                <Button Content="Войти" Click="ButtonAuthorization_Click"/>
-                <TextBlock Text="Нет учетной записи?" MouseLeftButtonDown="ButtonRegistration_Click" Foreground="Blue" Cursor="Hand" MaxWidth="1000" HorizontalAlignment="Left"/>
+                <TextBlock Text="Авторизация" 
+                           FontSize="40"
+                           Margin="10"/>
+                <TextBox x:Name="textBoxEmail" 
+                         materialDesign:HintAssist.Hint="Email" 
+                         Margin="10" BorderBrush="{DynamicResource UnderLineLight}" 
+                         FontSize="30"/>
+                <PasswordBox x:Name="textBoxPassword" 
+                             materialDesign:HintAssist.Hint="Password" 
+                             Margin="10" BorderBrush="{DynamicResource UnderLineLight}" 
+                             FontSize="30"/>
+                <Button Content="Авторизоваться" 
+                        Click="ButtonAuthorization_Click" 
+                        Background="#66E39C" 
+                        FontSize="20"
+                        Margin="10,0,10,0"
+                        MinHeight="40"
+                        materialDesign:ButtonAssist.CornerRadius="10"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="Нет учетной записи?" 
+                               MouseLeftButtonDown="ButtonRegistration_Click" 
+                               Foreground="#66E39C" 
+                               Cursor="Hand" 
+                               MaxWidth="1000" 
+                               HorizontalAlignment="Left"
+                               Margin="10,0,0,0"/>
+                    
+                    <TextBlock Text="Войти как гость" 
+                               Cursor="Hand" 
+                               MaxWidth="1000" 
+                               Foreground="#66E39C" 
+                               HorizontalAlignment="Right" 
+                               MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"
+                               Margin="0,0,10,0"/>
+                </Grid>
+                
             </StackPanel>
         </Border>
         

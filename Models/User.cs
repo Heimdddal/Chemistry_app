@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace Chemistry_app.Models
 {
@@ -13,7 +15,16 @@ namespace Chemistry_app.Models
         public int Age { get; set; }
         public string Gender { get; set; }
         public string Password { get; set; }
+        public bool isGuest { get; set; }
 
+        public User() {
+            Name = "Гость";
+            Email = "guest@gmail.com";
+            Age = 0;
+            Gender = null;
+            Password = null;
+            isGuest = true;
+        }   
         public User(string name,
             string email,
             int age,
@@ -25,6 +36,7 @@ namespace Chemistry_app.Models
             Age = age;
             Gender = gender;
             Password = password;
+            isGuest = false;
         }
 
         public override string ToString()

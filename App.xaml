@@ -12,6 +12,10 @@
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
             </ResourceDictionary.MergedDictionaries>
             <SolidColorBrush x:Key="UnderLineLight" Color="Aquamarine"/>
+            <SolidColorBrush x:Key="BackgroundDarkTheme" Color="#242424"/>
+            <SolidColorBrush x:Key="UnactiveElementDarkTheme" Color="#363636"/>
+            <SolidColorBrush x:Key="ActiveElements" Color="#66E39C"/>
+            <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
         </ResourceDictionary>
     </Application.Resources>
 

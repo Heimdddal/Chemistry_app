@@ -8,19 +8,109 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
         xmlns:local="clr-namespace:Chemistry_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="450" Width="400">
+        Title="RegistrationWindow" Height="600" Width="400" Background="#242424" Foreground="White" FontSize="19">
     <Grid>
-        <Border Margin="20" >
+        <Border Margin="20" Background="#363636" CornerRadius="10">
             <StackPanel>
-                <TextBlock Text="Регистрация"/>
-                <TextBox x:Name="textBoxName" materialDesign:HintAssist.Hint ="Name" Margin="5"/>
-                <TextBox x:Name="textBoxEmail" Margin="5" materialDesign:HintAssist.Hint ="Email"/>
-                <TextBox x:Name="textBoxGender" Margin="5" materialDesign:HintAssist.Hint="Gender"/>
-                <TextBox x:Name="textBoxAge" Margin="5" materialDesign:HintAssist.Hint ="Age"/>
-                <PasswordBox x:Name="textBoxPassword" Margin="5" materialDesign:HintAssist.Hint ="Password"/>
-                <PasswordBox Name="textBoxRepeatPassword" Margin="5" materialDesign:HintAssist.Hint ="Repeat password"/>
-                <Button Content="Регистрация" Click="ButtonRegistration_Click"/>
-                <Button Content="Вернуться к авторизации" Click="ButtonReturnToAuentification_Click"/>
+                <TextBlock Text="Регистрация" 
+                           FontSize="30" 
+                           Margin="5"/>
+                <TextBox x:Name="textBoxName" 
+                         materialDesign:HintAssist.Hint ="Name" 
+                         Margin="10"/>
+                <TextBox x:Name="textBoxEmail" 
+                         Margin="10" 
+                         materialDesign:HintAssist.Hint ="Email"/>
+                <TextBlock Text="Пол" 
+                         Margin="10" 
+                         Name="textBoxGender"
+                         Foreground="#60FFFFFF"/>
+                
+                <StackPanel
+                  Margin="4"
+                  Orientation="Horizontal">
+                    <RadioButton
+                        x:Name="MaleRadioButton"
+                        Checked="RadioButton_Checked"
+                        HorizontalAlignment="Center"
+                        Margin="4"
+                        IsChecked="True"
+                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                        Foreground="{DynamicResource TextColor}"
+                        BorderBrush="{DynamicResource ActiveElements}">
+                        <StackPanel>
+                            <materialDesign:PackIcon
+                                HorizontalAlignment="Center"
+                                Kind="GenderMale" />
+                            <TextBlock
+                                Margin="0,4,0,0"
+                                Text="Муж" />
+                        </StackPanel>
+                    </RadioButton>
+                    <RadioButton
+                        x:Name="FemaleRadioButton"
+                        Checked="RadioButton_Checked"
+                        HorizontalAlignment="Center"
+                        Margin="4"
+                        IsChecked="False"
+                        Style="{StaticResource MaterialDesignTabRadioButton}"
+                        Foreground="{DynamicResource TextColor}"
+                        BorderBrush="{DynamicResource ActiveElements}">
+                        <StackPanel>
+                            <materialDesign:PackIcon
+                                HorizontalAlignment="Center"
+                                Kind="GenderFemale" />
+                            <TextBlock
+                                Margin="0,4,0,0"
+                                Text="Жен" />
+                        </StackPanel>
+                    </RadioButton>
+                </StackPanel>
+                <TextBlock Text="Возраст"
+                           Margin="10,5,0,10" Foreground="#60FFFFFF"/>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Slider x:Name="sld"
+                            Maximum="100"
+                            Minimum="0"
+                            Value="18"
+                            HorizontalAlignment="Left"
+                            MinWidth="280"
+                            IsSnapToTickEnabled = "True"
+                            TickFrequency = "1"
+                            Panel.ZIndex="2"
+                            VerticalAlignment="Center"
+                            Margin="10,0,0,0"
+                            ></Slider>
+                    <TextBlock Text="{Binding ElementName=sld, Path=Value, Mode=TwoWay}"
+                               x:Name="textBoxAge"
+                               HorizontalAlignment="Right"
+                               Margin="0,0,10,0"/>
+                </Grid>
+
+                <PasswordBox x:Name="textBoxPassword" 
+                             Margin="10" 
+                             materialDesign:HintAssist.Hint ="Password"/>
+                <PasswordBox Name="textBoxRepeatPassword" 
+                             Margin="10" 
+                             materialDesign:HintAssist.Hint ="Repeat password"/>
+                <Button Content="Регистрация" 
+                        Click="ButtonRegistration_Click"
+                        Background="#66E39C"
+                        MinHeight="40"
+                        materialDesign:ButtonAssist.CornerRadius ="10"
+                        Margin="10,0,10,0"/>
+                <TextBlock Text="Назад" 
+                            Cursor="Hand" 
+                            MaxWidth="1000" 
+                            Foreground="#66E39C" 
+                            HorizontalAlignment="Left" 
+                            MouseLeftButtonDown="ButtonReturnToAuentification_Click"
+                            Margin="10,5,0,0"
+                            FontSize="15"/>
             </StackPanel>
         </Border>
     </Grid>

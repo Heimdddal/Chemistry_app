@@ -4,43 +4,139 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chemistry_app"
+        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
 
-        Title="MainWindow" Height="800" Width="1400" Background="#242424">
+        Title="MainWindow" Height="800" Width="1400" Background="#242424" Foreground="white">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Border Grid.Column="2" Margin="30,40,30,40" CornerRadius="30" Background="#363636">
-            <Frame Padding="40" Name = "MainFrame" NavigationUIVisibility="Hidden">
+            <Frame Padding="20" Name = "MainFrame" NavigationUIVisibility="Hidden">
 
             </Frame>
         </Border>
-        <StackPanel>
-            <Button Content="Profile" 
-                    Click="ButtonProfile_Click"/>
-            
-            <Button Content="Theory"
-                    Click="ButtonTheory_Click" />
+        <Border Background="#363636" MinWidth="280">
+            <StackPanel MinWidth="280">
+                <Grid MinWidth="280">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
 
-            <Button Content="Tests"
-                    Click="ButtonTests_Click"/>
+                            <TextBlock x:Name="textBoxNameUser" 
+                                       FontSize="25" 
+                                       Foreground="White" 
+                                       Grid.Column="1" 
+                                       Grid.Row="0" 
+                                       VerticalAlignment="Bottom"
+                                       RenderTransformOrigin="0,1"/>
 
-            <Button Content="Mendeleev Table"
-                    Click="ButtonMendeleevTable_Click" />
+                            <TextBlock x:Name="textBoxEmailUser" 
+                                       FontSize="10" 
+                                       Foreground="White" 
+                                       Grid.Column="1" 
+                                       Grid.Row="1"
+                                       VerticalAlignment="Top"
+                                       RenderTransformOrigin="0,0"/>
 
-            <Button Content="Solubillity Table"
-                    Click="ButtonSolubillityTable_Click"/>
+                            <materialDesign:PackIcon Grid.RowSpan="2" Grid.Column="0" 
+                                HorizontalAlignment="Center"
+                                Kind="AccountBadgeOutline" Height="50" Width="50" />
+                            <Ellipse Grid.RowSpan="2" Grid.Column="0">
 
-            <Button Content="Metal Activity Table"
-                    Click="ButtonMetalActivityTable_Click"/>
+                            </Ellipse>
+                        </Grid>
+                    </StackPanel>
+                    <StackPanel Grid.Row="1"  VerticalAlignment="Center" PreviewMouseLeftButtonDown="ButtonTheory_Click" Cursor="Hand">
+                        <Grid VerticalAlignment="Center" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="Book" VerticalAlignment="Center" Height="40" Width="36"/>
+                            <TextBlock Text="Теория" 
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="30"/>
+                        </Grid>
+                    </StackPanel>
 
-            <Button Content="Settings"
-                    Click="ButtonSettings_Click"/>
-            
-        </StackPanel>
+                    <TreeView Grid.Row="2" >
+                        <TreeViewItem
+                        Header="Таблицы"
+                        FontSize="30"
+                        IsExpanded="False"
+                        Foreground="White">
+                            <TreeViewItem
+                            Header="Таблица менделеева" 
+                            FontSize="15"
+                            Foreground="white"
+                            PreviewMouseLeftButtonDown="ButtonMendeleevTable_Click">
+                            </TreeViewItem>
+                            <TreeViewItem
+                            Header="Таблица растворимости"
+                            FontSize="15"
+                            Foreground="White"
+                            PreviewMouseLeftButtonDown="ButtonSolubillityTable_Click">
+                            </TreeViewItem>
+                            <TreeViewItem
+                            Header="Таблица активности металлов"
+                            FontSize="15"
+                            Foreground="White"
+                            PreviewMouseLeftButtonDown ="ButtonMetalActivityTable_Click"/>
+                        </TreeViewItem>
+                    </TreeView>
 
+                    <StackPanel Grid.Row="4" VerticalAlignment="Center" PreviewMouseLeftButtonDown="ButtonTests_Click" Cursor="Hand">
+                        <Grid VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="BlurLinear" VerticalAlignment="Center" Height="40" Width="36"/>
+                            <TextBlock Text="Тест" 
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Left" 
+                                       VerticalAlignment="Center"
+                                       FontSize="30"/>
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="5" VerticalAlignment="Center" PreviewMouseLeftButtonDown="StackPanel_PreviewMouseLeftButtonDown" Cursor="Hand">
+                        <Grid VerticalAlignment="Center">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
+                            <TextBlock Text="Выход" 
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="30"/>
+                        </Grid>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

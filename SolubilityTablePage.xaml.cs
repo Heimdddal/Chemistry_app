@@ -1,5 +1,7 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +25,81 @@ namespace Chemistry_app
         public Page1()
         {
             InitializeComponent();
+        }
+        
+        static BrushConverter converter = new BrushConverter();
+        Brush outline = (Brush)converter.ConvertFromString("#66E39C");
+        Brush noColor = (Brush)converter.ConvertFromString("#00000000");
+
+        void removeAnionsColors()
+        {
+            I.BorderBrush = noColor;
+            Br.BorderBrush = noColor;
+            Cl.BorderBrush = noColor;
+            NO3.BorderBrush = noColor;
+            SO3.BorderBrush = noColor;
+            SO4.BorderBrush = noColor;
+            F.BorderBrush = noColor;
+            NO2.BorderBrush = noColor;
+            HCOO.BorderBrush = noColor;
+            CH2COO.BorderBrush = noColor;
+            PO4.BorderBrush = noColor;
+            CO3.BorderBrush = noColor;
+            S.BorderBrush = noColor;
+            SiO3.BorderBrush = noColor;
+            OH.BorderBrush = noColor;
+        }
+        void removeCationColors()
+        {
+            K.BorderBrush = noColor;
+            Na.BorderBrush = noColor;
+            Ba.BorderBrush = noColor;
+            Ca.BorderBrush = noColor;
+            NH4.BorderBrush = noColor;
+            Ag.BorderBrush = noColor;
+            Mg.BorderBrush = noColor;
+            Pb.BorderBrush = noColor;
+            Mn.BorderBrush = noColor;
+            Fe2.BorderBrush = noColor;
+            Zn.BorderBrush = noColor;
+            Cu.BorderBrush = noColor;
+            Hg.BorderBrush = noColor;
+            Al.BorderBrush = noColor;
+            Cr.BorderBrush = noColor;
+            Fe3.BorderBrush = noColor;
+            H.BorderBrush = noColor;
+        }
+        private void AnionTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = AnionTextbox.Text.ToString().ToUpper();
+            List<ColorZone> colorZones = new List<ColorZone>
+            {
+                I,Br,Cl,NO3,SO3,SO4,F,NO2,HCOO,CH2COO,PO4,CO3,S,SiO3,OH
+            };
+            colorZones = colorZones.Where(cz=>cz.Name.ToUpper().Contains(text) && text != "").ToList();
+            removeAnionsColors();
+            foreach (var cz in colorZones)
+            {
+                cz.BorderBrush = outline;
+            }
+
+        }
+
+
+        private void CationTextbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            string text = CationTextbox.Text.ToString().ToUpper();
+            List<ColorZone> colorZones = new List<ColorZone>
+            {
+                K,Na,Ba,Ca,NH4,Ag,Mg,Pb,Mn, Fe2,Zn,Cu,Hg,Al,Fe3,Cr,H
+            };
+            colorZones = colorZones.Where(cz => cz.Name.ToUpper().Contains(text) && text != "").ToList();
+            removeCationColors();
+            foreach (var cz in colorZones)
+            {
+                cz.BorderBrush = outline;
+            }
+
         }
     }
 }
