@@ -38,9 +38,31 @@ namespace Chemistry_app
             client.Send(message);
         }
 
-        static void SendCertificate()
+        public static void SendCertificate(string toEmail, string nameOfTest, string nameOfFile)
         {
+            string smtpServer = "smtp.mail.ru";
+            int smtpPort = 587;
+            string username = "sukhov_klim@mail.ru";
+            string password = "e7fTzmi7Y63CYZL6t2CE";
 
+            SmtpClient client = new SmtpClient(smtpServer, smtpPort);
+            client.EnableSsl = true;
+            client.UseDefaultCredentials = false;
+            client.Credentials = new NetworkCredential(username, password);
+
+            MailAddress fromEmail = new MailAddress("sukhov_klim@mail.ru");
+            MailAddress toMail = new MailAddress(toEmail);
+
+            MailMessage message = new MailMessage();
+            message.From = fromEmail;
+            message.To.Add(toMail);
+
+            message.Subject = $"Поздравляем вас от комманды Chemistry_app с успешным прохождением теста {nameOfTest}";
+
+            Attachment attachment = new Attachment(nameOfFile);
+            message.Attachments.Add(attachment);
+
+            client.Send(message);
         }
     }
 }

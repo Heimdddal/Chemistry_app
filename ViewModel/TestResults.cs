@@ -51,6 +51,7 @@ namespace Chemistry_app.ViewModel
             string id = new string(Enumerable.Repeat(chars, 8)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
             CertificateGenerator.GenerateCertificate(userName, nameOfTest,id,percentResult);
+            EmailSender.SendCertificate("bearshunter321@gmail.com",nameOfTest, "certificate.pdf");
         }
     }
 }
