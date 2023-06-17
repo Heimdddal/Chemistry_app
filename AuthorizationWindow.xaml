@@ -6,16 +6,16 @@
         xmlns:local="clr-namespace:Chemistry_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="AuthorizationWindow" Height="370" Width="400" ResizeMode="NoResize" Background="#242424" Foreground="White">
+        Title="AuthorizationWindow" Height="315" Width="400" ResizeMode="NoResize" Background="#242424" Foreground="White">
     <Grid>
         <Border Margin="20" Background="#363636" CornerRadius="10">
             <StackPanel>
                 <TextBlock Text="Авторизация" 
                            FontSize="40"
-                           Margin="10"/>
+                           Margin="10,0,0,0"/>
                 <TextBox x:Name="textBoxEmail" 
                          materialDesign:HintAssist.Hint="Email" 
-                         Margin="10" BorderBrush="{DynamicResource UnderLineLight}" 
+                         Margin="10,0,10,0" BorderBrush="{DynamicResource UnderLineLight}" 
                          FontSize="30"/>
                 <PasswordBox x:Name="textBoxPassword" 
                              materialDesign:HintAssist.Hint="Password" 
