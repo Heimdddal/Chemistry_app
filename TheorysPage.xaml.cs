@@ -32,7 +32,7 @@ namespace Chemistry_app
             Loaded += MainWindow_Loaded;
         }
         private TheoryData theoryData;
-        
+
         private void LoadTheoryData(string jsonFilePath)
         {
             try
@@ -109,6 +109,7 @@ namespace Chemistry_app
                 grid6.Visibility = Visibility.Collapsed;
 
                 returnButton.Visibility = Visibility.Visible;
+
             }
         }
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -143,5 +144,7 @@ namespace Chemistry_app
             }
             returnButton.Visibility = Visibility.Collapsed;
         }
+
         }
+
     }

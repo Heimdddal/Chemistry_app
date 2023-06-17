@@ -237,34 +237,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assert\Введение.png">
+    <Resource Include="Assert\Введение.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assert\Простые реакции.png">
+    <Resource Include="Assert\Простые реакции.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assert\Соединения.png">
+    <Resource Include="Assert\Соединения.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assert\Разложения.png">
+    <Resource Include="Assert\Разложения.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assert\Замещения.png">
+    <Resource Include="Assert\Замещения.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assert\Обмена.png">
+    <Resource Include="Assert\Обмена.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Resource>
     <Resource Include="Assert\bronzeMedal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>

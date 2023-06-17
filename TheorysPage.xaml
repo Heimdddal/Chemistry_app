@@ -5,88 +5,89 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chemistry_app"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      TextElement.Foreground="#FFFFFF"
+      TextElement.Foreground="{DynamicResource TextColor}"
       mc:Ignorable="d" 
       d:DesignHeight="1500" d:DesignWidth="1100"
+      Height="1200"
       Title="TheorysPage" >
-    <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0,0,0,0">
-        <Grid x:Name="grid">
+    <Grid x:Name="grid">
+
         <Grid.RowDefinitions>
-                <RowDefinition Height="100*" />
-                <RowDefinition Height="100*" />
-                <RowDefinition Height="100*"/>
-                <RowDefinition Height="41*"/>
-            </Grid.RowDefinitions>
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="100*" />
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="41*"/>
+        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <materialDesign:Card x:Name="grid1" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="0" Margin="20" Background="#00000000">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="\Assert\Введение.png" Stretch="UniformToFill" ></Image>
-                    <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Ввдение"/>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card x:Name="grid2" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="1" Margin="20">
-                <Grid >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
-                        <RowDefinition Height="1*"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="\Assert\Простые реакции.png" Stretch="UniformToFill"></Image>
-                    <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Простые реакции"/>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card x:Name="grid3" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="1" Grid.Column="0" Margin="20">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="\Assert\Соединения.png" Stretch="UniformToFill" ></Image>
-                    <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Cоединения"/>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card x:Name="grid4" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="1" Grid.Column="1" Margin="20">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="\Assert\Разложения.png" Stretch="UniformToFill" ></Image>
-                    <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Разложения"/>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card x:Name="grid5" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="2" Grid.Column="0" Margin="20">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="\Assert\Замещения.png" Stretch="UniformToFill" ></Image>
-                    <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Замещения"/>
-                </Grid>
-            </materialDesign:Card>
-            <materialDesign:Card  x:Name="grid6" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="2" Grid.Column="1" Margin="20">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2.5*"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Image Grid.Row="0" Source="\Assert\Обмена.png" Stretch="UniformToFill" ></Image>
-                    <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Обмена"/>
-                </Grid>
-            </materialDesign:Card>
-            <RichTextBox Name="richTextBox1" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick"/>
-            <RichTextBox Name="richTextBox2" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick"/>
-            <RichTextBox Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick"/>
-            <RichTextBox Name="richTextBox4" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick"/>
-            <RichTextBox Name="richTextBox5" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick"/>
-            <RichTextBox Name="richTextBox6" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick"/>
+        <materialDesign:Card x:Name="grid1" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="0" Margin="20" Background="#00000000">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Введение.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Ввдение"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid2" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="1" Margin="20">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Простые реакции.png" Stretch="UniformToFill"></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Простые реакции"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid3" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="1" Grid.Column="0" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Соединения.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Cоединения"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid4" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="1" Grid.Column="1" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Разложения.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Разложения"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card x:Name="grid5" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="2" Grid.Column="0" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Замещения.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Замещения"/>
+            </Grid>
+        </materialDesign:Card>
+        <materialDesign:Card  x:Name="grid6" Background="#00000000" MouseDoubleClick="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="2" Grid.Column="1" Margin="20">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2.5*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="\Assert\Обмена.png" Stretch="UniformToFill" ></Image>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="60" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Обмена"/>
+            </Grid>
+        </materialDesign:Card>
+        <RichTextBox Grid.Row="0" Grid.Column="0" Name="richTextBox1" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="0" Grid.Column="1" Name="richTextBox2" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="1" Grid.Column="0" Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="1" Grid.Column="1" Name="richTextBox4" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="2" Grid.Column="0" Name="richTextBox5" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
+        <RichTextBox Grid.Row="2" Grid.Column="1" Name="richTextBox6" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" MouseDoubleClick="RichTextBox_MouseDoubleClick"/>
         <StackPanel x:Name="returnStackPanel" Grid.Row="3" Grid.ColumnSpan="2" Margin="0,5,0,0">
             <Button Content="Вернуться" Name="returnButton" Click="Button_Click" 
                 Margin="380,10,380,0"
@@ -102,5 +103,4 @@
             </Button>
         </StackPanel>
     </Grid>
-    </ScrollViewer>
 </Page>
