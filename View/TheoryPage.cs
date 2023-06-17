@@ -8,7 +8,6 @@ namespace Chemistry_app.View
 {
     internal class TheoryPage
     {
-        public int PageNumber { get; set; }
         public string Content { get; set; }
     }
 }

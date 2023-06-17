@@ -238,6 +238,22 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Assert\Введение.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Простые реакции.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Соединения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Разложения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Замещения.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assert\Обмена.png" />
     <Resource Include="Assert\bronzeMedal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
