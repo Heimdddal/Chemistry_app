@@ -11,6 +11,7 @@
       Height="1200"
       Title="TheorysPage" >
     <Grid x:Name="grid">
+
         <Grid.RowDefinitions>
             <RowDefinition Height="100*" />
             <RowDefinition Height="100*" />

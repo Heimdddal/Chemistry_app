@@ -39,18 +39,13 @@ namespace Chemistry_app
             {
                 string jsonContent = File.ReadAllText(jsonFilePath);
                 theoryData = JsonConvert.DeserializeObject<TheoryData>(jsonContent);
-                richTextBox1.Document.Blocks.Clear();
-                richTextBox1.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[0]).Content)));
-                richTextBox2.Document.Blocks.Clear();
-                richTextBox2.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[1]).Content)));
-                richTextBox3.Document.Blocks.Clear();
-                richTextBox3.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[2]).Content)));
-                richTextBox4.Document.Blocks.Clear();
-                richTextBox4.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[3]).Content)));
-                richTextBox5.Document.Blocks.Clear();
-                richTextBox5.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[4]).Content)));
-                richTextBox6.Document.Blocks.Clear();
-                richTextBox6.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[5]).Content)));
+
+                for (int i = 0; i < theoryData.Pages.Count; i++)
+                {
+                    RichTextBox richTextBox = FindName($"richTextBox{i + 1}") as RichTextBox;
+                    richTextBox.Document.Blocks.Clear();
+                    richTextBox.Document.Blocks.Add(new Paragraph(new Run((theoryData.Pages[i]).Content)));
+                }
             }
             catch (Exception ex)
             {
@@ -60,125 +55,96 @@ namespace Chemistry_app
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
         {
-            richTextBox1.Visibility = Visibility.Collapsed;
-            richTextBox2.Visibility = Visibility.Collapsed;
-            richTextBox3.Visibility = Visibility.Collapsed;
-            richTextBox4.Visibility = Visibility.Collapsed;
-            richTextBox5.Visibility = Visibility.Collapsed;
-            richTextBox6.Visibility = Visibility.Collapsed;
+
+            List<RichTextBox> richTextBoxes = new List<RichTextBox>()
+            {
+                richTextBox1,
+                richTextBox2,
+                richTextBox3,
+                richTextBox4,
+                richTextBox5,
+                richTextBox6
+            };
+
+            foreach (RichTextBox rtb in richTextBoxes)
+            {
+                rtb.Visibility = Visibility.Collapsed;
+            }
             returnButton.Visibility = Visibility.Collapsed;
             string jsonFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assert\\Theory.json");
             LoadTheoryData(jsonFilePath);
         }
+
+
         private void RichTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            grid1.Visibility = Visibility.Collapsed;
-            grid2.Visibility = Visibility.Collapsed;
-            grid3.Visibility = Visibility.Collapsed;
-            grid4.Visibility = Visibility.Collapsed;
-            grid5.Visibility = Visibility.Collapsed;
-            grid6.Visibility = Visibility.Collapsed;
-            returnButton.Visibility = Visibility.Visible;
-            if (sender is MaterialDesignThemes.Wpf.Card card)
+            Dictionary<string, (RichTextBox richTextBox, int row, int column, int rowSpan, int columnSpan)> cardMap = new Dictionary<string, (RichTextBox, int, int, int, int)>
             {
-                if (card.Name == "grid1")
+                {"grid1", (richTextBox1, 0, 0, 3, 3)},
+                {"grid2", (richTextBox2, 0, 0, 3, 3)},
+                {"grid3", (richTextBox3, 0, 0, 3, 3)},
+                {"grid4", (richTextBox4, 0, 0, 3, 3)},
+                {"grid5", (richTextBox5, 0, 0, 3, 3)},
+                {"grid6", (richTextBox6, 0, 0, 3, 3)}
+            };
+
+            if (sender is MaterialDesignThemes.Wpf.Card card && cardMap.TryGetValue(card.Name, out var mapping))
+            {
+                foreach (var pair in cardMap.Values)
                 {
-                    richTextBox1.Visibility = Visibility.Visible;
-                    Grid.SetRow(richTextBox1, 0);
-                    Grid.SetColumn(richTextBox1, 0);
-                    Grid.SetRowSpan(richTextBox1, 3);
-                    Grid.SetColumnSpan(richTextBox1, 3);
+                    pair.richTextBox.Visibility = Visibility.Collapsed;
                 }
-                else if (card.Name == "grid2")
-                {
-                    richTextBox2.Visibility = Visibility.Visible;
-                    Grid.SetRow(richTextBox2, 0);
-                    Grid.SetColumn(richTextBox2, 0);
-                    Grid.SetRowSpan(richTextBox2, 3);
-                    Grid.SetColumnSpan(richTextBox2, 3);
-                }
-                else if (card.Name == "grid3")
-                {
-                    richTextBox3.Visibility = Visibility.Visible;
-                    Grid.SetRow(richTextBox3, 0);
-                    Grid.SetColumn(richTextBox3, 0);
-                    Grid.SetRowSpan(richTextBox3, 3);
-                    Grid.SetColumnSpan(richTextBox3, 3);
-                }
-                else if (card.Name == "grid4")
-                {
-                    richTextBox4.Visibility = Visibility.Visible;
-                    Grid.SetRow(richTextBox4, 0);
-                    Grid.SetColumn(richTextBox4, 0);
-                    Grid.SetRowSpan(richTextBox4, 3);
-                    Grid.SetColumnSpan(richTextBox4, 3);
-                }
-                else if (card.Name == "grid5")
-                {
-                    richTextBox5.Visibility = Visibility.Visible;
-                    Grid.SetRow(richTextBox5, 0);
-                    Grid.SetColumn(richTextBox5, 0);
-                    Grid.SetRowSpan(richTextBox5, 3);
-                    Grid.SetColumnSpan(richTextBox5, 3);
-                }
-                else if (card.Name == "grid6")
-                {
-                    richTextBox6.Visibility = Visibility.Visible;
-                    Grid.SetRow(richTextBox6, 0);
-                    Grid.SetColumn(richTextBox6, 0);
-                    Grid.SetRowSpan(richTextBox6, 3);
-                    Grid.SetColumnSpan(richTextBox6, 3);
-                }
+
+                mapping.richTextBox.Visibility = Visibility.Visible;
+                Grid.SetRow(mapping.richTextBox, mapping.row);
+                Grid.SetColumn(mapping.richTextBox, mapping.column);
+                Grid.SetRowSpan(mapping.richTextBox, mapping.rowSpan);
+                Grid.SetColumnSpan(mapping.richTextBox, mapping.columnSpan);
+
+                grid1.Visibility = Visibility.Collapsed;
+                grid2.Visibility = Visibility.Collapsed;
+                grid3.Visibility = Visibility.Collapsed;
+                grid4.Visibility = Visibility.Collapsed;
+                grid5.Visibility = Visibility.Collapsed;
+                grid6.Visibility = Visibility.Collapsed;
+
+                returnButton.Visibility = Visibility.Visible;
 
             }
         }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            grid1.Visibility = Visibility.Visible;
-            grid2.Visibility = Visibility.Visible;
-            grid3.Visibility = Visibility.Visible;
-            grid4.Visibility = Visibility.Visible;
-            grid5.Visibility = Visibility.Visible;
-            grid6.Visibility = Visibility.Visible;
-            returnButton.Visibility = Visibility.Collapsed;
-            // Установить размеры и расположение всех RichTextBox обратно
-            Grid.SetRow(richTextBox1, 0);
-            Grid.SetColumn(richTextBox1, 0);
-            Grid.SetRowSpan(richTextBox1, 1);
-            Grid.SetColumnSpan(richTextBox1, 1);
+            // Установить видимость всех сеток
+            foreach (MaterialDesignThemes.Wpf.Card grid in new List<MaterialDesignThemes.Wpf.Card> { grid1, grid2, grid3, grid4, grid5, grid6 })
+            {
+                grid.Visibility = Visibility.Visible;
+            }
 
-            Grid.SetRow(richTextBox2, 0);
-            Grid.SetColumn(richTextBox2, 1);
-            Grid.SetRowSpan(richTextBox2, 1);
-            Grid.SetColumnSpan(richTextBox2, 1);
+            // Установить размеры и расположение всех RichTextBox
+            foreach (RichTextBox richTextBox in new List<RichTextBox> {richTextBox1, richTextBox2,
+                                                             richTextBox3, richTextBox4,
+                                                             richTextBox5, richTextBox6})
+            {
+                int rowIndex = Grid.GetRow(richTextBox);
+                int columnIndex = Grid.GetColumn(richTextBox);
 
-            Grid.SetRow(richTextBox3, 1);
-            Grid.SetColumn(richTextBox3, 0);
-            Grid.SetRowSpan(richTextBox3, 1);
-            Grid.SetColumnSpan(richTextBox3, 1);
+                
+                richTextBox.SetValue(Grid.RowSpanProperty, 1);
+                richTextBox.SetValue(Grid.ColumnSpanProperty, 1);
+                Grid.SetRow(richTextBox, rowIndex);
+                Grid.SetColumn(richTextBox, columnIndex);
+            }
 
-            Grid.SetRow(richTextBox4, 1);
-            Grid.SetColumn(richTextBox4, 1);
-            Grid.SetRowSpan(richTextBox4, 1);
-            Grid.SetColumnSpan(richTextBox4, 1);
-
-            Grid.SetRow(richTextBox5, 2);
-            Grid.SetColumn(richTextBox5, 0);
-            Grid.SetRowSpan(richTextBox5, 1);
-            Grid.SetColumnSpan(richTextBox5, 1);
-
-            Grid.SetRow(richTextBox6, 2);
-            Grid.SetColumn(richTextBox6, 1);
-            Grid.SetRowSpan(richTextBox6, 1);
-            Grid.SetColumnSpan(richTextBox6, 1);
-            richTextBox1.Visibility = Visibility.Collapsed;
-            richTextBox2.Visibility = Visibility.Collapsed;
-            richTextBox3.Visibility = Visibility.Collapsed;
-            richTextBox4.Visibility = Visibility.Collapsed;
-            richTextBox5.Visibility = Visibility.Collapsed;
-            richTextBox6.Visibility = Visibility.Collapsed;
+            // Скрыть все RichTextBox и кнопку "returnButton"
+            foreach (RichTextBox richTextBox in new List<RichTextBox> {richTextBox1, richTextBox2,
+                                                             richTextBox3, richTextBox4,
+                                                             richTextBox5, richTextBox6})
+            {
+                richTextBox.Visibility = Visibility.Collapsed;
+            }
             returnButton.Visibility = Visibility.Collapsed;
         }
+
+        }
+
     }
-}
