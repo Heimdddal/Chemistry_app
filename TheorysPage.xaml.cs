@@ -32,7 +32,7 @@ namespace Chemistry_app
             Loaded += MainWindow_Loaded;
         }
         private TheoryData theoryData;
-        
+
         private void LoadTheoryData(string jsonFilePath)
         {
             try
@@ -129,7 +129,7 @@ namespace Chemistry_app
                     Grid.SetRowSpan(richTextBox6, 3);
                     Grid.SetColumnSpan(richTextBox6, 3);
                 }
-                
+
             }
         }
 
@@ -179,6 +179,6 @@ namespace Chemistry_app
             richTextBox5.Visibility = Visibility.Collapsed;
             richTextBox6.Visibility = Visibility.Collapsed;
             returnButton.Visibility = Visibility.Collapsed;
-        }   
+        }
     }
 }
