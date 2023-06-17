@@ -20,11 +20,12 @@
             </ScrollViewer>
         </Border>
         <Border Background="#363636" MinWidth="280">
-            <Grid MinWidth="280">
+            <StackPanel>
+                <Grid MinWidth="280">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
-                    <RowDefinition Height="3.5*"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="5*"/>
@@ -56,10 +57,10 @@
                                        VerticalAlignment="Top"
                                        HorizontalAlignment="Left"
                                        Margin="5,0,0,0"/>
-                        <Ellipse Grid.RowSpan="2" Fill="#66E39C">
+                            <Ellipse Grid.RowSpan="2" Fill="#66E39C" MinHeight="62">
                             
                         </Ellipse>
-                        <Ellipse Grid.RowSpan="2">
+                        <Ellipse Grid.RowSpan="2" MinHeight="62">
                             <Ellipse.Fill>
                                 <VisualBrush Stretch="Uniform">
                                     <VisualBrush.Visual>
@@ -72,7 +73,7 @@
                 </Border>
                 <Border Grid.Row="1" 
                         CornerRadius="10" 
-                        Margin="10"
+                        Margin="5"
                         x:Name="ButtonTheory"
                         PreviewMouseLeftButtonDown="ButtonTheory_Click"
                         Cursor="Hand">
@@ -91,9 +92,13 @@
                         </Grid>
                     </StackPanel>
                 </Border>
-
-                <TreeView Grid.Row="2">
+                <StackPanel Grid.Row="2">
+                    <TreeView
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
                     <TreeViewItem
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
                         Header="Таблицы"
                         FontSize="30"
                         IsExpanded="True"
@@ -102,32 +107,39 @@
                         <Border CornerRadius="10" 
                                 PreviewMouseLeftButtonDown="ButtonMendeleevTable_Click"
                                 Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
                                 x:Name="ButtonMendeleevTable">
                             <TextBlock Text="Таблица менделеева"
-                                       FontSize="15"
+                                       FontSize="14"
                                        Margin="5"/>
                         </Border>
                         <Border CornerRadius="10" 
                                 PreviewMouseLeftButtonDown="ButtonSolubillityTable_Click"
                                 Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
                                 x:Name="ButtonSolubillityTable">
                             <TextBlock Text="Таблица растворимости"
-                                       FontSize="15"
+                                       FontSize="14"
                                        Margin="5"/>
                         </Border>
                         <Border CornerRadius="10" 
                                 PreviewMouseLeftButtonDown="ButtonMetalActivityTable_Click"
                                 x:Name="ButtonMetalActivityTable"
-                                Cursor="Hand">
+                                Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
                             <TextBlock Text="Таблица активности металлов"
-                                       FontSize="15"
+                                       FontSize="14"
                                        Margin="5"/>
                         </Border>
                     </TreeViewItem>
                 </TreeView>
+                </StackPanel>
                 <Border Grid.Row="3" 
                         CornerRadius="10" 
-                        Margin="10"
+                        Margin="5"
                         PreviewMouseLeftButtonDown="ButtonTests_Click" 
                         Cursor="Hand"
                         x:Name="ButtonTests">
@@ -149,8 +161,9 @@
                 </Border>
                 <Border Grid.Row="4" 
                         CornerRadius="10" 
-                        Margin="10"
+                        Margin="5"
                         x:Name="ExitButton"
+                        Background="Red"
                         Cursor="Hand"
                         PreviewMouseLeftButtonDown="StackPanel_PreviewMouseLeftButtonDown" >
                     <StackPanel VerticalAlignment="Center" 
@@ -170,6 +183,7 @@
                     </StackPanel>
                 </Border>
             </Grid>
+            </StackPanel>
         </Border>
     </Grid>
 </Window>
