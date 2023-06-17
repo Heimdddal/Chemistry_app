@@ -39,28 +39,64 @@ namespace Chemistry_app
         private void ButtonTests_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new PageForTest(user));
+            ButtonTests.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
+            ButtonMendeleevTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonTheory.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonSolubillityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMetalActivityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ExitButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
         }
         private void ButtonTheory_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new TheorysPage());
+            ButtonTests.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMendeleevTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonTheory.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
+            ButtonSolubillityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMetalActivityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ExitButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
         }
         private void ButtonMendeleevTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
+            ButtonTests.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMendeleevTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
+            ButtonTheory.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonSolubillityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMetalActivityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ExitButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
         }
 
         private void ButtonSolubillityTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new Page1());
+            ButtonTests.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMendeleevTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonTheory.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonSolubillityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
+            ButtonMetalActivityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ExitButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
         }
 
         private void ButtonMetalActivityTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MetalActivity());
+            ButtonTests.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMendeleevTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonTheory.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonSolubillityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMetalActivityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
+            ExitButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
         }
 
         private void StackPanel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            ButtonTests.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMendeleevTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonTheory.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonSolubillityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ButtonMetalActivityTable.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#363636"));
+            ExitButton.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
             this.Close();
         }
     }
