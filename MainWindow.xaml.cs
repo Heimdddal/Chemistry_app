@@ -42,7 +42,7 @@ namespace Chemistry_app
         }
         private void ButtonTheory_Click(object sender, MouseButtonEventArgs e)
         {
-            FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
+            FrameNavigator.MainFrame.Navigate(new TheorysPage());
         }
         private void ButtonMendeleevTable_Click(object sender, MouseButtonEventArgs e)
         {

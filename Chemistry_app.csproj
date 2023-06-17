@@ -152,7 +152,6 @@
     <Compile Include="View\QuestionView.cs" />
     <Compile Include="View\TheoryData.cs" />
     <Compile Include="View\TheoryPage.cs" />
-    <Compile Include="View\TheoryPager.cs" />
     <Page Include="EmailConfirmation.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -238,22 +237,34 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\Введение.png" />
+    <None Include="Assert\Введение.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\Простые реакции.png" />
+    <None Include="Assert\Простые реакции.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\Соединения.png" />
+    <None Include="Assert\Соединения.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\Разложения.png" />
+    <None Include="Assert\Разложения.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\Замещения.png" />
+    <None Include="Assert\Замещения.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\Обмена.png" />
+    <None Include="Assert\Обмена.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <Resource Include="Assert\bronzeMedal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
