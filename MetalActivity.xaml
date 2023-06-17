@@ -4,11 +4,87 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Chemistry_app"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MetalActivity">
 
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="2.5*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <materialDesign:ColorZone
+            Grid.Row="1"
+            Background="#ffffff"
+            BorderBrush="{DynamicResource UnactiveElementDarkTheme}"
+            BorderThickness="2"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Li" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"/>
+                        <TextBlock Text="K" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1"/>
+                        <TextBlock Text="Ba" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"/>
+                        <TextBlock Text="Ca" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
+                        <TextBlock Text="Na" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
+                        <TextBlock Text="Mg" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5"/>
+                        <TextBlock Text="Al" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="6"/>
+                        <TextBlock Text="Be" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="7"/>
+                        <TextBlock Text="Mn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="8"/>
+                        <TextBlock Text="Cr" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="9"/>
+                        <TextBlock Text="Zn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10"/>
+                        <TextBlock Text="Fe" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="11"/>
+                        <TextBlock Text="Cd" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="12"/>
+                        <TextBlock Text="Co" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="13"/>
+                        <TextBlock Text="Ni" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="14"/>
+                        <TextBlock Text="Sn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="15"/>
+                        <TextBlock Text="Pb" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="16"/>
+                        <TextBlock Text="H2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="17"/>
+                        <TextBlock Text="Sb" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="18"/>
+                        <TextBlock Text="Cu" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="19"/>
+                        <TextBlock Text="Hg" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="20"/>
+                        <TextBlock Text="Ag" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="21"/>
+                        <TextBlock Text="Pt" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="22"/>
+                        <TextBlock Text="Au" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="23"/>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </materialDesign:ColorZone>
     </Grid>
 </Page>
