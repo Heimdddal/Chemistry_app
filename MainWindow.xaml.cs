@@ -86,7 +86,19 @@ namespace Chemistry_app
 
         private void StackPanel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Подтвердите выход", "", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                Close();
+        }
+
+        private void GoBack_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (FrameNavigator.MainFrame.CanGoBack) FrameNavigator.MainFrame.GoBack();
+            else FrameNavigator.MainFrame.Navigate(null);
+        }
+
+        private void GoForward_Click(object sender, MouseButtonEventArgs e)
+        {
+            if (FrameNavigator.MainFrame.CanGoForward) FrameNavigator.MainFrame.GoForward();
         }
     }
 }

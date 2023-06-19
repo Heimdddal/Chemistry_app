@@ -28,8 +28,10 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="5*"/>
-                </Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
                 <Border Grid.Row="0">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -182,7 +184,54 @@
                         </Grid>
                     </StackPanel>
                 </Border>
-            </Grid>
+                    <Border Grid.Row="5" 
+                        CornerRadius="10" 
+                        Margin="5"
+                        x:Name="ButtonBack"
+                        Background="Red"
+                        Cursor="Hand"
+                        PreviewMouseLeftButtonDown="GoBack_Click" >
+                        <StackPanel VerticalAlignment="Center" 
+                                Cursor="Hand">
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
+                                <TextBlock Text="Назад" 
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="30"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <Border Grid.Row="6" 
+                        CornerRadius="10" 
+                        Margin="5"
+                        x:Name="ButtonForward"
+                        Background="Red"
+                        Cursor="Hand"
+                        PreviewMouseLeftButtonDown="GoForward_Click" >
+                        <StackPanel VerticalAlignment="Center" 
+                                Cursor="Hand">
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
+                                <TextBlock Text="Вперед" 
+                                       Grid.Column="1"
+                                       HorizontalAlignment="Left"
+                                       VerticalAlignment="Center"
+                                       FontSize="30"/>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </StackPanel>
         </Border>
     </Grid>
