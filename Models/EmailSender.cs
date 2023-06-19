@@ -34,9 +34,14 @@ namespace Chemistry_app
             message.Body = $"Спасибо что зарегистрировались на нашем сервисе!\nВаш код подтверждения: {code}";
 
             message.To.Add(toEmail);
-
-            client.Send(message);
+            try
+            {
+                client.Send(message);
+            }
+            catch 
+            { }
         }
+
 
         public static void SendCertificate(string toEmail, string nameOfTest, string nameOfFile)
         {
