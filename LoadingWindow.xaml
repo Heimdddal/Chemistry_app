@@ -4,9 +4,20 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chemistry_app"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="LoadingWindow" Height="450" Width="350">
     <Grid>
-        
+        <materialDesign:Card
+          Padding="4"
+            Height="200"
+            Width="200"
+          UniformCornerRadius="14">
+            <ProgressBar
+                Height="100"
+                Width="100"
+                IsIndeterminate="True"
+                Style="{StaticResource MaterialDesignCircularProgressBar}" />
+        </materialDesign:Card>
     </Grid>
 </Window>

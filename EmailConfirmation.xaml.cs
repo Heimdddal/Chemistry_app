@@ -16,6 +16,7 @@ using System.Windows.Shapes;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using System.Threading;
 
 namespace Chemistry_app
 {
@@ -26,13 +27,45 @@ namespace Chemistry_app
     {
         public User user { get; set; }
         public string codeAuth { get; set; }
-        public EmailConfirmation(User user)
+        public RegistrationWindow registrationWindow { get; set; }
+        public EmailConfirmation(User user, RegistrationWindow registrationWindow)
         {
             InitializeComponent();
             this.user = user;
             int code = GenerateCode();
             codeAuth = code.ToString();
-            EmailSender.SendCode(code.ToString(), user.Email);
+
+            ShowLoadedWindow(); // Показать окно загрузки в асинхронном режиме
+
+            Task.Run(() =>
+            {
+                Thread.Sleep(1000);
+                EmailSender.SendCode(code.ToString(), user.Email);
+            }).ContinueWith(task =>
+            {
+                CloseLoadedWindow(); // Закрыть окно загрузки после отправки электронной почты
+                ShowConfirmationWindow(); // Показать окно подтверждения
+            }, TaskScheduler.FromCurrentSynchronizationContext());
+
+            this.registrationWindow = registrationWindow;
+        }
+        private async void ShowLoadedWindow()
+        {
+            LoadingWindow window = new LoadingWindow();
+            await Task.Delay(100); // Небольшая задержка для дать время окну загрузки отрисоваться
+            window.Show();
+        }
+
+        private void CloseLoadedWindow()
+        {
+            // Найти и закрыть окно загрузки (если необходимо)
+            LoadingWindow window = Application.Current.Windows.OfType<LoadingWindow>().FirstOrDefault();
+            window?.Close();
+        }
+
+        private void ShowConfirmationWindow()
+        {
+            this.Show();
         }
         public int GenerateCode()
         {
@@ -61,8 +94,7 @@ namespace Chemistry_app
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            RegistrationWindow window = new RegistrationWindow();
-            window.Show();
+            registrationWindow.IsEnabled = true;
             this.Close();
         }
     }
