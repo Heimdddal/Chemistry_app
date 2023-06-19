@@ -28,8 +28,10 @@
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
                     <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
                     <RowDefinition Height="5*"/>
-                </Grid.RowDefinitions>
+                    </Grid.RowDefinitions>
                 <Border Grid.Row="0">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -159,30 +161,30 @@
                         </Grid>
                     </StackPanel>
                 </Border>
-                <Border Grid.Row="4" 
+                    <Border Grid.Row="4" 
                         CornerRadius="10" 
                         Margin="5"
                         x:Name="ExitButton"
                         Background="Red"
                         Cursor="Hand"
                         PreviewMouseLeftButtonDown="StackPanel_PreviewMouseLeftButtonDown" >
-                    <StackPanel VerticalAlignment="Center" 
+                        <StackPanel VerticalAlignment="Center" 
                                 Cursor="Hand">
-                        <Grid VerticalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="3*"/>
-                            </Grid.ColumnDefinitions>
-                            <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
-                            <TextBlock Text="Выход" 
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
+                                <TextBlock Text="Выход" 
                                        Grid.Column="1"
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Center"
                                        FontSize="30"/>
-                        </Grid>
-                    </StackPanel>
-                </Border>
-            </Grid>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+                </Grid>
             </StackPanel>
         </Border>
     </Grid>
