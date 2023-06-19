@@ -29,7 +29,7 @@
                     <RowDefinition></RowDefinition>
                 </Grid.RowDefinitions>
                 <Image Grid.Row="0" Source="\Assert\Введение.png" Stretch="UniformToFill" ></Image>
-                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Ввдение"/>
+                <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Введение"/>
             </Grid>
         </materialDesign:Card>
         <materialDesign:Card x:Name="grid2" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_MouseDoubleClick" UniformCornerRadius="50" Grid.Row="0" Grid.Column="1" Margin="20">
