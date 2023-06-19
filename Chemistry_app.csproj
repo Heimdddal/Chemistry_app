@@ -128,6 +128,9 @@
     <Compile Include="EmailConfirmation.xaml.cs">
       <DependentUpon>EmailConfirmation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LoadingWindow.xaml.cs">
+      <DependentUpon>LoadingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Models\EmailSender.cs" />
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
@@ -153,6 +156,10 @@
     <Compile Include="View\TheoryData.cs" />
     <Compile Include="View\TheoryPage.cs" />
     <Page Include="EmailConfirmation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoadingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
