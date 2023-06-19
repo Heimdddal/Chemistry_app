@@ -147,6 +147,9 @@
     <Compile Include="SolubilityTablePage.xaml.cs">
       <DependentUpon>SolubilityTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TheoryPage2.xaml.cs">
+      <DependentUpon>TheoryPage2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="TheorysPage.xaml.cs">
       <DependentUpon>TheorysPage.xaml</DependentUpon>
     </Compile>
@@ -200,6 +203,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TheoryPage2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
