@@ -48,44 +48,13 @@ namespace Chemistry_app
                     var page = theoryData.Pages[i];
                     var content = page.Content;
                     Paragraph paragraph = new Paragraph();
-                    //string[] wordCombinations = content.Split(new[] { " " }, StringSplitOptions.RemoveEmptyEntries);
                     string[] words = content.Split(' ');
-
-                    //foreach (string combination in wordCombinations)
-                    //{
-                    //    // Создание Run для каждого сочетания слов
-                    //    Run run = new Run(combination);
-
-                    //    // Проверка наличия сочетания слов в списке BoldCombinations
-                    //    if (page.BoldCombinations.Contains(combination))
-                    //    {
-                    //        // Задание жирности для сочетания слов
-                    //        run.FontWeight = FontWeights.Bold;
-                    //    }
-
-                    //    // Задание размера для сочетания слов
-                    //    if (page.WordSizes.TryGetValue(combination, out int wordSize))
-                    //    {
-                    //        run.FontSize = wordSize;
-                    //    }
-
-                    //    // Добавление Run в параграф
-                    //    paragraph.Inlines.Add(run);
-                    //    paragraph.Inlines.Add(" ");
-                    //}
 
                     foreach (string word in words)
                     {
                         // Создание Run для каждого слова
                         Run run = new Run(word);
 
-                        // Задание размера слова
-                        //run.FontSize = page.WordSize;
-
-                        if (page.WordSizes.TryGetValue(word, out int wordSize))
-                        {
-                            run.FontSize = wordSize;
-                        }
                         //Задание жирности слова
                         if (page.BoldWords.Contains(word))
                         {
@@ -150,7 +119,7 @@ namespace Chemistry_app
         }
 
 
-        private async void RichTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        private async void RichTextBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
             foreach (MaterialDesignThemes.Wpf.Card grid in new List<MaterialDesignThemes.Wpf.Card> { grid1, grid2, grid3, grid4, grid5, grid6 })
@@ -166,7 +135,6 @@ namespace Chemistry_app
                 {"grid5", (richTextBox5, 0, 0, 2, 2)},
                 {"grid6", (richTextBox6, 0, 0, 2, 2)}
             };
-            //FrameNavigator.MainFrame.Navigate(new TheoryPage2(cardMap));
             if (sender is MaterialDesignThemes.Wpf.Card card && cardMap.TryGetValue(card.Name, out var mapping))
             {
                 foreach (var pair in cardMap.Values)
@@ -187,7 +155,7 @@ namespace Chemistry_app
                 returnButton.Margin = new Thickness(0, 100, 0, 0);
             }
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void returnButton_Click(object sender, RoutedEventArgs e)
         {
 
             page.Height = 1200;
@@ -221,7 +189,6 @@ namespace Chemistry_app
             }
             returnButton.Visibility = Visibility.Collapsed;
         }
-
     }
 
 }
