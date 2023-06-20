@@ -78,13 +78,25 @@ namespace Chemistry_app.ViewModel
 
         private void ShowResults(object sender, RoutedEventArgs e)
         {
-            TestResults testResults = new TestResults(ref grid, CountCorrectAnswers(), numberOfQuestions, userName,email, nameOfTest,
+            TestResults testResults = new TestResults(ref grid, CountCorrectAnswers(), 
+                numberOfQuestions, userName,email, nameOfTest,
                 questionList);
             panel.Children.Clear();
             string jsonResult = $"{userName}:{CountCorrectAnswers()}\n";
+            string jsonFileText = File.ReadAllText("Assert\\results.json");
+            var jsonStrArr = jsonFileText.Split('\n', '\r');
+            int index = jsonStrArr.Select((p, i) => new { value = p, indx = i }).Where(s => s.value.Split(':')[0] == userName)
+                .Select(x=>x.indx).First();
+
+            int oldResult = int.Parse(jsonStrArr[index].Split(':')[1]);
+            if (CountCorrectAnswers()>oldResult)
+            {
+                jsonStrArr[index] = jsonResult;
+                jsonFileText = string.Join("\n", jsonStrArr);
+            }
             try
             {
-                File.AppendAllText("results.json", jsonResult + Environment.NewLine);
+                File.WriteAllText("Assert\\results.json", jsonFileText);
             }
             catch (Exception ex)
             {

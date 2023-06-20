@@ -231,6 +231,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <None Include="Assert\results.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Assert\Theory.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -242,6 +245,7 @@
     <None Include="Assert\Users.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="results.json" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

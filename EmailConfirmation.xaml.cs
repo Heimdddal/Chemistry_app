@@ -17,6 +17,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
 using System.Threading;
+using System.IO;
 
 namespace Chemistry_app
 {
@@ -75,6 +76,7 @@ namespace Chemistry_app
         }
         public void checkEmail() {
             string fileName = "Assert\\Users.json";
+
             if (codeAuth == textBoxCode.Text)
             {
                 List<User> users = UserJsonController.ReadFromJson(fileName);
@@ -83,6 +85,15 @@ namespace Chemistry_app
                 MainWindow window = new MainWindow(user);
                 window.Show();
                 Hide();
+                try
+                {
+                    File.AppendAllText("Assert\\results.json", $"{user.Name}:0" + Environment.NewLine);
+                }
+                catch (Exception ex)
+                {
+                    // обработка ошибок записи в файл
+                    MessageBox.Show($"Error writing to file: {ex.Message}");
+                }
             }
             else MessageBox.Show("Неверный код");
         }
