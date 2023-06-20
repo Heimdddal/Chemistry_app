@@ -24,8 +24,27 @@
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <TextBox x:Name="AnionTextbox" TextChanged="AnionTextbox_TextChanged" HorizontalAlignment="Stretch" Margin="15" Grid.Column="0" materialDesign:HintAssist.Hint="Введите сторку" BorderBrush="{DynamicResource UnderLineLight}" ></TextBox>
-                <TextBox x:Name="CationTextbox" TextChanged="CationTextbox_TextChanged" HorizontalAlignment="Stretch" Margin="15" Grid.Column="1" materialDesign:HintAssist.Hint="Введите столбец" BorderBrush="{DynamicResource UnderLineLight}"></TextBox>
+                <TextBox
+                    x:Name="AnionTextbox"
+                    TextChanged="AnionTextbox_TextChanged"
+                    HorizontalAlignment="Stretch"
+                    Margin="15" Grid.Column="0"
+                    materialDesign:HintAssist.Hint="Введите сторку"
+                    BorderBrush="{DynamicResource UnderLineLight}"
+                    CaretBrush="{DynamicResource ActiveElements}"
+                    SelectionBrush="{DynamicResource UnderLineLight}"
+                    materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
+                    ></TextBox>
+                <TextBox
+                    x:Name="CationTextbox"
+                    TextChanged="CationTextbox_TextChanged"
+                    HorizontalAlignment="Stretch" Margin="15"
+                    Grid.Column="1" materialDesign:HintAssist.Hint="Введите столбец"
+                    BorderBrush="{DynamicResource UnderLineLight}"
+                    CaretBrush="{DynamicResource ActiveElements}"
+                    SelectionBrush="{DynamicResource UnderLineLight}"
+                    materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
+                    ></TextBox>
             </Grid>
             <ScrollViewer VerticalScrollBarVisibility="Visible">
 
