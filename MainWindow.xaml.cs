@@ -31,8 +31,13 @@ namespace Chemistry_app
             InitializeComponent();
             WindowState = WindowState.Maximized;
             this.user = user;
+            MenuName.Text = user.Name;
+            MenuEmail.Text = user.Email;
+            MenuAge.Text = $"Возраст: {user.Age}";
+            MenuGender.Text = $"Пол: {user.Gender}";
             textBoxNameUser.Text = user.Name;
             textBoxEmailUser.Text = user.Email;
+            SetButtonBackground(ButtonTheory, "#66E39C");
             FrameNavigator.MainFrame = MainFrame;
             FrameNavigator.MainFrame.Navigate(new TheorysPage());
         }
@@ -48,7 +53,7 @@ namespace Chemistry_app
             SetButtonBackground(ButtonTheory, colorCode);
             SetButtonBackground(ButtonSolubillityTable, colorCode);
             SetButtonBackground(ButtonMetalActivityTable, colorCode);
-            SetButtonBackground(ExitButton, colorCode);
+            SetButtonBackground(ExitButton, "#FF0000");
         }
 
         private void ButtonTests_Click(object sender, MouseButtonEventArgs e)
@@ -89,6 +94,27 @@ namespace Chemistry_app
         {
             if (MessageBox.Show("Подтвердите выход", "", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
                 Close();
+        }
+
+        private void Border_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                var border = (Border)sender;
+                ContextMenu contextMenu = border.ContextMenu;
+                if (contextMenu != null)
+                {
+                    contextMenu.PlacementTarget = border;
+                    contextMenu.IsOpen = true;
+                }
+            }
+        }
+
+        private void MenuItem_PreviewMouseLeftButtonDown_ExitThisAccount(object sender, MouseButtonEventArgs e)
+        {
+            AuthorizationWindow authorizationWindow = new AuthorizationWindow();
+            authorizationWindow.Show();
+            this.Close();
         }
     }
 }

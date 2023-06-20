@@ -22,6 +22,7 @@ namespace Chemistry_app
         public LoadingWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
     }
 }

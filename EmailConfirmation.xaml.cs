@@ -79,6 +79,7 @@ namespace Chemistry_app
 
             if (codeAuth == textBoxCode.Text)
             {
+                registrationWindow.Close();
                 List<User> users = UserJsonController.ReadFromJson(fileName);
                 users.Add(user);
                 UserJsonController.WriteToJson(users, fileName);

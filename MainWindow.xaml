@@ -14,35 +14,46 @@
         </Grid.ColumnDefinitions>
         <Border Grid.Column="2" Margin="30,40,30,40" CornerRadius="30" Background="#363636">
             <ScrollViewer materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True" Margin="20" Visibility="{Binding }" VerticalScrollBarVisibility="Auto">
-            <Frame Padding="20" Name = "MainFrame" NavigationUIVisibility="Hidden">
+                <Frame Padding="20" Name = "MainFrame" NavigationUIVisibility="Hidden">
 
-            </Frame>
+                </Frame>
             </ScrollViewer>
         </Border>
         <Border Background="#363636" MinWidth="280">
             <StackPanel>
                 <Grid MinWidth="280">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="5*"/>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
-                <Border Grid.Row="0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="1*"/>
-                            <ColumnDefinition Width="3.5*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="2*"/>
-                            <RowDefinition Height="1*"/>
-                        </Grid.RowDefinitions>
-                        <TextBlock x:Name="textBoxNameUser" 
+                    <Border Grid.Row="0" PreviewMouseLeftButtonDown="Border_MouseRightButtonDown" >
+                        <Border.ContextMenu>
+                            <ContextMenu>
+                                <TextBlock x:Name="MenuName"/>
+                                <TextBlock x:Name="MenuEmail"/>
+                                <TextBlock x:Name="MenuAge"/>
+                                <TextBlock x:Name="MenuGender"/>
+                                <MenuItem Header="Выйти из аккаунта"
+                                          Icon="{materialDesign:PackIcon Kind=ExitToApp}"
+                                          PreviewMouseLeftButtonDown="MenuItem_PreviewMouseLeftButtonDown_ExitThisAccount"/>
+                            </ContextMenu>
+                        </Border.ContextMenu>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="1*"/>
+                                <ColumnDefinition Width="3.5*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="2*"/>
+                                <RowDefinition Height="1*"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock x:Name="textBoxNameUser" 
                                        FontSize="25" 
                                        Foreground="White" 
                                        Grid.Column="1" 
@@ -51,7 +62,7 @@
                                        HorizontalAlignment="Left"
                                        Margin="5,0,0,0"/>
 
-                        <TextBlock x:Name="textBoxEmailUser" 
+                            <TextBlock x:Name="textBoxEmailUser" 
                                        FontSize="10" 
                                        Foreground="White" 
                                        Grid.Column="1" 
@@ -59,20 +70,27 @@
                                        VerticalAlignment="Top"
                                        HorizontalAlignment="Left"
                                        Margin="5,0,0,0"/>
-                            <Ellipse Grid.RowSpan="2" Fill="#66E39C" MinHeight="62">
-                            
-                        </Ellipse>
-                        <Ellipse Grid.RowSpan="2" MinHeight="62">
-                            <Ellipse.Fill>
-                                <VisualBrush Stretch="Uniform">
-                                    <VisualBrush.Visual>
-                                        <materialDesign:PackIcon Kind="AccountCircleOutline" />
-                                    </VisualBrush.Visual>
-                                </VisualBrush>
-                            </Ellipse.Fill>
-                        </Ellipse>
-                    </Grid>
-                </Border>
+                            <Ellipse Grid.RowSpan="2" 
+                                     Fill="#66E39C" 
+                                     Height="{Binding ElementName = Profile, Path=ActualHeight}"
+                                     Width="{Binding ElementName = Profile, Path=ActualWidth}">
+
+                            </Ellipse>
+                            <Ellipse Grid.RowSpan="2" 
+                                     Height="62"
+                                     Width="62"
+                                     x:Name="Profile">
+                                <Ellipse.Fill>
+                                    <VisualBrush Stretch="Uniform">
+                                        <VisualBrush.Visual>
+                                            <materialDesign:PackIcon Kind="AccountCircleOutline" />
+                                        </VisualBrush.Visual>
+                                    </VisualBrush>
+                                </Ellipse.Fill>
+                            </Ellipse>
+                        </Grid>
+                    </Border>
+                    
                 <Border Grid.Row="1" 
                         CornerRadius="10" 
                         Margin="5"
@@ -184,6 +202,7 @@
                             </Grid>
                         </StackPanel>
                     </Border>
+                    
                 </Grid>
             </StackPanel>
         </Border>
