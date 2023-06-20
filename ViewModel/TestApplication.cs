@@ -82,7 +82,7 @@ namespace Chemistry_app.ViewModel
                 numberOfQuestions, userName,email, nameOfTest,
                 questionList);
             panel.Children.Clear();
-            string jsonResult = $"{userName}:{CountCorrectAnswers()}\n";
+            string jsonResult = $"{email}:{CountCorrectAnswers()}\n";
             string jsonFileText = File.ReadAllText("Assert\\results.json");
             var jsonStrArr = jsonFileText.Split('\n', '\r');
             int index = jsonStrArr.Select((p, i) => new { value = p, indx = i }).Where(s => s.value.Split(':')[0] == userName)
