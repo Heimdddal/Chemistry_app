@@ -122,18 +122,18 @@ namespace Chemistry_app
         private async void RichTextBox_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
-            foreach (MaterialDesignThemes.Wpf.Card grid in new List<MaterialDesignThemes.Wpf.Card> { grid1, grid2, grid3, grid4, grid5, grid6 })
+            foreach (MaterialDesignThemes.Wpf.Card cards in new List<MaterialDesignThemes.Wpf.Card> { card1, card2, card3, card4, card5, card6 })
             {
-                grid.Visibility = Visibility.Collapsed;
+                cards.Visibility = Visibility.Collapsed;
             }
             Dictionary<string, (RichTextBox richTextBox, int row, int column, int rowSpan, int columnSpan)> cardMap = new Dictionary<string, (RichTextBox, int, int, int, int)>
             {
-                {"grid1", (richTextBox1, 0, 0, 2, 2)},
-                {"grid2", (richTextBox2, 0, 0, 2, 2)},
-                {"grid3", (richTextBox3, 0, 0, 2, 2)},
-                {"grid4", (richTextBox4, 0, 0, 2, 2)},
-                {"grid5", (richTextBox5, 0, 0, 2, 2)},
-                {"grid6", (richTextBox6, 0, 0, 2, 2)}
+                {"card1", (richTextBox1, 0, 0, 2, 2)},
+                {"card2", (richTextBox2, 0, 0, 2, 2)},
+                {"card3", (richTextBox3, 0, 0, 2, 2)},
+                {"card4", (richTextBox4, 0, 0, 2, 2)},
+                {"card5", (richTextBox5, 0, 0, 2, 2)},
+                {"card6", (richTextBox6, 0, 0, 2, 2)}
             };
             if (sender is MaterialDesignThemes.Wpf.Card card && cardMap.TryGetValue(card.Name, out var mapping))
             {
@@ -157,12 +157,11 @@ namespace Chemistry_app
         }
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
-
             page.Height = 1200;
             // Установить видимость всех сеток
-            foreach (MaterialDesignThemes.Wpf.Card grid in new List<MaterialDesignThemes.Wpf.Card> { grid1, grid2, grid3, grid4, grid5, grid6 })
+            foreach (MaterialDesignThemes.Wpf.Card cards in new List<MaterialDesignThemes.Wpf.Card> { card1, card2, card3, card4, card5, card6 })
             {
-                grid.Visibility = Visibility.Visible;
+                cards.Visibility = Visibility.Visible;
             }
 
             // Установить размеры и расположение всех RichTextBox

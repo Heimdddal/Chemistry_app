@@ -11,6 +11,46 @@
       Height="1200"
       Name="page"
       Title="TheorysPage" >
+
+    <Page.Resources>
+        <Style TargetType="materialDesign:Card">
+            <Setter  Property="RenderTransformOrigin" Value="0.5,0.5"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                             To="1.1" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                             To="1.1" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
+                                             To="1" Duration="0:0:0.2" />
+                            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
+                                             To="1" Duration="0:0:0.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Effect">
+                        <Setter.Value>
+                            <DropShadowEffect ShadowDepth="1" BlurRadius="10" Opacity=".7" />
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
     <Grid x:Name="grid">
 
         <Grid.RowDefinitions>
@@ -22,7 +62,7 @@
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <materialDesign:Card x:Name="grid1" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown"  UniformCornerRadius="50" Grid.Row="0" Grid.Column="0" Margin="20" Background="#00000000">
+        <materialDesign:Card x:Name="card1" Cursor="Hand"  PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown"  UniformCornerRadius="50" Grid.Row="0" Grid.Column="0" Margin="20" Background="#00000000">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"></RowDefinition>
@@ -32,7 +72,7 @@
                 <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Введение"/>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card x:Name="grid2" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="0" Grid.Column="1" Margin="20">
+        <materialDesign:Card x:Name="card2" Cursor="Hand" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="0" Grid.Column="1" Margin="20">
             <Grid >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"></RowDefinition>
@@ -42,7 +82,7 @@
                 <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Простые реакции"/>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card x:Name="grid3" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="1" Grid.Column="0" Margin="20">
+        <materialDesign:Card x:Name="card3" Cursor="Hand" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="1" Grid.Column="0" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"></RowDefinition>
@@ -52,7 +92,7 @@
                 <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Cоединения"/>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card x:Name="grid4" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="1" Grid.Column="1" Margin="20">
+        <materialDesign:Card x:Name="card4" Cursor="Hand" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="1" Grid.Column="1" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"></RowDefinition>
@@ -62,7 +102,7 @@
                 <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Разложения"/>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card x:Name="grid5" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="2" Grid.Column="0" Margin="20">
+        <materialDesign:Card x:Name="card5" Cursor="Hand" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="2" Grid.Column="0" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"></RowDefinition>
@@ -72,7 +112,7 @@
                 <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Замещения"/>
             </Grid>
         </materialDesign:Card>
-        <materialDesign:Card  x:Name="grid6" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="2" Grid.Column="1" Margin="20">
+        <materialDesign:Card  x:Name="card6" Cursor="Hand" Background="#00000000" PreviewMouseLeftButtonDown="RichTextBox_PreviewMouseLeftButtonDown" UniformCornerRadius="50" Grid.Row="2" Grid.Column="1" Margin="20">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2.5*"></RowDefinition>
@@ -82,12 +122,12 @@
                 <materialDesign:ColorZone Grid.Row="1" CornerRadius="0,0,20,20" Background="#242424" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontFamily="Times New Roman" FontSize="50" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Content="Обмена"/>
             </Grid>
         </materialDesign:Card>
-        <RichTextBox Grid.Row="0" Grid.Column="0" Name="richTextBox1" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
-        <RichTextBox Grid.Row="0" Grid.Column="1" Name="richTextBox2" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
-        <RichTextBox Grid.Row="1" Grid.Column="0" Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
-        <RichTextBox Grid.Row="1" Grid.Column="1" Name="richTextBox4" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
-        <RichTextBox Grid.Row="2" Grid.Column="0" Name="richTextBox5" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
-        <RichTextBox Grid.Row="2" Grid.Column="1" Name="richTextBox6" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
+        <RichTextBox Name="richTextBox1" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
+        <RichTextBox Name="richTextBox2" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
+        <RichTextBox Name="richTextBox3" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
+        <RichTextBox Name="richTextBox4" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
+        <RichTextBox Name="richTextBox5" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
+        <RichTextBox Name="richTextBox6" IsReadOnly="True" FontSize="18" FontFamily="Times New Roman" Visibility="Collapsed"/>
         
         <Button Content="Вернуться" Name="returnButton" Click="returnButton_Click"  Visibility="Collapsed"
             Background="#66E39C"

@@ -33,7 +33,7 @@ namespace Chemistry_app
             textBoxNameUser.Text = user.Name;
             textBoxEmailUser.Text = user.Email;
             FrameNavigator.MainFrame = MainFrame;
-            
+            FrameNavigator.MainFrame.Navigate(new TheorysPage());
         }
         private void SetButtonBackground(System.Windows.Controls.Border button, string colorCode)
         {
