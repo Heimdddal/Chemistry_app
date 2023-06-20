@@ -100,12 +100,14 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                              Margin="10" 
                              BorderBrush="{DynamicResource ActiveElements}"
                              Foreground="{DynamicResource TextColor}" 
-                             materialDesign:HintAssist.Hint ="Password"/>
+                             materialDesign:HintAssist.Hint ="Password" 
+                             PasswordChanged="Password_Changed"/>
                 <PasswordBox Name="textBoxRepeatPassword" 
                              Margin="10" 
                              BorderBrush="{DynamicResource ActiveElements}"
                              Foreground="{DynamicResource TextColor}" 
-                             materialDesign:HintAssist.Hint ="Repeat password"/>
+                             materialDesign:HintAssist.Hint ="Repeat password" 
+                             PasswordChanged="PasswordRepeat_Changed"/>
                 <Button Content="Регистрация" 
                         Click="ButtonRegistration_Click"
                         Background="#66E39C"

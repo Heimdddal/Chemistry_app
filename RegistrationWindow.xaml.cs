@@ -37,6 +37,7 @@ namespace Chemistry_app
     public partial class RegistrationWindow : System.Windows.Window
     {
         public string Gender { get; set; }
+        public string Password { get; set; }
         public RegistrationWindow()
         {
             InitializeComponent();
@@ -188,6 +189,31 @@ namespace Chemistry_app
                 {
                     Gender = "Жен";
                 }
+            }
+        }
+
+        private void PasswordRepeat_Changed(object sender, RoutedEventArgs e)
+        {
+            string repeatPassword;
+            repeatPassword = textBoxRepeatPassword.Password;
+            if (repeatPassword != Password) {
+                textBoxRepeatPassword.ToolTip = "Пароль не совпадает";
+                textBoxRepeatPassword.BorderBrush = Brushes.Red;
+            }
+        }
+
+        private void Password_Changed(object sender, RoutedEventArgs e)
+        {
+            string password;
+            password = textBoxPassword.Password.Trim();
+            if (password.Length <= 5)
+            {
+                textBoxPassword.ToolTip = "Неверный пароль";
+                textBoxPassword.BorderBrush = Brushes.Red;
+            }
+            else { 
+                textBoxPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements"); 
+                Password = password;
             }
         }
     }
