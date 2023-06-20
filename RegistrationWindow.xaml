@@ -21,13 +21,15 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                          Foreground="{DynamicResource TextColor}"
                          CaretBrush="{DynamicResource ActiveElements}"
                          SelectionBrush="{DynamicResource UnderLineLight}"
-             
+                         materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
                          materialDesign:HintAssist.Hint ="Имя" 
                          Margin="10"/>
                 <TextBox x:Name="textBoxEmail" 
                          BorderBrush="{DynamicResource UnderLineLight}"
                          Foreground="{DynamicResource TextColor}"
-                         
+                         CaretBrush="{DynamicResource ActiveElements}"
+                         SelectionBrush="{DynamicResource UnderLineLight}"
+                         materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
                          Margin="10" 
                          materialDesign:HintAssist.Hint ="Почтовый адрес"/>
                 <TextBlock Text="Пол" 
@@ -105,13 +107,21 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                              BorderBrush="{DynamicResource ActiveElements}"
                              Foreground="{DynamicResource TextColor}" 
                              materialDesign:HintAssist.Hint ="Пароль (не менее 5 символов)" 
-                             PasswordChanged="Password_Changed"/>
+                             PasswordChanged="Password_Changed"
+                             CaretBrush="{DynamicResource ActiveElements}"
+                             SelectionBrush="{DynamicResource UnderLineLight}"
+                             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
+                             />
                 <PasswordBox Name="textBoxRepeatPassword" 
                              Margin="10" 
                              BorderBrush="{DynamicResource ActiveElements}"
                              Foreground="{DynamicResource TextColor}" 
                              materialDesign:HintAssist.Hint ="Повторите пароль" 
-                             PasswordChanged="PasswordRepeat_Changed"/>
+                             PasswordChanged="PasswordRepeat_Changed"
+                             CaretBrush="{DynamicResource ActiveElements}"
+                             SelectionBrush="{DynamicResource UnderLineLight}"
+                             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
+                             />
                 <Button Content="Регистрация" 
                         Click="ButtonRegistration_Click"
                         Background="#66E39C"
