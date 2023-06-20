@@ -17,7 +17,9 @@ namespace Chemistry_app.ViewModel
         private float percentResult;
         private string userName;
         private string nameOfTest;
-        Button GetCertificate = new Button()
+        private List<Question> questionList;
+        private string email;
+       Button GetCertificate = new Button()
         {
             Foreground = Brushes.White,
             Background = (Brush)new BrushConverter().ConvertFrom("#66e39c"),
@@ -26,14 +28,31 @@ namespace Chemistry_app.ViewModel
             Margin = new Thickness(0, 100, 10, 0),
             MinHeight = 100,
             MinWidth = 200,
+            
         };
-        public TestResults(ref Grid grid, float result, float numberOfQuestions, string userName, string nameOfTest)
+
+        Button RepeatTest = new Button()
+        {
+            Foreground = Brushes.White,
+            Background = (Brush)new BrushConverter().ConvertFrom("#66e39c"),
+            Content = "Пройти тест заново",
+            FontSize = 40,
+            Margin = new Thickness(0, 100, 10, 0),
+            MinHeight = 100,
+            MinWidth = 200,
+
+        };
+
+        public TestResults(ref Grid grid, float result, float numberOfQuestions, string userName,string email,
+            string nameOfTest, List<Question> questionList)
         {
             this.grid = grid;
             this.grid.Children.Clear();
             percentResult = result / numberOfQuestions*100;
             this.userName = userName;
             this.nameOfTest = nameOfTest;
+            this.questionList = questionList;
+            this.email = email;
 
             StackPanel panel = new StackPanel()
             { 
@@ -62,22 +81,31 @@ namespace Chemistry_app.ViewModel
                 FontSize = 25,
             };
             GetCertificate.Click += GetCertificate_Click;
+            RepeatTest.Click += RepeatTest_click;
 
             panel.Children.Add(Results);
             panel.Children.Add(PercentResults);
             panel.Children.Add(Conclusion);
             this.grid.Children.Add(panel);
 
-            if (percentResult >= 80)
+            if (email != "guest@gmail.com")
             {
-                panel.Children.Add(GetCertificate);
-                Conclusion.Content = "Вы набрали достаточно баллов для получения сертефиката:";
+                if (percentResult >= 80)
+                {
+                    panel.Children.Add(GetCertificate);
+                    Conclusion.Content = "Вы набрали достаточно баллов для получения сертефиката:";
+                }
+                else
+                {
+                    Conclusion.Content = "Вы не набрали достаточно баллов для получения сертефиката";
+                    panel.Children.Add(RepeatTest);
+                }
             }
             else
             {
-                Conclusion.Content = "Вы не набрали достаточно баллов для получения сертефиката";
+                Conclusion.Content = "Зарегистрируйтесь чтобы иметь возможность получить сертификат";
+                panel.Children.Add(RepeatTest);
             }
-                
                 
         }
 
@@ -91,12 +119,35 @@ namespace Chemistry_app.ViewModel
             try
             {
                 CertificateGenerator.GenerateCertificate(userName, nameOfTest, id, percentResult);
-                EmailSender.SendCertificate("bearshunter321@gmail.com", nameOfTest, "certificate.pdf");
+                EmailSender.SendCertificate(email, nameOfTest, "certificate.pdf");
+                MessageBox.Show($"Сертефикат успешно отправлен на ваш e-mail: {email}");
             }
             catch (Exception)
             {
                 
             }
+            grid.Children.Clear();
+            foreach (Question quest in questionList)
+            {
+                quest.RadioButtonTrue.IsChecked = false;
+                quest.RadioButtonFalse1.IsChecked = false;
+                quest.RadioButtonFalse2.IsChecked = false;
+                quest.RadioButtonFalse3.IsChecked = false;
+            }
+            new TestApplication(questionList, ref grid, nameOfTest, userName, email);
+        }
+
+        private void RepeatTest_click(object sender, RoutedEventArgs e)
+        {
+            grid.Children.Clear();
+            foreach (Question quest in questionList)
+            {
+                quest.RadioButtonTrue.IsChecked = false;
+                quest.RadioButtonFalse1.IsChecked = false;
+                quest.RadioButtonFalse2.IsChecked = false;
+                quest.RadioButtonFalse3.IsChecked = false;
+            }
+            new TestApplication(questionList, ref grid, nameOfTest, userName, email);
         }
     }
 }

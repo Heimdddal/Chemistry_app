@@ -16,26 +16,33 @@ namespace Chemistry_app.ViewModel
         private StackPanel panel = new StackPanel();
         private Button button = new Button()
         {
-            Foreground = Brushes.White
+            Foreground = Brushes.White,
+            Background = (Brush)new BrushConverter().ConvertFrom("#66e39c"),
+            MinHeight = 100,
+            FontSize= 25
         };
         private int numberOfQuestions;
         private List<Question> questionList;
         private string userName;
         private Grid grid;
         private string nameOfTest;
-        public TestApplication(List<Question> questions, ref Grid grid, string testName, string userName)
+        private string email;
+        public TestApplication(List<Question> questions, ref Grid grid, string testName, string userName, string email)
         {
             this.grid = grid;
             this.nameOfTest = testName;
 
             this.userName= userName;
+            this.email= email;
+
             numberOfQuestions = questions.Count;
             questionList = questions;
-            panel.Children.Add(new TextBlock() 
+            panel.Children.Add(new TextBlock()
             {
                 Foreground = Brushes.White,
-                HorizontalAlignment =HorizontalAlignment.Center,
-                Text=testName
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Text = testName,
+                FontSize = 40
             });
             for (int i = 0; i < questions.Count; i++)
             {
@@ -71,7 +78,9 @@ namespace Chemistry_app.ViewModel
 
         private void ShowResults(object sender, RoutedEventArgs e)
         {
-            TestResults testResults = new TestResults(ref grid, CountCorrectAnswers(), numberOfQuestions, userName, nameOfTest);
+            TestResults testResults = new TestResults(ref grid, CountCorrectAnswers(), numberOfQuestions, userName,email, nameOfTest,
+                questionList);
+            panel.Children.Clear();
             string jsonResult = $"{userName}:{CountCorrectAnswers()}\n";
             try
             {

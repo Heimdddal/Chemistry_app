@@ -4,6 +4,7 @@ using System.Windows.Controls;
 using System.Windows;
 using System;
 using System.Windows.Media;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace Chemistry_app
 {
@@ -50,9 +51,10 @@ namespace Chemistry_app
 
             RadioButtonsGroup = new GroupBox()
             {
-                Margin = new Thickness(5),
+                Margin = new Thickness(5, 5, 5, 30),
                 Header = questionText,
                 Foreground = Brushes.White,
+                FontSize = 20
             };
 
             RadioButtonsGroup.Content = new StackPanel();
