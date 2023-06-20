@@ -12,13 +12,13 @@
         <Style TargetType="TextBlock" x:Key="style">
             <Setter Property="Foreground" Value="{DynamicResource TextColor}"></Setter>
         </Style>
-        <Style x:Key="AnimatedBorderStyle" TargetType="Border">
+       <Style x:Key="AnimatedBorderStyle" TargetType="Border">
             <Setter Property="Height" Value="75"/>
             <Setter Property="Width" Value="75"/>
-            <Setter Property="Panel.ZIndex" Value="0"/>
+            <Setter Property="Background" Value="{DynamicResource UnactiveElementDarkTheme}"/>
             <Setter Property="BorderBrush" Value="{DynamicResource BackgroundDarkTheme}"/>
             <Setter Property="BorderThickness" Value="2"/>
-            <Setter Property="Background" Value="{DynamicResource UnactiveElementDarkTheme}"/>
+            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5" />
             <Setter Property="RenderTransform">
                 <Setter.Value>
                     <ScaleTransform ScaleX="1" ScaleY="1" />
@@ -34,13 +34,13 @@
                     <BeginStoryboard>
                         <Storyboard>
                             <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleX)"
-                                         To="1" Duration="0:0:0.3" />
+                                         To="1.5" Duration="0:0:0.3" />
                             <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)"
-                                         To="1" Duration="0:0:0.3" />
+                                         To="1.5" Duration="0:0:0.3" />
                             <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)"
-                                        To="0" Duration="0:0:0.01" />
+                                        To="1" Duration="0:0:0.01"/>
                             <DoubleAnimation Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)"
-                                             To="0" Duration="0:0:0.3"/>
+                                             To="0.4" Duration="0:0:0.3"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -69,6 +69,24 @@
         <Style x:Key="RightCellsMetalActivity" TargetType="Border" BasedOn="{StaticResource AnimatedBorderStyle}">
             <Setter Property="RenderTransformOrigin" Value="1, 0.5"/>
         </Style>
+        <Style TargetType ="ContentControl" x:Key="AnimationForContentControl">
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="ContentControl.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)" To="1" Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="ContentControl.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)" To="0" Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
         <ControlTemplate x:Key="MetalCellTemplate" TargetType="ContentControl">
             <Border Style="{StaticResource MiddleCellsMetalActivity}">
                 <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource style}" Text="{TemplateBinding ContentStringFormat}"></TextBlock>
@@ -93,8 +111,9 @@
         </Grid.RowDefinitions>
         <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <DockPanel HorizontalAlignment="Left" Name="DockPanel" LastChildFill="False">
-                <ContentControl Template="{StaticResource LeftMetalCellTemplate}" ContentStringFormat="Hi" Panel.ZIndex="4"/>
-                <ContentControl Template="{StaticResource MetalCellTemplate}" ContentStringFormat="Bye" />
+                <ContentControl Template="{StaticResource LeftMetalCellTemplate}" ContentStringFormat="Hi"/>
+                <ContentControl Template="{StaticResource MetalCellTemplate}" Style="{StaticResource AnimationForContentControl}" ContentStringFormat="Bye" />
+                <Border Style="{StaticResource AnimatedBorderStyle}"/>
                 <ContentControl Template="{StaticResource RightMetalCellTemplate}" ContentStringFormat="Man" />
                 
             </DockPanel>
