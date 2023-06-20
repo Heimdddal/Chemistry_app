@@ -124,6 +124,7 @@
     <Compile Include="Converters\BorderSizeCoefficent.cs" />
     <Compile Include="Converters\ScrollViewerVisibilityConverter.cs" />
     <Compile Include="CustomProperties\BorderAspectRatio.cs" />
+    <Compile Include="CustomProperties\MendeleevContentControl.cs" />
     <Compile Include="ForCertificate\BronzeBackGround.cs" />
     <Compile Include="ForCertificate\CertificateGenerator.cs" />
     <Compile Include="ForCertificate\GoldBackGround.cs" />

@@ -19,11 +19,15 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                 <TextBox x:Name="textBoxName" 
                          BorderBrush="{DynamicResource UnderLineLight}"
                          Foreground="{DynamicResource TextColor}"
+                         CaretBrush="{DynamicResource ActiveElements}"
+                         SelectionBrush="{DynamicResource UnderLineLight}"
+             
                          materialDesign:HintAssist.Hint ="Имя" 
                          Margin="10"/>
                 <TextBox x:Name="textBoxEmail" 
                          BorderBrush="{DynamicResource UnderLineLight}"
                          Foreground="{DynamicResource TextColor}"
+                         
                          Margin="10" 
                          materialDesign:HintAssist.Hint ="Почтовый адрес"/>
                 <TextBlock Text="Пол" 
