@@ -15,11 +15,15 @@
                            Margin="10,0,0,0"/>
                 <TextBox x:Name="textBoxEmail" 
                          materialDesign:HintAssist.Hint="Email" 
-                         Margin="10,0,10,0" BorderBrush="{DynamicResource UnderLineLight}" 
+                         Margin="10,0,10,0" 
+                         BorderBrush="{DynamicResource ActiveElements}"
+                         Foreground="{DynamicResource TextColor}" 
                          FontSize="30"/>
                 <PasswordBox x:Name="textBoxPassword" 
                              materialDesign:HintAssist.Hint="Password" 
-                             Margin="10" BorderBrush="{DynamicResource UnderLineLight}" 
+                             Margin="10" 
+                             BorderBrush="{DynamicResource ActiveElements}"
+                             Foreground="{DynamicResource TextColor}" 
                              FontSize="30"/>
                 <Button Content="Авторизоваться" 
                         Click="ButtonAuthorization_Click" 

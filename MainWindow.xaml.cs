@@ -29,6 +29,7 @@ namespace Chemistry_app
         public MainWindow(User user)
         {
             InitializeComponent();
+            WindowState = WindowState.Maximized;
             this.user = user;
             textBoxNameUser.Text = user.Name;
             textBoxEmailUser.Text = user.Email;

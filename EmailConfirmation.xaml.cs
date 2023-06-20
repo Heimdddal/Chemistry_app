@@ -31,11 +31,12 @@ namespace Chemistry_app
         public EmailConfirmation(User user, RegistrationWindow registrationWindow)
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.user = user;
             int code = GenerateCode();
             codeAuth = code.ToString();
 
-            ShowLoadedWindow(); // Показать окно загрузки в асинхронном режиме
+            ShowLoadedWindow();
 
             Task.Run(() =>
             {
@@ -43,8 +44,8 @@ namespace Chemistry_app
                 EmailSender.SendCode(code.ToString(), user.Email);
             }).ContinueWith(task =>
             {
-                CloseLoadedWindow(); // Закрыть окно загрузки после отправки электронной почты
-                ShowConfirmationWindow(); // Показать окно подтверждения
+                CloseLoadedWindow();
+                ShowConfirmationWindow();
             }, TaskScheduler.FromCurrentSynchronizationContext());
 
             this.registrationWindow = registrationWindow;
@@ -52,13 +53,12 @@ namespace Chemistry_app
         private async void ShowLoadedWindow()
         {
             LoadingWindow window = new LoadingWindow();
-            await Task.Delay(100); // Небольшая задержка для дать время окну загрузки отрисоваться
+            await Task.Delay(100);
             window.Show();
         }
 
         private void CloseLoadedWindow()
         {
-            // Найти и закрыть окно загрузки (если необходимо)
             LoadingWindow window = Application.Current.Windows.OfType<LoadingWindow>().FirstOrDefault();
             window?.Close();
         }

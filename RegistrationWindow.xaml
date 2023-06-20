@@ -13,12 +13,17 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
         <Border Margin="20" Background="#363636" CornerRadius="10">
             <StackPanel>
                 <TextBlock Text="Регистрация" 
+                           Foreground="{DynamicResource TextColor}"
                            FontSize="30" 
                            Margin="5"/>
                 <TextBox x:Name="textBoxName" 
+                         BorderBrush="{DynamicResource UnderLineLight}"
+                         Foreground="{DynamicResource TextColor}"
                          materialDesign:HintAssist.Hint ="Name" 
                          Margin="10"/>
                 <TextBox x:Name="textBoxEmail" 
+                         BorderBrush="{DynamicResource UnderLineLight}"
+                         Foreground="{DynamicResource TextColor}"
                          Margin="10" 
                          materialDesign:HintAssist.Hint ="Email"/>
                 <TextBlock Text="Пол" 
@@ -36,8 +41,8 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                         Margin="4"
                         IsChecked="True"
                         Style="{StaticResource MaterialDesignTabRadioButton}"
-                        Foreground="{DynamicResource TextColor}"
-                        BorderBrush="{DynamicResource ActiveElements}">
+                        BorderBrush="{DynamicResource ActiveElements}"
+                         Foreground="{DynamicResource TextColor}">
                         <StackPanel>
                             <materialDesign:PackIcon
                                 HorizontalAlignment="Center"
@@ -93,9 +98,13 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
 
                 <PasswordBox x:Name="textBoxPassword" 
                              Margin="10" 
+                             BorderBrush="{DynamicResource ActiveElements}"
+                             Foreground="{DynamicResource TextColor}" 
                              materialDesign:HintAssist.Hint ="Password"/>
                 <PasswordBox Name="textBoxRepeatPassword" 
                              Margin="10" 
+                             BorderBrush="{DynamicResource ActiveElements}"
+                             Foreground="{DynamicResource TextColor}" 
                              materialDesign:HintAssist.Hint ="Repeat password"/>
                 <Button Content="Регистрация" 
                         Click="ButtonRegistration_Click"

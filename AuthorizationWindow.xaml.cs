@@ -31,6 +31,7 @@ namespace Chemistry_app
         public AuthorizationWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void ButtonRegistration_Click(object sender, RoutedEventArgs e)

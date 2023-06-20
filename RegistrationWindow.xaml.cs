@@ -26,6 +26,7 @@ using Google.Apis.Util.Store;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace Chemistry_app
 {
@@ -39,10 +40,19 @@ namespace Chemistry_app
         public RegistrationWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
             MaleRadioButton.Checked += RadioButton_Checked;
             FemaleRadioButton.Checked += RadioButton_Checked;
         }
+        public bool ValidateEmail(string email)
+        {
+            string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
 
+            Regex regex = new Regex(pattern);
+            bool isValid = regex.IsMatch(email);
+
+            return isValid;
+        }
         public void EmailConfirmation(User user) {;
             Chemistry_app.EmailConfirmation window = new EmailConfirmation(user, this);
             this.IsEnabled = false;
@@ -64,26 +74,37 @@ namespace Chemistry_app
             int passCount = 0;
             #region checkName
             name = textBoxName.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(name)) {
+            if (!string.IsNullOrWhiteSpace(name))
+            {
                 passCount++;
+                textBoxName.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
-            else textBoxName.ToolTip = "Введите значение";
+            else { 
+                textBoxName.ToolTip = "Введите значение";
+                textBoxName.BorderBrush = Brushes.Red;
+            }
             #endregion
             #region checkEmail
             email = textBoxEmail.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(email)){
-                passCount++;
-            }
-            else textBoxEmail.ToolTip = "Введите значение";
-
-            if (!email.Contains("@") & !email.Contains(".") || email.Count(c => c == '@') > 1)
+            if (!string.IsNullOrWhiteSpace(email))
             {
+                passCount++;
+                textBoxEmail.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
+            }
+            else { 
                 textBoxEmail.BorderBrush = Brushes.Red;
-                textBoxEmail.ToolTip = "Email введен неверно";
+                textBoxEmail.ToolTip = "Введите значение"; 
+            }
+
+            if (ValidateEmail(email))
+            {
+                passCount++;
+                textBoxEmail.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
             else
             {
-                passCount++;
+                textBoxEmail.BorderBrush = Brushes.Red;
+                textBoxEmail.ToolTip = "Email введен неверно";
             }
             #endregion
             #region checkGender
@@ -91,8 +112,10 @@ namespace Chemistry_app
             if (!string.IsNullOrWhiteSpace(gender))
             {
                 passCount++;
+                textBoxGender.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
-            else textBoxGender.ToolTip = "Неверный гендер";
+            else {
+            }
             #endregion
             #region checkAge
             try
@@ -110,16 +133,24 @@ namespace Chemistry_app
             if (!string.IsNullOrWhiteSpace(password) & password.Length >= 5)
             {
                 passCount++;
+                textBoxPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
-            else textBoxPassword.ToolTip = "Введите значение";
+            else { 
+                textBoxPassword.ToolTip = "Введите значение"; 
+                textBoxPassword.BorderBrush = Brushes.Red;
+            }
             #endregion
             #region checkRepeatePassword
             repeatePassword = textBoxRepeatPassword.Password;
             if (!string.IsNullOrWhiteSpace(repeatePassword))
             {
                 passCount++;
+                textBoxRepeatPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
-            else textBoxRepeatPassword.ToolTip = "Введите значение";
+            else { 
+                textBoxRepeatPassword.ToolTip = "Введите значение"; 
+                textBoxRepeatPassword.BorderBrush = Brushes.Red;
+            }
 
             if (password != repeatePassword)
             {
