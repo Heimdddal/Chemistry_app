@@ -23,6 +23,7 @@ namespace Chemistry_app
         public MetalActivity()
         {
             InitializeComponent();
+
         }
     }
 }
