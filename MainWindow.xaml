@@ -3,15 +3,14 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Chemistry_app.Converters"
-        
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="800" Width="1400" Background="#242424" Foreground="white"
         >
-    <Window.Resources>
-        <local:ScrollViewerVisibilityConverter x:Key="ScrollViewerVisibilityConverter" />
-    </Window.Resources>
+        xmlns:local="clr-namespace:Chemistry_app"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1400" Background="#242424" Foreground="white">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>
@@ -25,52 +24,66 @@
             </ScrollViewer>
         </Border>
         <Border Background="#363636" MinWidth="280">
-            <StackPanel MinWidth="280">
+            <StackPanel>
                 <Grid MinWidth="280">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
-                        <RowDefinition Height="1*"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="5*"/>
                     </Grid.RowDefinitions>
-                    <StackPanel>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="3*"/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-
-                            <TextBlock x:Name="textBoxNameUser" 
+                <Border Grid.Row="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="3.5*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="2*"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="textBoxNameUser" 
                                        FontSize="25" 
                                        Foreground="White" 
                                        Grid.Column="1" 
                                        Grid.Row="0" 
                                        VerticalAlignment="Bottom"
-                                       RenderTransformOrigin="0,1"/>
+                                       HorizontalAlignment="Left"
+                                       Margin="5,0,0,0"/>
 
-                            <TextBlock x:Name="textBoxEmailUser" 
+                        <TextBlock x:Name="textBoxEmailUser" 
                                        FontSize="10" 
                                        Foreground="White" 
                                        Grid.Column="1" 
                                        Grid.Row="1"
                                        VerticalAlignment="Top"
-                                       RenderTransformOrigin="0,0"/>
-
-                            <materialDesign:PackIcon Grid.RowSpan="2" Grid.Column="0" 
-                                HorizontalAlignment="Center"
-                                Kind="AccountBadgeOutline" Height="50" Width="50" />
-                            <Ellipse Grid.RowSpan="2" Grid.Column="0">
-
-                            </Ellipse>
-                        </Grid>
-                    </StackPanel>
-                    <StackPanel Grid.Row="1"  VerticalAlignment="Center" PreviewMouseLeftButtonDown="ButtonTheory_Click" Cursor="Hand">
+                                       HorizontalAlignment="Left"
+                                       Margin="5,0,0,0"/>
+                            <Ellipse Grid.RowSpan="2" Fill="#66E39C" MinHeight="62">
+                            
+                        </Ellipse>
+                        <Ellipse Grid.RowSpan="2" MinHeight="62">
+                            <Ellipse.Fill>
+                                <VisualBrush Stretch="Uniform">
+                                    <VisualBrush.Visual>
+                                        <materialDesign:PackIcon Kind="AccountCircleOutline" />
+                                    </VisualBrush.Visual>
+                                </VisualBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Grid>
+                </Border>
+                <Border Grid.Row="1" 
+                        CornerRadius="10" 
+                        Margin="5"
+                        x:Name="ButtonTheory"
+                        PreviewMouseLeftButtonDown="ButtonTheory_Click"
+                        Cursor="Hand">
+                    <StackPanel VerticalAlignment="Center"  >
                         <Grid VerticalAlignment="Center" >
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
@@ -84,34 +97,60 @@
                                        FontSize="30"/>
                         </Grid>
                     </StackPanel>
-
-                    <TreeView Grid.Row="2" >
-                        <TreeViewItem
+                </Border>
+                <StackPanel Grid.Row="2">
+                    <TreeView
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch">
+                    <TreeViewItem
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
                         Header="Таблицы"
                         FontSize="30"
-                        IsExpanded="False"
-                        Foreground="White">
-                            <TreeViewItem
-                            Header="Таблица менделеева" 
-                            FontSize="15"
-                            Foreground="white"
-                            PreviewMouseLeftButtonDown="ButtonMendeleevTable_Click">
-                            </TreeViewItem>
-                            <TreeViewItem
-                            Header="Таблица растворимости"
-                            FontSize="15"
-                            Foreground="White"
-                            PreviewMouseLeftButtonDown="ButtonSolubillityTable_Click">
-                            </TreeViewItem>
-                            <TreeViewItem
-                            Header="Таблица активности металлов"
-                            FontSize="15"
-                            Foreground="White"
-                            PreviewMouseLeftButtonDown ="ButtonMetalActivityTable_Click"/>
-                        </TreeViewItem>
-                    </TreeView>
-
-                    <StackPanel Grid.Row="4" VerticalAlignment="Center" PreviewMouseLeftButtonDown="ButtonTests_Click" Cursor="Hand">
+                        IsExpanded="True"
+                        Foreground="White"
+                        Cursor="Hand">
+                        <Border CornerRadius="10" 
+                                PreviewMouseLeftButtonDown="ButtonMendeleevTable_Click"
+                                Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                x:Name="ButtonMendeleevTable">
+                            <TextBlock Text="Таблица менделеева"
+                                       FontSize="14"
+                                       Margin="5"/>
+                        </Border>
+                        <Border CornerRadius="10" 
+                                PreviewMouseLeftButtonDown="ButtonSolubillityTable_Click"
+                                Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch"
+                                x:Name="ButtonSolubillityTable">
+                            <TextBlock Text="Таблица растворимости"
+                                       FontSize="14"
+                                       Margin="5"/>
+                        </Border>
+                        <Border CornerRadius="10" 
+                                PreviewMouseLeftButtonDown="ButtonMetalActivityTable_Click"
+                                x:Name="ButtonMetalActivityTable"
+                                Cursor="Hand"
+                                HorizontalAlignment="Stretch"
+                                VerticalAlignment="Stretch">
+                            <TextBlock Text="Таблица активности металлов"
+                                       FontSize="14"
+                                       Margin="5"/>
+                        </Border>
+                    </TreeViewItem>
+                </TreeView>
+                </StackPanel>
+                <Border Grid.Row="3" 
+                        CornerRadius="10" 
+                        Margin="5"
+                        PreviewMouseLeftButtonDown="ButtonTests_Click" 
+                        Cursor="Hand"
+                        x:Name="ButtonTests">
+                    <StackPanel Grid.Row="3" 
+                                VerticalAlignment="Center" >
                         <Grid VerticalAlignment="Center">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="1*"/>
@@ -125,21 +164,30 @@
                                        FontSize="30"/>
                         </Grid>
                     </StackPanel>
-
-                    <StackPanel Grid.Row="5" VerticalAlignment="Center" PreviewMouseLeftButtonDown="StackPanel_PreviewMouseLeftButtonDown" Cursor="Hand">
-                        <Grid VerticalAlignment="Center">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="1*"/>
-                                <ColumnDefinition Width="3*"/>
-                            </Grid.ColumnDefinitions>
-                            <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
-                            <TextBlock Text="Выход" 
+                </Border>
+                    <Border Grid.Row="4" 
+                        CornerRadius="10" 
+                        Margin="5"
+                        x:Name="ExitButton"
+                        Background="Red"
+                        Cursor="Hand"
+                        PreviewMouseLeftButtonDown="StackPanel_PreviewMouseLeftButtonDown" >
+                        <StackPanel VerticalAlignment="Center" 
+                                Cursor="Hand">
+                            <Grid VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"/>
+                                    <ColumnDefinition Width="3*"/>
+                                </Grid.ColumnDefinitions>
+                                <materialDesign:PackIcon Kind="ExitToApp" VerticalAlignment="Center" Height="40" Width="36"/>
+                                <TextBlock Text="Выход" 
                                        Grid.Column="1"
                                        HorizontalAlignment="Left"
                                        VerticalAlignment="Center"
                                        FontSize="30"/>
-                        </Grid>
-                    </StackPanel>
+                            </Grid>
+                        </StackPanel>
+                    </Border>
                 </Grid>
             </StackPanel>
         </Border>

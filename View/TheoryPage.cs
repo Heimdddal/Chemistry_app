@@ -8,6 +8,7 @@ namespace Chemistry_app.View
 {
     internal class TheoryPage
     {
+        public List<string> BoldWords { get; set; }
         public string Content { get; set; }
     }
 }

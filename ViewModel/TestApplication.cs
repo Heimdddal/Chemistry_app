@@ -14,7 +14,6 @@ namespace Chemistry_app.ViewModel
     internal class TestApplication
     {
         private StackPanel panel = new StackPanel();
-        private ScrollViewer scrollViewer = new ScrollViewer();
         private Button button = new Button()
         {
             Foreground = Brushes.White
@@ -52,8 +51,7 @@ namespace Chemistry_app.ViewModel
             button.Content = "Узнать результаты";
             button.Click += ShowResults;
             panel.Children.Add(button);
-            scrollViewer.Content = panel;
-            this.grid.Children.Add(scrollViewer);
+            this.grid.Children.Add(panel);
         }
 
         private int CountCorrectAnswers()

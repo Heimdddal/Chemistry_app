@@ -44,9 +44,8 @@ namespace Chemistry_app
         }
 
         public void EmailConfirmation(User user) {;
-            Chemistry_app.EmailConfirmation window = new EmailConfirmation(user);
-            window.Show();
-            this.Close();
+            Chemistry_app.EmailConfirmation window = new EmailConfirmation(user, this);
+            this.IsEnabled = false;
         }
         bool isUsers(string email)
         {

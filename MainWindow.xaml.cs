@@ -33,35 +33,61 @@ namespace Chemistry_app
             textBoxNameUser.Text = user.Name;
             textBoxEmailUser.Text = user.Email;
             FrameNavigator.MainFrame = MainFrame;
-            
+            FrameNavigator.MainFrame.Navigate(new TheorysPage());
+        }
+        private void SetButtonBackground(System.Windows.Controls.Border button, string colorCode)
+        {
+            button.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString(colorCode));
+        }
+
+        private void SetAllButtonBackgrounds(string colorCode)
+        {
+            SetButtonBackground(ButtonTests, colorCode);
+            SetButtonBackground(ButtonMendeleevTable, colorCode);
+            SetButtonBackground(ButtonTheory, colorCode);
+            SetButtonBackground(ButtonSolubillityTable, colorCode);
+            SetButtonBackground(ButtonMetalActivityTable, colorCode);
+            SetButtonBackground(ExitButton, colorCode);
         }
 
         private void ButtonTests_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new PageForTest(user));
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonTests, "#66E39C");
+
         }
         private void ButtonTheory_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new TheorysPage());
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonTheory, "#66E39C");
         }
         private void ButtonMendeleevTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MendeleevTablePage());
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonMendeleevTable, "#66E39C");
         }
 
         private void ButtonSolubillityTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new Page1());
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonSolubillityTable, "#66E39C");
         }
 
         private void ButtonMetalActivityTable_Click(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new MetalActivity());
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonMetalActivityTable, "#66E39C");
         }
 
         private void StackPanel_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("Подтвердите выход", "", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                Close();
         }
     }
 }

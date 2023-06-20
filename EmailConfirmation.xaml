@@ -6,7 +6,7 @@
          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:Chemistry_app"
         mc:Ignorable="d"
-        Title="EmailConfirmation" Height="300" Width="400" Background="#242424" Foreground="White" FontSize="19">
+        Title="EmailConfirmation" Height="340" Width="400" Background="#242424" Foreground="White" FontSize="19">
     <Grid>
         <Border Margin="30" Background="#363636" CornerRadius="10">
             <StackPanel>
