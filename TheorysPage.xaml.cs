@@ -87,12 +87,12 @@ namespace Chemistry_app
             {
                 From = show ? 0 : 1,
                 To = show ? 1 : 0,
-                Duration = TimeSpan.FromSeconds(1)
+                Duration = TimeSpan.FromSeconds(2)
             };
 
             richTextBox.BeginAnimation(OpacityProperty, animation);
 
-            await Task.Delay(TimeSpan.FromSeconds(3));
+            await Task.Delay(TimeSpan.FromSeconds(1));
 
             richTextBox.Visibility = show ? Visibility.Visible : Visibility.Collapsed;
             isAnimating = false;
@@ -142,22 +142,26 @@ namespace Chemistry_app
                     pair.richTextBox.Visibility = Visibility.Collapsed;
                 }
                 page.Height = 600;
+                rowDef.Height = new GridLength(300, GridUnitType.Star);
                 mapping.richTextBox.Visibility = Visibility.Visible;
                 Grid.SetRow(mapping.richTextBox, mapping.row);
                 Grid.SetColumn(mapping.richTextBox, mapping.column);
                 Grid.SetRowSpan(mapping.richTextBox, mapping.rowSpan);
                 Grid.SetColumnSpan(mapping.richTextBox, mapping.columnSpan);
-                await AnimateRichTextBox(mapping.richTextBox, true);
-                
+
                 returnButton.Visibility = Visibility.Visible;
                 Grid.SetColumnSpan(returnButton, 2);
                 Grid.SetRow(returnButton, 2);
-                returnButton.Margin = new Thickness(0, 100, 0, 0);
+                returnButton.Margin = new Thickness(0, 50, 0, 0);
+
+                await AnimateRichTextBox(mapping.richTextBox, true); 
+                
             }
         }
         private void returnButton_Click(object sender, RoutedEventArgs e)
         {
             page.Height = 1200;
+            rowDef.Height = new GridLength(100, GridUnitType.Star);
             // Установить видимость всех сеток
             foreach (MaterialDesignThemes.Wpf.Card cards in new List<MaterialDesignThemes.Wpf.Card> { card1, card2, card3, card4, card5, card6 })
             {

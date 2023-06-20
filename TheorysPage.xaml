@@ -52,7 +52,6 @@
         </Style>
     </Page.Resources>
     <Grid x:Name="grid">
-
         <Grid.RowDefinitions>
             <RowDefinition Height="100*" />
             <RowDefinition Name="rowDef" Height="100*" />
