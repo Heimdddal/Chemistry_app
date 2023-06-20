@@ -77,6 +77,7 @@ namespace Chemistry_app
             string fileName = "Assert\\Users.json";
             if (codeAuth == textBoxCode.Text)
             {
+                registrationWindow.Close();
                 List<User> users = UserJsonController.ReadFromJson(fileName);
                 users.Add(user);
                 UserJsonController.WriteToJson(users, fileName);
