@@ -121,6 +121,9 @@
     </ApplicationDefinition>
     <Compile Include="Controllers\FrameNavigator.cs" />
     <Compile Include="Controllers\UserJsonController.cs" />
+    <Compile Include="Converters\BorderSizeCoefficent.cs" />
+    <Compile Include="Converters\ScrollViewerVisibilityConverter.cs" />
+    <Compile Include="CustomProperties\BorderAspectRatio.cs" />
     <Compile Include="ForCertificate\BronzeBackGround.cs" />
     <Compile Include="ForCertificate\CertificateGenerator.cs" />
     <Compile Include="ForCertificate\GoldBackGround.cs" />

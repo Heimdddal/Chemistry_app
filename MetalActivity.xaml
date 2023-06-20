@@ -3,88 +3,103 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Chemistry_app"
+      xmlns:local="clr-namespace:Chemistry_app.Converters"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MetalActivity">
-
+    <Page.Resources>
+        <Style TargetType="TextBlock" x:Key="style">
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}"></Setter>
+        </Style>
+        <Style x:Key="AnimatedBorderStyle" TargetType="Border">
+            <Setter Property="Height" Value="75"/>
+            <Setter Property="Width" Value="75"/>
+            <Setter Property="Panel.ZIndex" Value="0"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BackgroundDarkTheme}"/>
+            <Setter Property="BorderThickness" Value="2"/>
+            <Setter Property="Background" Value="{DynamicResource UnactiveElementDarkTheme}"/>
+            <Setter Property="RenderTransform">
+                <Setter.Value>
+                    <ScaleTransform ScaleX="1" ScaleY="1" />
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Effect">
+                <Setter.Value>
+                    <DropShadowEffect ShadowDepth="5" Opacity="0" Color="Green" BlurRadius="10"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <EventTrigger RoutedEvent="Border.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleX)"
+                                         To="1" Duration="0:0:0.3" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)"
+                                         To="1" Duration="0:0:0.3" />
+                            <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)"
+                                        To="0" Duration="0:0:0.01" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)"
+                                             To="0" Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="Border.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleX)"
+                                         To="1" Duration="0:0:0.3" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)"
+                                         To="1" Duration="0:0:0.3" />
+                            <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)"
+                                        To="0" Duration="0:0:0.01" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)"
+                                             To="0" Duration="0:0:0.3"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="LeftCellMetalActivity" TargetType="Border" BasedOn="{StaticResource AnimatedBorderStyle}">
+            <Setter Property="RenderTransformOrigin" Value="0, 0.5"/>
+        </Style>
+        <Style x:Key="MiddleCellsMetalActivity" TargetType="Border" BasedOn="{StaticResource AnimatedBorderStyle}">
+            <Setter Property="RenderTransformOrigin" Value="0.5, 0.5"/>
+        </Style>
+        <Style x:Key="RightCellsMetalActivity" TargetType="Border" BasedOn="{StaticResource AnimatedBorderStyle}">
+            <Setter Property="RenderTransformOrigin" Value="1, 0.5"/>
+        </Style>
+        <ControlTemplate x:Key="MetalCellTemplate" TargetType="ContentControl">
+            <Border Style="{StaticResource MiddleCellsMetalActivity}">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource style}" Text="{TemplateBinding ContentStringFormat}"></TextBlock>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="LeftMetalCellTemplate" TargetType="ContentControl">
+            <Border Style="{StaticResource LeftCellMetalActivity}">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource style}" Text="{TemplateBinding ContentStringFormat}"></TextBlock>
+            </Border>
+        </ControlTemplate>
+        <ControlTemplate x:Key="RightMetalCellTemplate" TargetType="ContentControl">
+            <Border Style="{StaticResource RightCellsMetalActivity}">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource style}" Text="{TemplateBinding ContentStringFormat}"></TextBlock>
+            </Border>
+        </ControlTemplate>
+    </Page.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition Height="2.5*"></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="2*"></RowDefinition>
+            <RowDefinition Height="1.5*"></RowDefinition>
         </Grid.RowDefinitions>
-        <materialDesign:ColorZone
-            Grid.Row="1"
-            Background="#ffffff"
-            BorderBrush="{DynamicResource UnactiveElementDarkTheme}"
-            BorderThickness="2"
-            VerticalAlignment="Stretch"
-            HorizontalAlignment="Stretch"
-            >
-            <Grid>
-                <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-                <ScrollViewer HorizontalScrollBarVisibility="Auto" Grid.Row="1">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                            <ColumnDefinition></ColumnDefinition>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Text="Li" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="0"/>
-                        <TextBlock Text="K" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="1"/>
-                        <TextBlock Text="Ba" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="2"/>
-                        <TextBlock Text="Ca" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="3"/>
-                        <TextBlock Text="Na" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="4"/>
-                        <TextBlock Text="Mg" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="5"/>
-                        <TextBlock Text="Al" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="6"/>
-                        <TextBlock Text="Be" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="7"/>
-                        <TextBlock Text="Mn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="8"/>
-                        <TextBlock Text="Cr" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="9"/>
-                        <TextBlock Text="Zn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="10"/>
-                        <TextBlock Text="Fe" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="11"/>
-                        <TextBlock Text="Cd" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="12"/>
-                        <TextBlock Text="Co" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="13"/>
-                        <TextBlock Text="Ni" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="14"/>
-                        <TextBlock Text="Sn" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="15"/>
-                        <TextBlock Text="Pb" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="16"/>
-                        <TextBlock Text="H2" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="17"/>
-                        <TextBlock Text="Sb" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="18"/>
-                        <TextBlock Text="Cu" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="19"/>
-                        <TextBlock Text="Hg" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="20"/>
-                        <TextBlock Text="Ag" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="21"/>
-                        <TextBlock Text="Pt" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="22"/>
-                        <TextBlock Text="Au" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Column="23"/>
-                    </Grid>
-                </ScrollViewer>
-            </Grid>
-        </materialDesign:ColorZone>
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <DockPanel HorizontalAlignment="Left" Name="DockPanel" LastChildFill="False">
+                <ContentControl Template="{StaticResource LeftMetalCellTemplate}" ContentStringFormat="Hi" Panel.ZIndex="4"/>
+                <ContentControl Template="{StaticResource MetalCellTemplate}" ContentStringFormat="Bye" />
+                <ContentControl Template="{StaticResource RightMetalCellTemplate}" ContentStringFormat="Man" />
+                
+            </DockPanel>
+        </ScrollViewer>
+        
     </Grid>
+
 </Page>
