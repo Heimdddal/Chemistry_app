@@ -143,24 +143,12 @@ namespace Chemistry_app
             #endregion
             #region checkRepeatePassword
             repeatePassword = textBoxRepeatPassword.Password;
-            if (!string.IsNullOrWhiteSpace(repeatePassword))
+            if (password == repeatePassword)
             {
                 passCount++;
-                textBoxRepeatPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
-            else { 
-                textBoxRepeatPassword.ToolTip = "Введите значение"; 
-                textBoxRepeatPassword.BorderBrush = Brushes.Red;
-            }
-
-            if (password != repeatePassword)
-            {
-                textBoxPassword.ToolTip = "Пароли не совпадают";
-                textBoxRepeatPassword.ToolTip = "Пароли не совпадают";
-            }
-            else passCount++;
             #endregion
-            if (passCount == 8) {
+            if (passCount == 7) {
                 if (!isUsers(email))
                 {
                     User user = new User(name, email, age, gender, password);
@@ -194,11 +182,15 @@ namespace Chemistry_app
 
         private void PasswordRepeat_Changed(object sender, RoutedEventArgs e)
         {
-            string repeatPassword;
-            repeatPassword = textBoxRepeatPassword.Password;
-            if (repeatPassword != Password) {
+            string repeatePassword;
+            repeatePassword = textBoxRepeatPassword.Password;
+            if (repeatePassword != Password) {
                 textBoxRepeatPassword.ToolTip = "Пароль не совпадает";
                 textBoxRepeatPassword.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                textBoxRepeatPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
         }
 
@@ -208,7 +200,7 @@ namespace Chemistry_app
             password = textBoxPassword.Password.Trim();
             if (password.Length <= 5)
             {
-                textBoxPassword.ToolTip = "Неверный пароль";
+                textBoxPassword.ToolTip = "Неверный пароль (Длина меньше 5 символов)";
                 textBoxPassword.BorderBrush = Brushes.Red;
             }
             else { 
