@@ -2,6 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Chemistry_app"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              StartupUri="AuthorizationWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
@@ -16,6 +17,16 @@
             <SolidColorBrush x:Key="UnactiveElementDarkTheme" Color="#363636"/>
             <SolidColorBrush x:Key="ActiveElements" Color="#66E39C"/>
             <SolidColorBrush x:Key="TextColor" Color="#FFFFFF"/>
+            <Style TargetType="TextBox" x:Key="TextBoxStandartStyle" BasedOn="{StaticResource MaterialDesignTextBox}">
+                <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+                <Setter Property="BorderBrush"  Value="{DynamicResource ActiveElements}"/>
+                <Setter Property="CaretBrush" Value="{DynamicResource ActiveElements}"/>
+                <Setter Property="SelectionBrush" Value="{DynamicResource ActiveElements}"/>
+                <Setter Property="Background" Value="#00000000"/>
+                <Setter Property="BorderThickness" Value="0,0,0,1"/>
+                
+
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 

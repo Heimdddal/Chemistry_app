@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="800" Width="1400" Background="#242424" Foreground="white"
+        Title="MainWindow" Height="800" Width="1400" Background="#242424" Foreground="{DynamicResource TextColor}"
         xmlns:local="clr-namespace:Chemistry_app">
     <Grid>
         <Grid.ColumnDefinitions>
