@@ -39,7 +39,7 @@
                             <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)"
                                          To="1.5" Duration="0:0:0.3" />
                             <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)"
-                                        To="1" Duration="0:0:0.01"/>
+                                        To="1" Duration="0:0:0.001"/>
                             <DoubleAnimation Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)"
                                              To="0.4" Duration="0:0:0.3"/>
                         </Storyboard>
@@ -53,7 +53,7 @@
                             <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(ScaleTransform.ScaleY)"
                                          To="1" Duration="0:0:0.3" />
                             <Int32Animation Storyboard.TargetProperty="(Panel.ZIndex)"
-                                        To="0" Duration="0:0:0.01" />
+                                        To="0" Duration="0:0:0.001" />
                             <DoubleAnimation Storyboard.TargetProperty="(Border.Effect).(DropShadowEffect.Opacity)"
                                              To="0" Duration="0:0:0.3"/>
                         </Storyboard>
