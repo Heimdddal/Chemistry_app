@@ -21,7 +21,7 @@ namespace Chemistry_app.ViewModel
         {
             Foreground = Brushes.White,
             Background = (Brush)new BrushConverter().ConvertFrom("#66e39c"),
-            Content = "Сгенерировать сертификат",
+            Content = "Отправка сертефиката на почту",
             FontSize = 40,
             Margin = new Thickness(0, 100, 10, 0),
             MinHeight = 100,
@@ -81,13 +81,8 @@ namespace Chemistry_app.ViewModel
                 
         }
 
-        private async void GetCertificate_Click(object sender, RoutedEventArgs e)
+        private void GetCertificate_Click(object sender, RoutedEventArgs e)
         {
-
-            ((Button)sender).Content = "Отправка на почту...";
-
-            await Task.Delay(1);
-
 
             Random random = new Random();
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
