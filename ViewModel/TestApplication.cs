@@ -85,15 +85,19 @@ namespace Chemistry_app.ViewModel
             string jsonResult = $"{email}:{CountCorrectAnswers()}\n";
             string jsonFileText = File.ReadAllText("Assert\\results.json");
             var jsonStrArr = jsonFileText.Split('\n', '\r');
-            int index = jsonStrArr.Select((p, i) => new { value = p, indx = i }).Where(s => s.value.Split(':')[0] == userName)
-                .Select(x=>x.indx).First();
-
-            int oldResult = int.Parse(jsonStrArr[index].Split(':')[1]);
-            if (CountCorrectAnswers()>oldResult)
+            if (email != "guest@gmail.com")
             {
-                jsonStrArr[index] = jsonResult;
-                jsonFileText = string.Join("\n", jsonStrArr);
+                int index = jsonStrArr.Select((p, i) => new { value = p, indx = i }).Where(s => s.value.Split(':')[0] == email)
+               .Select(x => x.indx).First();
+
+                int oldResult = int.Parse(jsonStrArr[index].Split(':')[1]);
+                if (CountCorrectAnswers() > oldResult)
+                {
+                    jsonStrArr[index] = jsonResult;
+                    jsonFileText = string.Join("\n", jsonStrArr);
+                }
             }
+
             try
             {
                 File.WriteAllText("Assert\\results.json", jsonFileText);

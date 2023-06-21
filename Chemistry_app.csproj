@@ -132,6 +132,7 @@
     <Compile Include="EmailConfirmation.xaml.cs">
       <DependentUpon>EmailConfirmation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="LeaderBoardPage.cs" />
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +140,9 @@
     <Compile Include="Models\EmailSender.cs" />
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PageForLeaderBoard.xaml.cs">
+      <DependentUpon>PageForLeaderBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\Question.cs" />
     <Compile Include="PageForTest.xaml.cs">
@@ -195,6 +199,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="MendeleevTablePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PageForLeaderBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

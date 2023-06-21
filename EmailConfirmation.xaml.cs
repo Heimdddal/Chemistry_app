@@ -87,7 +87,7 @@ namespace Chemistry_app
                 Hide();
                 try
                 {
-                    File.AppendAllText("Assert\\results.json", $"{user.Email}:0");
+                    File.AppendAllText("Assert\\results.json", $"{user.Email}:0\n");
                 }
                 catch (Exception ex)
                 {

@@ -116,6 +116,13 @@ namespace Chemistry_app
             authorizationWindow.Show();
             this.Close();
         }
+
+        private void LeaderBoard_Click(object sender, RoutedEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new PageForLeaderBoard());
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonMetalActivityTable, "#66E39C");
+        }
     }
 }
 

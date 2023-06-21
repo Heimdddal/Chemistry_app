@@ -216,7 +216,7 @@
                             </Grid>
                         </StackPanel>
                     </Border>
-                    
+                    <Button Grid.Row="5" x:Name="LeaderBoard" Content="Таблица лидеров" Margin="10,10,10,10" Click="LeaderBoard_Click"></Button>
                 </Grid>
             </StackPanel>
         </Border>
