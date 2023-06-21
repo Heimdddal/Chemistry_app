@@ -46,7 +46,7 @@ namespace Chemistry_app
             };
 
             var radioButtonList = new List<RadioButton> { RadioButtonTrue, RadioButtonFalse1, RadioButtonFalse2, RadioButtonFalse3 };
-            Random random = new Random();
+            Random random = new Random(DateTime.Now.Millisecond);
             radioButtonList = radioButtonList.OrderBy(x => random.Next()).ToList();
 
             RadioButtonsGroup = new GroupBox()
