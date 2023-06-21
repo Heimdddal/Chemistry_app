@@ -10,13 +10,13 @@ namespace Chemistry_app.Models
     {
         public string Text { get; set; }
         public List<string> Options { get; set; }
-        public int CorrectAnswer { get; set; }
+        public int CorrectAnswerIndex { get; set; }
 
-        public Question(string text, List<string> options, int correctAnswer)
+        public Question(string text, List<string> options, int correctAnswerIndex)
         {
             Text = text;
             Options = options;
-            CorrectAnswer = correctAnswer;
+            CorrectAnswerIndex = correctAnswerIndex;
         }
     }
 
@@ -24,6 +24,7 @@ namespace Chemistry_app.Models
     {
         private List<Question> questions;
         private Random random;
+        private Question currentQuestion;
 
         public QuestionSelector(List<Question> questionList)
         {
@@ -45,27 +46,30 @@ namespace Chemistry_app.Models
                 int questionIndex = indexes[randomIndex];
                 indexes.RemoveAt(randomIndex);
 
-                Question question = questions[questionIndex];
-                List<string> shuffledOptions = ShuffleOptions(question.Options);
-                selectedQuestions.Add(new Question(question.Text, shuffledOptions, question.CorrectAnswer));
+                currentQuestion = questions[questionIndex];
+                ShuffleOptions(currentQuestion.Options);
+                selectedQuestions.Add(currentQuestion);
             }
 
             return selectedQuestions;
         }
 
-        private List<string> ShuffleOptions(List<string> options)
+        private void ShuffleOptions(List<string> options)
         {
-            List<string> shuffledOptions = new List<string>(options);
-            int n = shuffledOptions.Count;
+            int n = options.Count;
             while (n > 1)
             {
                 n--;
                 int k = random.Next(n + 1);
-                string value = shuffledOptions[k];
-                shuffledOptions[k] = shuffledOptions[n];
-                shuffledOptions[n] = value;
+                string value = options[k];
+                options[k] = options[n];
+                options[n] = value;
+
+                if (k == currentQuestion.CorrectAnswerIndex)
+                    currentQuestion.CorrectAnswerIndex = n;
+                else if (n == currentQuestion.CorrectAnswerIndex)
+                    currentQuestion.CorrectAnswerIndex = k;
             }
-            return shuffledOptions;
         }
     }
 }
