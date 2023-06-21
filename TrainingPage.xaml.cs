@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Chemistry_app.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,14 @@ namespace Chemistry_app
         public TrainingPage()
         {
             InitializeComponent();
+            List<Question> allQuestions = new List<Question>();
+            List<string> options1 = new List<string> { "Option 1", "Option 2", "Option 3", "Option 4" };
+            Question question1 = new Question("Question 1", options1, 2); // Правильный ответ - третий вариант
+            allQuestions.Add(question1);
+
+            QuestionSelector questionSelector = new QuestionSelector(allQuestions);
+
+            List<Question> selectedQuestions = questionSelector.SelectRandomQuestions(3);
         }
     }
 }
