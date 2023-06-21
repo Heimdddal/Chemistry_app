@@ -11,14 +11,18 @@
     <Grid>
         <materialDesign:Card
             Background="#363636"
-          Padding="4"
+            Padding="4"
             Height="200"
             Width="200"
-          UniformCornerRadius="14">
+            UniformCornerRadius="14">
+            <materialDesign:Card.Effect>
+                <DropShadowEffect ShadowDepth="20" BlurRadius="120" Opacity="2"/>
+            </materialDesign:Card.Effect>
             <ProgressBar
                 Height="100"
                 Width="100"
                 IsIndeterminate="True"
+                Foreground="{DynamicResource ActiveElements}"
                 Style="{StaticResource MaterialDesignCircularProgressBar}" />
         </materialDesign:Card>
     </Grid>

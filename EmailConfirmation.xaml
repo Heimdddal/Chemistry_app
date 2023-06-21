@@ -10,14 +10,22 @@
         Title="EmailConfirmation" Height="330" Width="400" Background="#242424" Foreground="White" FontSize="19">
     <Grid>
         <Border Margin="30" Background="#363636" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="30" Opacity="2"/>
+            </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Подтвердите адрес электронной почты"
                            Foreground="White"
                            FontSize="30" 
-                           Margin="5"
+                           Margin="10"
                            TextWrapping="Wrap"/>
 
-                <TextBox materialDesign:HintAssist.Hint="Код" FontSize="25" Name="textBoxCode" Margin="10"/>
+                <TextBox materialDesign:HintAssist.Hint="Код" 
+                         FontSize="25" 
+                         Name="textBoxCode" 
+                         Margin="10"
+                         BorderBrush="{DynamicResource ActiveElements}"/>
+                
                 <Button Content="Завершить"  
                         Click="Button_Click"
                         Background="#66E39C"

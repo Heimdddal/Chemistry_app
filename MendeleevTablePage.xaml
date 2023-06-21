@@ -3,12 +3,309 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Chemistry_app"
+      xmlns:local="clr-namespace:Chemistry_app.CustomProperties"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="620" d:DesignWidth="1080"
       Title="MendeleevTablePage">
-
-    <Grid>
+    <Page.Resources>
+        <Style TargetType="Border" x:Key="BorderForCell">
+            <Setter Property="BorderBrush" Value="{DynamicResource ActiveElements}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment" Value="Stretch"/>
+            <Setter Property="Margin" Value="2,2"/>
+        </Style>
         
+        
+
+            
+        <!--#region TextBlocks-->
+        <Style TargetType="TextBlock" x:Key="MedeleevCellMainStyle">
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="AtomicNumberStyle" BasedOn="{StaticResource MedeleevCellMainStyle}">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="ElementCharStyle" BasedOn="{StaticResource MedeleevCellMainStyle}">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="AtomicWeightStyle" BasedOn="{StaticResource MedeleevCellMainStyle}">
+            <Setter Property="FontSize" Value="8"/>
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="2"/>
+        </Style>
+        <!--#endregion-->
+        <!--#region Template-->
+        <ControlTemplate x:Key="Template" TargetType="local:MendeleevContentControl">
+            <Border Style="{StaticResource BorderForCell}">
+                <Grid Background="{DynamicResource UnactiveElementDarkTheme}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="1.5*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition ></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition ></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Style="{StaticResource AtomicNumberStyle}" Text="{Binding AtomicNumber}" Grid.Row="0" Grid.Column="0"></TextBlock>
+                    <TextBlock Style="{StaticResource ElementCharStyle}" Text="{TemplateBinding ContentStringFormat}" Grid.Row="1" Grid.Column="1"></TextBlock>
+                    <TextBlock Style="{StaticResource AtomicWeightStyle}" Text="{TemplateBinding AtomicWeight}" Grid.Row="2" Grid.Column="2"></TextBlock>
+                </Grid>
+            </Border>
+        </ControlTemplate>
+        <!--#endregion-->
+
+        <DataTemplate x:Key="MyDataTemplate">
+            <Border Style="{StaticResource BorderForCell}">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <TextBlock Style="{StaticResource AtomicNumberStyle}" Text="{Binding AtomicNumber}" Grid.Row="0"></TextBlock>
+                <TextBlock Style="{StaticResource ElementCharStyle}" Text="{Binding Symbol}" Grid.Row="1"></TextBlock>
+                <TextBlock Style="{StaticResource AtomicWeightStyle}" Text="{Binding AtomicWeight}" Grid.Row="2"></TextBlock>
+            </Grid>
+            </Border>
+        </DataTemplate>
+    </Page.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <!--#region FirstCol-->
+        <!--
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="1" Template="{StaticResource Template}" ContentStringFormat="H" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="2" Template="{StaticResource Template}" ContentStringFormat="Li" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="3" Template="{StaticResource Template}" ContentStringFormat="Na" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="4" Template="{StaticResource Template}" ContentStringFormat="K" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="5" Template="{StaticResource Template}" ContentStringFormat="Rb" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="6" Template="{StaticResource Template}" ContentStringFormat="Cs" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="1" Grid.Row="7" Template="{StaticResource Template}" ContentStringFormat="Fr" AtomicNumber="1" AtomicWeight="1"></local:MendeleevContentControl>
+        -->
+        <!--#endregion-->
+        <!--#region  SecondCol-->
+        <!--
+        <local:MendeleevContentControl Grid.Column="2" Grid.Row="2" Template="{StaticResource Template}" ContentStringFormat="Be" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="2" Grid.Row="3" Template="{StaticResource Template}" ContentStringFormat="Mg" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="2" Grid.Row="4" Template="{StaticResource Template}" ContentStringFormat="Ca" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="2" Grid.Row="5" Template="{StaticResource Template}" ContentStringFormat="Sr" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="2" Grid.Row="6" Template="{StaticResource Template}" ContentStringFormat="Ba" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="2" Grid.Row="7" Template="{StaticResource Template}" ContentStringFormat="Ra" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        -->
+        <!--#endregion-->
+        <!--#region ThirdCol-->
+        <!--
+        <local:MendeleevContentControl Grid.Column="3" Grid.Row="4" Template="{StaticResource Template}" ContentStringFormat="Sc" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="3" Grid.Row="5" Template="{StaticResource Template}" ContentStringFormat="Y" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="3" Grid.Row="6" Template="{StaticResource Template}"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="3" Grid.Row="7" Template="{StaticResource Template}"></local:MendeleevContentControl>
+        -->
+        <!--#endregion-->
+        <!--#region FourthCol-->
+        <!--
+        <local:MendeleevContentControl Grid.Column="4" Grid.Row="4" Template="{StaticResource Template}" ContentStringFormat="Ti" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="4" Grid.Row="5" Template="{StaticResource Template}" ContentStringFormat="Zr" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="4" Grid.Row="6" Template="{StaticResource Template}" ContentStringFormat="Hf" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="4" Grid.Row="7" Template="{StaticResource Template}" ContentStringFormat="Rf" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        -->
+        <!--#endregion-->
+        <!--#region FifthCol-->
+        <!--
+        <local:MendeleevContentControl Grid.Column="5" Grid.Row="4" Template="{StaticResource Template}" ContentStringFormat="V" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="5" Grid.Row="5" Template="{StaticResource Template}" ContentStringFormat="Nb" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="5" Grid.Row="6" Template="{StaticResource Template}" ContentStringFormat="Ta" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="5" Grid.Row="7" Template="{StaticResource Template}" ContentStringFormat="Db" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        -->
+        <!--#endregion-->
+        <!--#region SixthCol-->
+        <!--
+        <local:MendeleevContentControl Grid.Column="6" Grid.Row="4" Template="{StaticResource Template}" ContentStringFormat="V" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="6" Grid.Row="5" Template="{StaticResource Template}" ContentStringFormat="V" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="6" Grid.Row="6" Template="{StaticResource Template}" ContentStringFormat="V" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        <local:MendeleevContentControl Grid.Column="6" Grid.Row="7" Template="{StaticResource Template}" ContentStringFormat="V" AtomicNumber="4" AtomicWeight="1"></local:MendeleevContentControl>
+        -->
+        <!--#endregion-->
+
+        <ContentPresenter Content="{Binding Elements[0]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="1" Grid.Column="1"/>
+        <ContentPresenter Content="{Binding Elements[2]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="1"/>
+        <ContentPresenter Content="{Binding Elements[10]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="1"/>
+        <ContentPresenter Content="{Binding Elements[18]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="1"/>
+        <ContentPresenter Content="{Binding Elements[36]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="1"/>
+        <ContentPresenter Content="{Binding Elements[54]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="1"/>
+        <ContentPresenter Content="{Binding Elements[86]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="1"/>
+
+
+        <ContentPresenter Content="{Binding Elements[3]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="2"/>
+        <ContentPresenter Content="{Binding Elements[11]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="2"/>
+        <ContentPresenter Content="{Binding Elements[19]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="2"/>
+        <ContentPresenter Content="{Binding Elements[36]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="2"/>
+        <ContentPresenter Content="{Binding Elements[55]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="2"/>
+        <ContentPresenter Content="{Binding Elements[87]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="2"/>
+
+        <ContentPresenter Content="{Binding Elements[20]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="3"/>
+        <ContentPresenter Content="{Binding Elements[35]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="3"/>
+        <Border Style="{StaticResource BorderForCell}" Grid.Column="3" Grid.Row="6"/>
+        <Border Style="{StaticResource BorderForCell}" Grid.Column="3" Grid.Row="7"/>
+
+        <ContentPresenter Content="{Binding Elements[21]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="4"/>
+        <ContentPresenter Content="{Binding Elements[39]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="4"/>
+        <ContentPresenter Content="{Binding Elements[71]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="4"/>
+        <ContentPresenter Content="{Binding Elements[103]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="4"/>
+
+        <ContentPresenter Content="{Binding Elements[22]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="5"/>
+        <ContentPresenter Content="{Binding Elements[40]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="5"/>
+        <ContentPresenter Content="{Binding Elements[72]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="5"/>
+        <ContentPresenter Content="{Binding Elements[104]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="5"/>
+
+        <ContentPresenter Content="{Binding Elements[23]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="6"/>
+        <ContentPresenter Content="{Binding Elements[41]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="6"/>
+        <ContentPresenter Content="{Binding Elements[73]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="6"/>
+        <ContentPresenter Content="{Binding Elements[105]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="6"/>
+
+        <ContentPresenter Content="{Binding Elements[24]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="7"/>
+        <ContentPresenter Content="{Binding Elements[42]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="7"/>
+        <ContentPresenter Content="{Binding Elements[74]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="7"/>
+        <ContentPresenter Content="{Binding Elements[106]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="7"/>
+
+        <ContentPresenter Content="{Binding Elements[25]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="8"/>
+        <ContentPresenter Content="{Binding Elements[43]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="8"/>
+        <ContentPresenter Content="{Binding Elements[75]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="8"/>
+        <ContentPresenter Content="{Binding Elements[107]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="8"/>
+
+        <ContentPresenter Content="{Binding Elements[26]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="9"/>
+        <ContentPresenter Content="{Binding Elements[44]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="9"/>
+        <ContentPresenter Content="{Binding Elements[76]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="9"/>
+        <ContentPresenter Content="{Binding Elements[108]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="9"/>
+
+        <ContentPresenter Content="{Binding Elements[27]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="10"/>
+        <ContentPresenter Content="{Binding Elements[45]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="10"/>
+        <ContentPresenter Content="{Binding Elements[77]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="10"/>
+        <ContentPresenter Content="{Binding Elements[109]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="10"/>
+
+        <ContentPresenter Content="{Binding Elements[28]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="11"/>
+        <ContentPresenter Content="{Binding Elements[46]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="11"/>
+        <ContentPresenter Content="{Binding Elements[78]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="11"/>
+        <ContentPresenter Content="{Binding Elements[110]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="11"/>
+
+        <ContentPresenter Content="{Binding Elements[29]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="12"/>
+        <ContentPresenter Content="{Binding Elements[47]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="12"/>
+        <ContentPresenter Content="{Binding Elements[79]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="12"/>
+        <ContentPresenter Content="{Binding Elements[111]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="12"/>
+
+        <ContentPresenter Content="{Binding Elements[4]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[12]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[30]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[48]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[80]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[112]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="13"/>
+
+        <ContentPresenter Content="{Binding Elements[5]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[13]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[31]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[49]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[81]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[113]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="14"/>
+
+        <ContentPresenter Content="{Binding Elements[6]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[14]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[32]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[50]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[82]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[116]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="15"/>
+
+        <ContentPresenter Content="{Binding Elements[7]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[15]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[33]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[51]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[83]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[115]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="16"/>
+
+        <ContentPresenter Content="{Binding Elements[8]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[16]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[34]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[52]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[84]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[116]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="17"/>
+
+        <ContentPresenter Content="{Binding Elements[1]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="1" Grid.Column="18"/>
+        <ContentPresenter Content="{Binding Elements[9]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="2" Grid.Column="18"/>
+        <ContentPresenter Content="{Binding Elements[17]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="3" Grid.Column="18"/>
+        <ContentPresenter Content="{Binding Elements[35]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="4" Grid.Column="18"/>
+        <ContentPresenter Content="{Binding Elements[53]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="5" Grid.Column="18"/>
+        <ContentPresenter Content="{Binding Elements[85]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="6" Grid.Column="18"/>
+        <ContentPresenter Content="{Binding Elements[117]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="7" Grid.Column="18"/>
+
+        <ContentPresenter Content="{Binding Elements[56]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="4"/>
+        <ContentPresenter Content="{Binding Elements[57]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="5"/>
+        <ContentPresenter Content="{Binding Elements[58]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="6"/>
+        <ContentPresenter Content="{Binding Elements[59]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="7"/>
+        <ContentPresenter Content="{Binding Elements[60]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="8"/>
+        <ContentPresenter Content="{Binding Elements[61]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="9"/>
+        <ContentPresenter Content="{Binding Elements[62]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="10"/>
+        <ContentPresenter Content="{Binding Elements[63]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="11"/>
+        <ContentPresenter Content="{Binding Elements[64]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="12"/>
+        <ContentPresenter Content="{Binding Elements[65]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[66]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[67]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[68]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[69]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[70]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="8" Grid.Column="18"/>
+
+        <ContentPresenter Content="{Binding Elements[88]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="4"/>
+        <ContentPresenter Content="{Binding Elements[89]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="5"/>
+        <ContentPresenter Content="{Binding Elements[90]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="6"/>
+        <ContentPresenter Content="{Binding Elements[91]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="7"/>
+        <ContentPresenter Content="{Binding Elements[92]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="8"/>
+        <ContentPresenter Content="{Binding Elements[93]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="9"/>
+        <ContentPresenter Content="{Binding Elements[94]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="10"/>
+        <ContentPresenter Content="{Binding Elements[95]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="11"/>
+        <ContentPresenter Content="{Binding Elements[96]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="12"/>
+        <ContentPresenter Content="{Binding Elements[97]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="13"/>
+        <ContentPresenter Content="{Binding Elements[98]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="14"/>
+        <ContentPresenter Content="{Binding Elements[99]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="15"/>
+        <ContentPresenter Content="{Binding Elements[100]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="16"/>
+        <ContentPresenter Content="{Binding Elements[101]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="17"/>
+        <ContentPresenter Content="{Binding Elements[102]}" ContentTemplate="{StaticResource MyDataTemplate}" Grid.Row="9" Grid.Column="18"/>
     </Grid>
 </Page>

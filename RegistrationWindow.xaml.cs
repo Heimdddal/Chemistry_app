@@ -180,20 +180,6 @@ namespace Chemistry_app
             }
         }
 
-        private void PasswordRepeat_Changed(object sender, RoutedEventArgs e)
-        {
-            string repeatePassword;
-            repeatePassword = textBoxRepeatPassword.Password;
-            if (repeatePassword != Password) {
-                textBoxRepeatPassword.ToolTip = "Пароль не совпадает";
-                textBoxRepeatPassword.BorderBrush = Brushes.Red;
-            }
-            else
-            {
-                textBoxRepeatPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
-            }
-        }
-
         private void Password_Changed(object sender, RoutedEventArgs e)
         {
             string password;
@@ -203,9 +189,23 @@ namespace Chemistry_app
                 textBoxPassword.ToolTip = "Неверный пароль (Длина меньше 5 символов)";
                 textBoxPassword.BorderBrush = Brushes.Red;
             }
-            else { 
+            else {
+                textBoxPassword.ToolTip = null;
                 textBoxPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements"); 
                 Password = password;
+            }
+
+            string repeatePassword;
+            repeatePassword = textBoxRepeatPassword.Password;
+            if (repeatePassword != Password)
+            {
+                textBoxRepeatPassword.ToolTip = "Пароль не совпадает";
+                textBoxRepeatPassword.BorderBrush = Brushes.Red;
+            }
+            else
+            {
+                textBoxRepeatPassword.ToolTip = null;
+                textBoxRepeatPassword.SetResourceReference(Control.BorderBrushProperty, "ActiveElements");
             }
         }
     }
