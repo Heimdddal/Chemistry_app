@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="TrainingPage">
 
-    <Grid>
+    <Grid x:Name="TrainingGrid">
         
     </Grid>
 </Page>
