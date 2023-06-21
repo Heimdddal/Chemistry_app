@@ -282,10 +282,10 @@ namespace Chemistry_app
             Button nextQuestionButton = new Button
             {
                 Content = "Next Question",
-                Width = 200,
+                Width = 300,
                 Foreground = Brushes.White,
                 FontSize = 15,
-                Height = 60,
+                Height = 50,
                 Margin = new Thickness(10),
             };
             mainPanel.Children.Add(nextQuestionButton);
