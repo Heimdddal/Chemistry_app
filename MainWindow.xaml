@@ -138,7 +138,7 @@
                                 PreviewMouseLeftButtonDown="ButtonMendeleevTable_Click"
                                 Cursor="Hand"
                                 Height="35"
-                                Width="260"
+                                Width="240"
                                 x:Name="ButtonMendeleevTable">
                             <TextBlock Text="Таблица менделеева"
                                        FontSize="14"
@@ -148,7 +148,7 @@
                                 PreviewMouseLeftButtonDown="ButtonSolubillityTable_Click"
                                 Cursor="Hand"
                                 Height="35"
-                                Width="260"
+                                Width="240"
                                 x:Name="ButtonSolubillityTable">
                             <TextBlock Text="Таблица растворимости"
                                        FontSize="14"
@@ -159,7 +159,7 @@
                                 x:Name="ButtonMetalActivityTable"
                                 Cursor="Hand"
                                 Height="35"
-                                Width="260">
+                                Width="240">
                             <TextBlock Text="Таблица активности металлов"
                                        FontSize="14"
                                        Margin="5"/>
