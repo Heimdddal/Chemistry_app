@@ -39,7 +39,7 @@ namespace Chemistry_app
             textBoxEmailUser.Text = user.Email;
             SetButtonBackground(ButtonTheory, "#66E39C");
             FrameNavigator.MainFrame = MainFrame;
-            FrameNavigator.MainFrame.Navigate(new TheorysPage());
+            FrameNavigator.MainFrame.Navigate(new TrainingPage());
         }
         private void SetButtonBackground(System.Windows.Controls.Border button, string colorCode)
         {

@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Chemistry_app.Models
 {
-    public class Question
+    public class Questions
     {
         public string Text { get; set; }
         public List<string> Options { get; set; }
         public int CorrectAnswerIndex { get; set; }
 
-        public Question(string text, List<string> options, int correctAnswerIndex)
+        public Questions(string text, List<string> options, int correctAnswerIndex)
         {
             Text = text;
             Options = options;
@@ -22,22 +22,22 @@ namespace Chemistry_app.Models
 
     public class QuestionSelector
     {
-        private List<Question> questions;
+        private List<Questions> questions;
         private Random random;
-        private Question currentQuestion;
+        private Questions currentQuestion;
 
-        public QuestionSelector(List<Question> questionList)
+        public QuestionSelector(List<Questions> questionList)
         {
             questions = questionList;
             random = new Random();
         }
 
-        public List<Question> SelectRandomQuestions(int count)
+        public List<Questions> SelectRandomQuestions(int count)
         {
             if (count <= 0 || count > questions.Count)
                 throw new ArgumentException("Invalid count");
 
-            List<Question> selectedQuestions = new List<Question>();
+            List<Questions> selectedQuestions = new List<Questions>();
 
             List<int> indexes = Enumerable.Range(0, questions.Count).ToList();
             for (int i = 0; i < count; i++)

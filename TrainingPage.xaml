@@ -9,6 +9,25 @@
       Title="TrainingPage">
 
     <Grid x:Name="TrainingGrid">
-        
+        <StackPanel>
+            <Slider x:Name="sld"
+                            Maximum="37"
+                            Minimum="1"
+                            Value="18"
+                            HorizontalAlignment="Left"
+                            MinWidth="280"
+                            IsSnapToTickEnabled = "True"
+                            TickFrequency = "1"
+                            Panel.ZIndex="2"
+                            VerticalAlignment="Center"
+                            Margin="10,0,0,0"
+                            ></Slider>
+        <TextBlock Text="{Binding ElementName=sld, Path=Value, Mode=TwoWay}"
+                               x:Name="textBoxAge"
+                                FontSize="40"
+                               HorizontalAlignment="Right"
+                               Margin="0,0,10,0"/>
+        <Button x:Name="StartTrainig" Click="StartTrainig_Click"/>
+        </StackPanel>
     </Grid>
 </Page>
