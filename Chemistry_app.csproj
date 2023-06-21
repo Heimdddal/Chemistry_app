@@ -139,6 +139,7 @@
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Question.cs" />
     <Compile Include="PageForTest.xaml.cs">
       <DependentUpon>PageForTest.xaml</DependentUpon>
     </Compile>
