@@ -8,14 +8,17 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
         xmlns:local="clr-namespace:Chemistry_app"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="RegistrationWindow" Height="600" Width="400" Background="#242424" Foreground="White" FontSize="19">
+        Title="RegistrationWindow" Height="615" Width="400" Background="#242424" Foreground="White" FontSize="19">
     <Grid>
         <Border Margin="20" Background="#363636" CornerRadius="10">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="30" Opacity="2"/>
+            </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Регистрация" 
                            Foreground="{DynamicResource TextColor}"
                            FontSize="30" 
-                           Margin="5"/>
+                           Margin="10"/>
                 <TextBox x:Name="textBoxName" 
                          BorderBrush="{DynamicResource UnderLineLight}"
                          Foreground="{DynamicResource TextColor}"
@@ -38,7 +41,7 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                          Foreground="#60FFFFFF"/>
                 
                 <StackPanel
-                  Margin="4"
+                  Margin="10"
                   Orientation="Horizontal">
                     <RadioButton
                         x:Name="MaleRadioButton"
@@ -110,24 +113,29 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                              PasswordChanged="Password_Changed"
                              CaretBrush="{DynamicResource ActiveElements}"
                              SelectionBrush="{DynamicResource UnderLineLight}"
-                             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
-                             />
+                             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"/>
+                
                 <PasswordBox Name="textBoxRepeatPassword" 
                              Margin="10" 
                              BorderBrush="{DynamicResource ActiveElements}"
                              Foreground="{DynamicResource TextColor}" 
                              materialDesign:HintAssist.Hint ="Повторите пароль" 
-                             PasswordChanged="PasswordRepeat_Changed"
+                             PasswordChanged="Password_Changed"
                              CaretBrush="{DynamicResource ActiveElements}"
                              SelectionBrush="{DynamicResource UnderLineLight}"
-                             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
-                             />
+                             materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"/>
+
                 <Button Content="Регистрация" 
                         Click="ButtonRegistration_Click"
                         Background="#66E39C"
                         MinHeight="40"
+                        BorderBrush="White"
                         materialDesign:ButtonAssist.CornerRadius ="10"
-                        Margin="10,0,10,0"/>
+                        Margin="10,0,10,0">
+                    <Button.Effect>
+                        <DropShadowEffect ShadowDepth="0" BlurRadius="20" Opacity="0.3"/>
+                    </Button.Effect>
+                </Button>
                 <TextBlock Text="Назад" 
                             Cursor="Hand" 
                             MaxWidth="1000" 
