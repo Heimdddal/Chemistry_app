@@ -9,7 +9,7 @@
       Title="TrainingPage">
 
     <Grid x:Name="TrainingGrid">
-        <StackPanel>
+        <StackPanel x:Name="TrainingStackPanel">
             <Slider x:Name="sld"
                             Maximum="37"
                             Minimum="1"

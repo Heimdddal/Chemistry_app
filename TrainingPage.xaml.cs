@@ -23,10 +23,15 @@ namespace Chemistry_app
     public partial class TrainingPage : Page
     {
         QuestionSelector questionSelector { get; set; }
+
+        private List<Questions> questions;
+
+        private int currentQuestionIndex;
         public TrainingPage()
         {
             InitializeComponent();
             List<Questions> questions = new List<Questions>();
+
             #region Вопросы
             questions.Add(new Questions(
             "Что изучает химия?",
@@ -210,20 +215,86 @@ namespace Chemistry_app
             0 // индекс правильного ответа (в данном случае, "Таблицу соответствий ионов, которая показывает, какие ионы способны вытеснять друг друга")
             ));
             #endregion
+            currentQuestionIndex = 0;
             questionSelector = new QuestionSelector(questions);
-
         }
-
         private void StartTrainig_Click(object sender, RoutedEventArgs e)
         {
             
             int countQuestions;
             countQuestions = int.Parse(textBoxAge.Text);
-            List<Questions> selectedQuestions = questionSelector.SelectRandomQuestions(countQuestions);
-            foreach (Questions question in selectedQuestions)
+            questions = questionSelector.SelectRandomQuestions(countQuestions);
+            TrainingStackPanel.Visibility = Visibility.Collapsed;
+            DisplayCurrentQuestion();
+        }
+        private void NextQuestionButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Переключение на следующий вопрос
+            currentQuestionIndex++;
+            if (currentQuestionIndex >= questions.Count)
             {
-                MessageBox.Show($"{question.Text}\n {question.Options[0]}\n {question.Options[1]}\n {question.Options[2]}\n {question.Options[3]} \n {question.CorrectAnswerIndex}");
+                MessageBox.Show("Все");
             }
+
+            // Отображение нового текущего вопроса
+            DisplayCurrentQuestion();
+        }
+        
+        private void DisplayCurrentQuestion()
+        {
+            StackPanel mainPanel = new StackPanel();
+            // Получение текущего вопроса
+            Questions currentQuestion = questions[currentQuestionIndex];
+
+            // Очистка содержимого панели
+            mainPanel.Children.Clear();
+
+            // Создание элементов для вывода текущего вопроса и вариантов ответа
+            TextBlock questionTextBlock = new TextBlock
+            {
+                Text = currentQuestion.Text,
+                Foreground = Brushes.White,
+                Margin = new Thickness(10),
+                FontWeight = FontWeights.Bold,
+                FontSize = 20
+            };
+
+            List<RadioButton> optionRadioButtons = new List<RadioButton>();
+            foreach (string option in currentQuestion.Options)
+            {
+                RadioButton optionRadioButton = new RadioButton
+                {
+                    Content = option,
+                    Foreground = Brushes.White,
+                    FontSize = 15,
+                    Margin = new Thickness(10)
+                };
+                optionRadioButtons.Add(optionRadioButton);
+            }
+
+            // Добавление элементов на панель
+            mainPanel.Children.Add(questionTextBlock);
+            foreach (RadioButton optionRadioButton in optionRadioButtons)
+            {
+                mainPanel.Children.Add(optionRadioButton);
+            }
+
+            Button nextQuestionButton = new Button
+            {
+                Content = "Next Question",
+                Width = 300,
+                Foreground = Brushes.White,
+                FontSize = 15,
+                Height = 50,
+                Margin = new Thickness(10),
+            };
+            mainPanel.Children.Add(nextQuestionButton);
+
+            nextQuestionButton.Click += NextQuestionButton_Click;
+            Grid mainGrid = new Grid();
+            this.Content = mainGrid;
+            mainGrid.Children.Add(mainPanel);
+            mainPanel.Visibility = Visibility.Visible;
         }
     }
 }
