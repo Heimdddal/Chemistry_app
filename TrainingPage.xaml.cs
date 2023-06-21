@@ -27,7 +27,7 @@ namespace Chemistry_app
         {
             InitializeComponent();
             List<Questions> questions = new List<Questions>();
-
+            #region Вопросы
             questions.Add(new Questions(
             "Что изучает химия?",
             new List<string> { "Состав, свойства и превращения вещества", "Астрономию", "Математику", "Биологию" },
@@ -209,7 +209,7 @@ namespace Chemistry_app
             new List<string> { "Таблицу соответствий ионов, которая показывает, какие ионы способны вытеснять друг друга", "Температуру реакции", "Массу вещества", "Расположение элементов в периодической таблице" },
             0 // индекс правильного ответа (в данном случае, "Таблицу соответствий ионов, которая показывает, какие ионы способны вытеснять друг друга")
             ));
-
+            #endregion
             questionSelector = new QuestionSelector(questions);
 
         }
