@@ -11,7 +11,7 @@
       Title="Page1">
 
     <Grid
-      TextElement.FontSize="24"
+      TextElement.FontSize="20"
       TextBlock.Foreground="#FFFFFF"
       TextBlock.TextAlignment="Center"
       TextBlock.FontStretch="UltraCondensed"
@@ -46,853 +46,851 @@
                     materialDesign:TextFieldAssist.UnderlineBrush="{DynamicResource UnderLineLight}"
                     ></TextBox>
             </Grid>
-            <ScrollViewer VerticalScrollBarVisibility="Visible">
 
 
-                <Grid
+            <Grid
              Background="{DynamicResource UnactiveElementDarkTheme}"
              Margin="10,0,10,0"
              MinHeight="670"
              >
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="1.1*"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <!--#region Borders-->
-                    <materialDesign:ColorZone x:Name="I" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Br" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Cl" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="NO3" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="SO3" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="SO4" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="F" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="NO2" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="HCOO" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="CH2COO" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="PO4" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="CO3" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="S" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="SiO3" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="OH" Grid.Column="0" Grid.Row="15" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <!---->
-                    <materialDesign:ColorZone x:Name="K" Grid.Column="1" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Na" Grid.Column="2" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Ba" Grid.Column="3" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Ca" Grid.Column="4" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="NH4" Grid.Column="5" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Ag" Grid.Column="6" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Mg" Grid.Column="7" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Pb" Grid.Column="8" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Mn" Grid.Column="9" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Fe2" Grid.Column="10" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Zn" Grid.Column="11" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Cu" Grid.Column="12" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Hg" Grid.Column="13" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Al" Grid.Column="14" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Cr" Grid.Column="15" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="Fe3" Grid.Column="16" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
-                    <materialDesign:ColorZone x:Name="H" Grid.Column="17" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1.1*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <!--#region Borders-->
+                <materialDesign:ColorZone x:Name="I" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Br" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Cl" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="NO3" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="SO3" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="SO4" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="F" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="NO2" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="HCOO" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="CH2COO" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="PO4" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="CO3" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="S" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="SiO3" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="OH" Grid.Column="0" Grid.Row="15" Grid.ColumnSpan="18" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <!---->
+                <materialDesign:ColorZone x:Name="K" Grid.Column="1" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Na" Grid.Column="2" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Ba" Grid.Column="3" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Ca" Grid.Column="4" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="NH4" Grid.Column="5" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Ag" Grid.Column="6" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Mg" Grid.Column="7" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Pb" Grid.Column="8" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Mn" Grid.Column="9" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Fe2" Grid.Column="10" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Zn" Grid.Column="11" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Cu" Grid.Column="12" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Hg" Grid.Column="13" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Al" Grid.Column="14" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Cr" Grid.Column="15" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="Fe3" Grid.Column="16" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
+                <materialDesign:ColorZone x:Name="H" Grid.Column="17" Grid.Row="0" Grid.RowSpan="16" VerticalAlignment="Stretch"  BorderBrush="#00000000" Panel.ZIndex="2" BorderThickness="1" Background="#00000000"/>
 
-                    <!--#endregion-->
-                    <!--#region Анионы-->
-                    <!--Левый столбец анионов-->
-                    <TextBlock Grid.Row="1">
+                <!--#endregion-->
+                <!--#region Анионы-->
+                <!--Левый столбец анионов-->
+                <TextBlock Grid.Row="1">
                     <Span>
                         I
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="2">
+                </TextBlock>
+                <TextBlock Grid.Row="2">
                     <Span>
                         Br
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="3">
+                </TextBlock>
+                <TextBlock Grid.Row="3">
                     <Span>
                         Cl
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="4">
+                </TextBlock>
+                <TextBlock Grid.Row="4">
                     <Span>
                         <Run Text="NO"/>
                         <Run Text="3" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="5">
+                </TextBlock>
+                <TextBlock Grid.Row="5">
                     <Span>
                         <Run Text="SO"/>
                         <Run Text="3" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="6">
+                </TextBlock>
+                <TextBlock Grid.Row="6">
                     <Span>
                         <Run Text="SO"/>
                         <Run Text="4" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="7">
+                </TextBlock>
+                <TextBlock Grid.Row="7">
                     <Span>
                         <Run Text="F"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="8">
+                </TextBlock>
+                <TextBlock Grid.Row="8">
                     <Span>
                         <Run Text="NO"/>
                         <Run Text="2" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="9">
+                </TextBlock>
+                <TextBlock Grid.Row="9">
                     <Span>
                         <Run Text="HCOO"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="10" >
+                </TextBlock>
+                <TextBlock Grid.Row="10" >
                     <Span>
                         <Run Text="CH"/>
                         <Run Text="2" FontSize="16"/>
                         <Run Text="COO"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="11">
+                </TextBlock>
+                <TextBlock Grid.Row="11">
                     <Span>
                         <Run Text="PO"/>
                         <Run Text="4" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">3-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="12">
+                </TextBlock>
+                <TextBlock Grid.Row="12">
                     <Span>
                         <Run Text="CO"/>
                         <Run Text="3" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="13">
+                </TextBlock>
+                <TextBlock Grid.Row="13">
                     <Span>
                         <Run Text="S"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="14">
+                </TextBlock>
+                <TextBlock Grid.Row="14">
                     <Span>
                         <Run Text="SiO"/>
                         <Run Text="3" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2-</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Row="15">
+                </TextBlock>
+                <TextBlock Grid.Row="15">
                     <Span>
                         <Run Text="OH"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">-</Span>
                     </Span>
-                    </TextBlock>
-                    <!--#endregion-->
-                    <!--#region Катионы-->
-                    <!--Верхняя строка катионов-->
-                    <TextBlock Grid.Column="1">
+                </TextBlock>
+                <!--#endregion-->
+                <!--#region Катионы-->
+                <!--Верхняя строка катионов-->
+                <TextBlock Grid.Column="1">
                     <Span>
                         <Run Text="K"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="2">
+                </TextBlock>
+                <TextBlock Grid.Column="2">
                     <Span>
                         <Run Text="Na"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="3">
+                </TextBlock>
+                <TextBlock Grid.Column="3">
                     <Span>
                         <Run Text="Ba"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="4">
+                </TextBlock>
+                <TextBlock Grid.Column="4">
                     <Span>
                         <Run Text="Ca"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="5">
+                </TextBlock>
+                <TextBlock Grid.Column="5">
                     <Span>
                         <Run Text="NH"/>
                         <Run Text="4" FontSize="16"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="6">
+                </TextBlock>
+                <TextBlock Grid.Column="6">
                     <Span>
                         <Run Text="Ag"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="7">
+                </TextBlock>
+                <TextBlock Grid.Column="7">
                     <Span>
                         <Run Text="Mg"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="8">
+                </TextBlock>
+                <TextBlock Grid.Column="8">
                     <Span>
                         <Run Text="Pb"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="9">
+                </TextBlock>
+                <TextBlock Grid.Column="9">
                     <Span>
                         <Run Text="Mn"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="10">
+                </TextBlock>
+                <TextBlock Grid.Column="10">
                     <Span>
                         <Run Text="Fe"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="11">
+                </TextBlock>
+                <TextBlock Grid.Column="11">
                     <Span>
                         <Run Text="Zn"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="12">
+                </TextBlock>
+                <TextBlock Grid.Column="12">
                     <Span>
                         <Run Text="Cu"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="13">
+                </TextBlock>
+                <TextBlock Grid.Column="13">
                     <Span>
                         <Run Text="Hg"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">2+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="14">
+                </TextBlock>
+                <TextBlock Grid.Column="14">
                     <Span>
                         <Run Text="Al"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">3+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="15">
+                </TextBlock>
+                <TextBlock Grid.Column="15">
                     <Span>
                         <Run Text="Cr"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">3+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="16">
+                </TextBlock>
+                <TextBlock Grid.Column="16">
                     <Span>
                         <Run Text="Fe"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">3+</Span>
                     </Span>
-                    </TextBlock>
-                    <TextBlock Grid.Column="17">
+                </TextBlock>
+                <TextBlock Grid.Column="17">
                     <Span>
                         <Run Text="H"/>
                         <Span BaselineAlignment="Superscript" FontSize="16">+</Span>
                     </Span>
-                    </TextBlock>
-                    <!--#endregion-->
-                    <!--#region  Йод-->
-                    <!--Знаки растворимости йода-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Н" Grid.Row="1" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="1" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="-" Grid.Row="1" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Н" Grid.Row="1" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="-" Grid.Row="1" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="1" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Бром-->
-                    <!--Знаки растворимости брома-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Н" Grid.Row="2" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="М" Grid.Row="2" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="М" Grid.Row="2" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="2" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Хлор-->
-                    <!--Знаки растворимости хлора-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Н" Grid.Row="3" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="М" Grid.Row="3" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="3" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Азотная кислота-->
-                    <!--Знаки растворимости азотной кислоты-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="4" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Сернистая кислота-->
-                    <!--Знаки растворимости Сернистой кислоты-->
-                    <TextBlock Text="Р" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="М" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="М" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="5" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="М" Grid.Row="5" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="М" Grid.Row="5" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="5" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Н" Grid.Row="5" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="М" Grid.Row="5" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="М" Grid.Row="5" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="-" Grid.Row="5" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="-" Grid.Row="5" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="-" Grid.Row="5" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="-" Grid.Row="5" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="-" Grid.Row="5" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="5" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Серная кислота-->
-                    <!--Знаки растворимости Серной2 кислоты-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Н" Grid.Row="6" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="М" Grid.Row="6" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="М" Grid.Row="6" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="6" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="6" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Фтор-->
-                    <!--Знаки растворимости Фтора-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="М" Grid.Row="7" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Н" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="р" Grid.Row="7" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="р" Grid.Row="7" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Н" Grid.Row="7" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="7" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="М" Grid.Row="7" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="-" Grid.Row="7" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="М" Grid.Row="7" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="М" Grid.Row="7" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="7" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Азотистая кислота-->
-                    <!--Знаки растворимости азотистой кислоты-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="М" Grid.Row="8" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="-" Grid.Row="8" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="8" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Муарвьиная кислота-->
-                    <!--Знаки растворимости муравьиной кислоты-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="9" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Уксусная кислота-->
-                    <!--Знаки растворимости уксусной кислоты-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="10" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Фосфорная кислота-->
-                    <!--Знаки растворимости фосфорной кислоты-->
-                    <TextBlock Text="Р" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="11" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="11" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Н" Grid.Row="11" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="11" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Карбоновая кислота-->
-                    <!--Знаки растворимости карбоновая кислоты-->
-                    <TextBlock Text="Р" Grid.Row="12" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="12" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="12" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Н" Grid.Row="12" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="-" Grid.Row="12" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="-" Grid.Row="12" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="-" Grid.Row="12" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="12" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Сероводородная кислота-->
-                    <!--Знаки растворимости сероводородной кислоты-->
-                    <TextBlock Text="Р" Grid.Row="13" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="13" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="13" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="М" Grid.Row="13" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="13" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="-" Grid.Row="13" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="Н" Grid.Row="13" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="-" Grid.Row="13" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="-" Grid.Row="13" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="-" Grid.Row="13" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="13" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Кремниевая кислота-->
-                    <!--Знаки растворимости кремниевой кислоты-->
-                    <TextBlock Text="Р" Grid.Row="14" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="14" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="-" Grid.Row="14" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="-" Grid.Row="14" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Н" Grid.Row="14" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="-" Grid.Row="14" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="-" Grid.Row="14" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="-" Grid.Row="14" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="-" Grid.Row="14" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Р" Grid.Row="14" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                    <!--#region  Вода-->
-                    <!--Знаки растворимости воды-->
-                    <TextBlock Text="Р" Grid.Row="15" Grid.Column="1" VerticalAlignment="Center"/>
-                    <!--K-->
-                    <TextBlock Text="Р" Grid.Row="15" Grid.Column="2" VerticalAlignment="Center"/>
-                    <!--Na-->
-                    <TextBlock Text="Р" Grid.Row="15" Grid.Column="3" VerticalAlignment="Center"/>
-                    <!--Ba-->
-                    <TextBlock Text="М" Grid.Row="15" Grid.Column="4" VerticalAlignment="Center"/>
-                    <!--Ca-->
-                    <TextBlock Text="Р" Grid.Row="15" Grid.Column="5" VerticalAlignment="Center"/>
-                    <!--NH-->
-                    <TextBlock Text="-" Grid.Row="15" Grid.Column="6" VerticalAlignment="Center"/>
-                    <!--Ag-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="7" VerticalAlignment="Center"/>
-                    <!--Mg-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="8" VerticalAlignment="Center"/>
-                    <!--Pb-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="9" VerticalAlignment="Center"/>
-                    <!--Mn-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="10" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="11" VerticalAlignment="Center"/>
-                    <!--Zn-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="12" VerticalAlignment="Center"/>
-                    <!--Cu-->
-                    <TextBlock Text="-" Grid.Row="15" Grid.Column="13" VerticalAlignment="Center"/>
-                    <!--Hg-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="14" VerticalAlignment="Center"/>
-                    <!--Al-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="15" VerticalAlignment="Center"/>
-                    <!--Cr-->
-                    <TextBlock Text="Н" Grid.Row="15" Grid.Column="16" VerticalAlignment="Center"/>
-                    <!--Fe-->
-                    <TextBlock Text="H2O" Grid.Row="15" Grid.Column="17" VerticalAlignment="Center"/>
-                    <!--H-->
-                    <!--#endregion-->
-                </Grid>
-            </ScrollViewer>
+                </TextBlock>
+                <!--#endregion-->
+                <!--#region  Йод-->
+                <!--Знаки растворимости йода-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Н" Grid.Row="1" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="1" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="-" Grid.Row="1" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Н" Grid.Row="1" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="-" Grid.Row="1" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="1" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Бром-->
+                <!--Знаки растворимости брома-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Н" Grid.Row="2" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="М" Grid.Row="2" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="М" Grid.Row="2" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="2" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Хлор-->
+                <!--Знаки растворимости хлора-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Н" Grid.Row="3" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="М" Grid.Row="3" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="3" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Азотная кислота-->
+                <!--Знаки растворимости азотной кислоты-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="4" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Сернистая кислота-->
+                <!--Знаки растворимости Сернистой кислоты-->
+                <TextBlock Text="Р" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="5" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="М" Grid.Row="5" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="М" Grid.Row="5" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="5" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="М" Grid.Row="5" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="М" Grid.Row="5" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="5" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Н" Grid.Row="5" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="М" Grid.Row="5" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="М" Grid.Row="5" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="-" Grid.Row="5" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="-" Grid.Row="5" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="-" Grid.Row="5" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="-" Grid.Row="5" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="-" Grid.Row="5" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="5" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Серная кислота-->
+                <!--Знаки растворимости Серной2 кислоты-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Н" Grid.Row="6" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="М" Grid.Row="6" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="М" Grid.Row="6" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="6" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="6" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Фтор-->
+                <!--Знаки растворимости Фтора-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="М" Grid.Row="7" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Н" Grid.Row="7" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="р" Grid.Row="7" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="р" Grid.Row="7" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Н" Grid.Row="7" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="7" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="М" Grid.Row="7" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="-" Grid.Row="7" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="М" Grid.Row="7" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="М" Grid.Row="7" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="7" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Азотистая кислота-->
+                <!--Знаки растворимости азотистой кислоты-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="М" Grid.Row="8" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="-" Grid.Row="8" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="8" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Муарвьиная кислота-->
+                <!--Знаки растворимости муравьиной кислоты-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="9" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Уксусная кислота-->
+                <!--Знаки растворимости уксусной кислоты-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="10" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Фосфорная кислота-->
+                <!--Знаки растворимости фосфорной кислоты-->
+                <TextBlock Text="Р" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="11" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="11" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Н" Grid.Row="11" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="11" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Карбоновая кислота-->
+                <!--Знаки растворимости карбоновая кислоты-->
+                <TextBlock Text="Р" Grid.Row="12" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="12" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="12" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Н" Grid.Row="12" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="-" Grid.Row="12" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="-" Grid.Row="12" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="-" Grid.Row="12" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="12" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Сероводородная кислота-->
+                <!--Знаки растворимости сероводородной кислоты-->
+                <TextBlock Text="Р" Grid.Row="13" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="13" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="13" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="М" Grid.Row="13" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="13" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="-" Grid.Row="13" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="Н" Grid.Row="13" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="-" Grid.Row="13" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="-" Grid.Row="13" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="-" Grid.Row="13" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="13" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Кремниевая кислота-->
+                <!--Знаки растворимости кремниевой кислоты-->
+                <TextBlock Text="Р" Grid.Row="14" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="14" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="-" Grid.Row="14" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="-" Grid.Row="14" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Н" Grid.Row="14" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="-" Grid.Row="14" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="-" Grid.Row="14" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="-" Grid.Row="14" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="-" Grid.Row="14" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Р" Grid.Row="14" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+                <!--#region  Вода-->
+                <!--Знаки растворимости воды-->
+                <TextBlock Text="Р" Grid.Row="15" Grid.Column="1" VerticalAlignment="Center"/>
+                <!--K-->
+                <TextBlock Text="Р" Grid.Row="15" Grid.Column="2" VerticalAlignment="Center"/>
+                <!--Na-->
+                <TextBlock Text="Р" Grid.Row="15" Grid.Column="3" VerticalAlignment="Center"/>
+                <!--Ba-->
+                <TextBlock Text="М" Grid.Row="15" Grid.Column="4" VerticalAlignment="Center"/>
+                <!--Ca-->
+                <TextBlock Text="Р" Grid.Row="15" Grid.Column="5" VerticalAlignment="Center"/>
+                <!--NH-->
+                <TextBlock Text="-" Grid.Row="15" Grid.Column="6" VerticalAlignment="Center"/>
+                <!--Ag-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="7" VerticalAlignment="Center"/>
+                <!--Mg-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="8" VerticalAlignment="Center"/>
+                <!--Pb-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="9" VerticalAlignment="Center"/>
+                <!--Mn-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="10" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="11" VerticalAlignment="Center"/>
+                <!--Zn-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="12" VerticalAlignment="Center"/>
+                <!--Cu-->
+                <TextBlock Text="-" Grid.Row="15" Grid.Column="13" VerticalAlignment="Center"/>
+                <!--Hg-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="14" VerticalAlignment="Center"/>
+                <!--Al-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="15" VerticalAlignment="Center"/>
+                <!--Cr-->
+                <TextBlock Text="Н" Grid.Row="15" Grid.Column="16" VerticalAlignment="Center"/>
+                <!--Fe-->
+                <TextBlock Text="H2O" Grid.Row="15" Grid.Column="17" VerticalAlignment="Center"/>
+                <!--H-->
+                <!--#endregion-->
+            </Grid>
         </StackPanel>
     </Grid>
 </Page>

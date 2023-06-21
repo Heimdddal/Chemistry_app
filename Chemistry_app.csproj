@@ -135,6 +135,7 @@
     <Compile Include="LoadingWindow.xaml.cs">
       <DependentUpon>LoadingWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Models\Element.cs" />
     <Compile Include="Models\EmailSender.cs" />
     <Compile Include="MendeleevTablePage.xaml.cs">
       <DependentUpon>MendeleevTablePage.xaml</DependentUpon>

@@ -98,6 +98,7 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                             Panel.ZIndex="2"
                             VerticalAlignment="Center"
                             Margin="10,0,0,0"
+                            Foreground="{DynamicResource ActiveElements}"
                             ></Slider>
                     <TextBlock Text="{Binding ElementName=sld, Path=Value, Mode=TwoWay}"
                                x:Name="textBoxAge"
