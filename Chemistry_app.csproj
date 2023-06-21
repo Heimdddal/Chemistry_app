@@ -157,6 +157,9 @@
     <Compile Include="TheorysPage.xaml.cs">
       <DependentUpon>TheorysPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="TrainingPage.xaml.cs">
+      <DependentUpon>TrainingPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\TestApplication.cs" />
     <Compile Include="ViewModel\TestResults.cs" />
     <Compile Include="View\QuestionView.cs" />
@@ -215,6 +218,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="TheorysPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TrainingPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
