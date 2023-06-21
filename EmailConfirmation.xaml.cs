@@ -41,7 +41,6 @@ namespace Chemistry_app
 
             Task.Run(() =>
             {
-                Thread.Sleep(1000);
                 EmailSender.SendCode(code.ToString(), user.Email);
             }).ContinueWith(task =>
             {
