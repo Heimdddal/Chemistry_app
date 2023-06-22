@@ -27,6 +27,7 @@ namespace Chemistry_app
 
         private List<Questions> questions = new List<Questions>();
 
+        //Вспомогательный класс Результат ответа на вопрос
         class Result { 
             public string text { get; set; }
             public bool answer { get; set; }
@@ -259,7 +260,7 @@ namespace Chemistry_app
             DisplayCurrentQuestion();
         }
         
-        private void DisplayCurrentQuestion()
+        private void DisplayCurrentQuestion()//Вывести  текущий вопрос
         {
             int i = 0;
             
@@ -335,7 +336,7 @@ namespace Chemistry_app
             nextQuestionButton.Click += NextQuestionButton_Click;
             mainPanel.Visibility = Visibility.Visible;
         }
-        void OptionRadioButton_Checked(object sender, RoutedEventArgs e)
+        void OptionRadioButton_Checked(object sender, RoutedEventArgs e)//Ответ на порос, индекс
         {
             RadioButton radioButton = sender as RadioButton;
             if (radioButton != null && radioButton.IsChecked == true)
@@ -343,7 +344,7 @@ namespace Chemistry_app
                 currentRadioButtonIndex = (int)radioButton.Tag;
             }
         }
-        private void NextQuestionButton_Click(object sender, RoutedEventArgs e)
+        private void NextQuestionButton_Click(object sender, RoutedEventArgs e)//Следующий вопрос
         {
            
             Questions currentQuestion = questions[currentQuestionIndex];
@@ -364,7 +365,7 @@ namespace Chemistry_app
             }
             else DisplayCurrentQuestion();
         }
-        private void DisplayCurrentResult()
+        private void DisplayCurrentResult()//Вывести результат
         {
             resultPanel.Children.Clear();
             string answer;

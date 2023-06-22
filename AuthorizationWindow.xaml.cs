@@ -34,21 +34,21 @@ namespace Chemistry_app
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
-        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
+        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)//Нажать на "Нет учетной записи"
         {
             RegistrationWindow window = new RegistrationWindow();
             window.Show();
             this.Close();
         }
 
-        User authUsers(string email, string password)
+        User authUsers(string email, string password)//Получить пользователя по его почте и пароля
         {
             User authUser = null;
             List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
             authUser = users.Where(b => b.Email == email && b.Password == password).FirstOrDefault();
             return authUser;
         }
-        bool isUsers(string email, string password)
+        bool isUsers(string email, string password)//Вернуть true если пользователь существует, false, если не существует
         {
             User authUser = null;
             List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
@@ -57,7 +57,7 @@ namespace Chemistry_app
             { return true; }
             else { return false; }
         }
-        private void ButtonAuthorization_Click(object sender, RoutedEventArgs e)
+        private void ButtonAuthorization_Click(object sender, RoutedEventArgs e)//Нажата кнопка авторизации
         {
             int passCount = 0;
             string email, password;
@@ -99,7 +99,7 @@ namespace Chemistry_app
 
         }
 
-        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)//Войти как Гость
         {
             MainWindow window = new MainWindow(new User());
             window.Show();

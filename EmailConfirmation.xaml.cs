@@ -57,23 +57,23 @@ namespace Chemistry_app
             window.Show();
         }
 
-        private void CloseLoadedWindow()
+        private void CloseLoadedWindow()//Закрыть окно загрузки
         {
             LoadingWindow window = Application.Current.Windows.OfType<LoadingWindow>().FirstOrDefault();
             window?.Close();
         }
 
-        private void ShowConfirmationWindow()
+        private void ShowConfirmationWindow()//Показать окно подтверждения почты
         {
             this.Show();
         }
-        public int GenerateCode()
+        public int GenerateCode()//Сгенерировать 6-ти значный код
         {
             Random random = new Random();
             int code = random.Next(100000, 1000000);
             return code;
         }
-        public void checkEmail() {
+        public void checkEmail() {//Проверить почту
             string fileName = "Assert\\Users.json";
 
             if (codeAuth == textBoxCode.Text)
@@ -98,12 +98,12 @@ namespace Chemistry_app
             else MessageBox.Show("Неверный код");
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)//Кнопка завершить
         {
            checkEmail();
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)//Кнопка вернуться назад на регистрацию
         {
             registrationWindow.IsEnabled = true;
             this.Close();

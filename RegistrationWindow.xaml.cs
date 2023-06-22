@@ -45,7 +45,7 @@ namespace Chemistry_app
             MaleRadioButton.Checked += RadioButton_Checked;
             FemaleRadioButton.Checked += RadioButton_Checked;
         }
-        public bool ValidateEmail(string email)
+        public bool ValidateEmail(string email)//проверка почты по шаблону @.
         {
             string pattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
 
@@ -54,11 +54,11 @@ namespace Chemistry_app
 
             return isValid;
         }
-        public void EmailConfirmation(User user) {;
+        public void EmailConfirmation(User user) {//Окно подтверждения почты
             Chemistry_app.EmailConfirmation window = new EmailConfirmation(user, this);
             this.IsEnabled = false;
         }
-        bool isUsers(string email)
+        bool isUsers(string email)//Вернуть true если пользователь существует, false, если не существует
         {
             User regUser = null;
             List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
@@ -67,7 +67,7 @@ namespace Chemistry_app
             { return true; }
             else { return false; }
         }
-        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)
+        private void ButtonRegistration_Click(object sender, RoutedEventArgs e)//Нажата зарегистрироваться
         {
             List<User> users = UserJsonController.ReadFromJson("Assert\\Users.json");
             string name, email, gender, password, repeatePassword;
@@ -158,14 +158,14 @@ namespace Chemistry_app
             }
         }
 
-        private void ButtonReturnToAuentification_Click(object sender, MouseButtonEventArgs e)
+        private void ButtonReturnToAuentification_Click(object sender, MouseButtonEventArgs e)//Нажата кнопка назад
         {
             AuthorizationWindow window = new AuthorizationWindow();
             window.Show();
             this.Close();
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void RadioButton_Checked(object sender, RoutedEventArgs e)//Получение данных: Пол пользователя
         {
             if (sender is RadioButton radio)
             {
@@ -180,7 +180,7 @@ namespace Chemistry_app
             }
         }
 
-        private void Password_Changed(object sender, RoutedEventArgs e)
+        private void Password_Changed(object sender, RoutedEventArgs e)//Проверка и вывод об ошибках паролей
         {
             string password;
             password = textBoxPassword.Password.Trim();
