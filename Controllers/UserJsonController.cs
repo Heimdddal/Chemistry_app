@@ -9,7 +9,7 @@ using System.IO;
 
 namespace Chemistry_app.Controllers
 {
-    public static class UserJsonController
+    public static class UserJsonController//Сохранение и чтения из json пользователя
     {
         public static void WriteToJson(List<User> users, string filename)
         {

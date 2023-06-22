@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Chemistry_app.Models
 {
-    public class Questions
+    public class Questions//Класс, определяющий вопрос
     {
         public string Text { get; set; }
         public List<string> Options { get; set; }
@@ -20,19 +20,19 @@ namespace Chemistry_app.Models
         }
     }
 
-    public class QuestionSelector
+    public class QuestionSelector//Класс, определяющий действия на вопросами
     {
         private List<Questions> questions;
         private Random random;
         private Questions currentQuestion;
 
-        public QuestionSelector(List<Questions> questionList)
+        public QuestionSelector(List<Questions> questionList)//Конструктор
         {
             questions = questionList;
             random = new Random();
         }
 
-        public List<Questions> SelectRandomQuestions(int count)
+        public List<Questions> SelectRandomQuestions(int count)//Получить рандомные вопросы, в параметрах кол-во нужных впросов
         {
             if (count <= 0 || count > questions.Count)
                 throw new ArgumentException("Invalid count");
@@ -54,7 +54,7 @@ namespace Chemistry_app.Models
             return selectedQuestions;
         }
 
-        private void ShuffleOptions(List<string> options)
+        private void ShuffleOptions(List<string> options)//Перемешка варантов ответов
         {
             int n = options.Count;
             while (n > 1)

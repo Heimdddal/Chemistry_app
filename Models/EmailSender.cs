@@ -8,14 +8,14 @@ using System.Threading.Tasks;
 
 namespace Chemistry_app
 {
-    internal class EmailSender
+    internal class EmailSender//Класс с методами отпрвки на почту данных
     {
         public EmailSender()
         {
 
         }
 
-        public static void SendCode(string code, string toEmail)
+        public static void SendCode(string code, string toEmail)//Отправка кода на почту (метод)
         {
             string smtpServer = "smtp.mail.ru";
             int smtpPort = 587;

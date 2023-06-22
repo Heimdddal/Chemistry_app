@@ -283,7 +283,7 @@ namespace Chemistry_app
             };
             mainPanel.Children.Add(questionTextBlock);
             List<RadioButton> optionRadioButtons = new List<RadioButton>();
-            foreach (string option in currentQuestion.Options)
+            foreach (string option in currentQuestion.Options)//Создание 4 кнопок-переключателей
             {
                 RadioButton optionRadioButton = new RadioButton
                 {
@@ -299,7 +299,7 @@ namespace Chemistry_app
                 optionRadioButtons.Add(optionRadioButton);
             }
 
-            foreach (RadioButton optionRadioButton in optionRadioButtons)
+            foreach (RadioButton optionRadioButton in optionRadioButtons)//Добавление 4 кнопок-переключателей на stackPanel
             {
                 mainPanel.Children.Add(optionRadioButton);
             }
@@ -370,7 +370,7 @@ namespace Chemistry_app
             resultPanel.Children.Clear();
             string answer;
             int numberAnswer = 1;
-            foreach(Result result in results){ 
+            foreach(Result result in results){ //Вывод результата
                 TextBlock resultTextBlock = new TextBlock
                 {
                     Text = numberAnswer +". "+ result.text,

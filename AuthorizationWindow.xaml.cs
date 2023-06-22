@@ -64,7 +64,7 @@ namespace Chemistry_app
 
             email = textBoxEmail.Text.Trim();
             password = textBoxPassword.Password.Trim();
-            #region checkEmail
+            #region Проверка почты
             if (!email.Contains("@") & !email.Contains(".")) {
                 textBoxEmail.BorderBrush = Brushes.Red;
                 textBoxEmail.ToolTip = "Почта введена неверно";
@@ -75,7 +75,7 @@ namespace Chemistry_app
                 textBoxEmail.ToolTip = "";
             }
             #endregion
-            #region checkPassword
+            #region Проверка пароля
             if (password.Length < 5){
                 textBoxPassword.BorderBrush = Brushes.Red;
                 textBoxPassword.ToolTip = "Пароль введен неконектно";

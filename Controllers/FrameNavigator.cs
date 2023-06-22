@@ -7,7 +7,7 @@ using System.Windows.Controls;
 
 namespace Chemistry_app.Controllers
 {
-    internal class FrameNavigator
+    internal class FrameNavigator//Переключение по Page
     {
         public static Frame MainFrame { get; set; }
         public FrameNavigator()

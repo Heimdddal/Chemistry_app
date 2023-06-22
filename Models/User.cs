@@ -8,7 +8,7 @@ using System.Xml.Linq;
 
 namespace Chemistry_app.Models
 {
-    public class User
+    public class User//Класс пользователя
     {
         public string Name { get; set; }  
         public string Email { get; set; }
@@ -17,7 +17,7 @@ namespace Chemistry_app.Models
         public string Password { get; set; }
         public bool isGuest { get; set; }
 
-        public User() {
+        public User() {//Конструктор по умолчанию
             Name = "Гость";
             Email = "guest@gmail.com";
             Age = 0;
@@ -25,7 +25,7 @@ namespace Chemistry_app.Models
             Password = null;
             isGuest = true;
         }   
-        public User(string name,
+        public User(string name,//Конструктор с полными параметрами
             string email,
             int age,
             string gender,
@@ -39,7 +39,7 @@ namespace Chemistry_app.Models
             isGuest = false;
         }
 
-        public override string ToString()
+        public override string ToString()//Перегрузка метода toString (приведения к строке)
         {
             return Name;
         }
