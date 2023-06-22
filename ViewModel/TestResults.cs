@@ -116,16 +116,10 @@ namespace Chemistry_app.ViewModel
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
             string id = new string(Enumerable.Repeat(chars, 8)
                 .Select(s => s[random.Next(s.Length)]).ToArray());
-            try
-            {
-                CertificateGenerator.GenerateCertificate(userName, nameOfTest, id, percentResult);
+             CertificateGenerator.GenerateCertificate(userName, nameOfTest, id, percentResult);
                 EmailSender.SendCertificate(email, nameOfTest, "certificate.pdf");
                 MessageBox.Show($"Сертефикат успешно отправлен на ваш e-mail: {email}");
-            }
-            catch (Exception)
-            {
-                
-            }
+         
             grid.Children.Clear();
             foreach (Question quest in questionList)
             {

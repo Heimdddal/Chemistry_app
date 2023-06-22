@@ -39,7 +39,7 @@ namespace Chemistry_app
             textBoxEmailUser.Text = user.Email;
             SetButtonBackground(ButtonTheory, "#66E39C");
             FrameNavigator.MainFrame = MainFrame;
-            FrameNavigator.MainFrame.Navigate(new TrainingPage());
+            FrameNavigator.MainFrame.Navigate(new TheorysPage());
         }
         private void SetButtonBackground(System.Windows.Controls.Border button, string colorCode)
         {
@@ -53,6 +53,8 @@ namespace Chemistry_app
             SetButtonBackground(ButtonTheory, colorCode);
             SetButtonBackground(ButtonSolubillityTable, colorCode);
             SetButtonBackground(ButtonMetalActivityTable, colorCode);
+            SetButtonBackground(ButtonResult, colorCode);
+            SetButtonBackground(ButtonAutoTest, colorCode);
             SetButtonBackground(ExitButton, "#FF0000");
         }
 
@@ -117,10 +119,19 @@ namespace Chemistry_app
             this.Close();
         }
 
-        private void LeaderBoard_Click(object sender, RoutedEventArgs e)
+
+        private void ButtonResult_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             FrameNavigator.MainFrame.Navigate(new PageForLeaderBoard());
             SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonResult, "#66E39C");
+        }
+
+        private void ButtonAutoTest_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            FrameNavigator.MainFrame.Navigate(new TrainingPage());
+            SetAllButtonBackgrounds("#363636");
+            SetButtonBackground(ButtonAutoTest, "#66E39C");
         }
     }
 }
