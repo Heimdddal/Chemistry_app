@@ -126,18 +126,14 @@ namespace Chemistry_app.ViewModel
             {
                 
             }
-            grid.Children.Clear();
-            foreach (Question quest in questionList)
-            {
-                quest.RadioButtonTrue.IsChecked = false;
-                quest.RadioButtonFalse1.IsChecked = false;
-                quest.RadioButtonFalse2.IsChecked = false;
-                quest.RadioButtonFalse3.IsChecked = false;
-            }
-            new TestApplication(questionList, ref grid, nameOfTest, userName, email);
+            GenerateNewTest();
         }
 
         private void RepeatTest_click(object sender, RoutedEventArgs e)
+        {
+            GenerateNewTest();
+        }
+        private void GenerateNewTest()
         {
             grid.Children.Clear();
             foreach (Question quest in questionList)
