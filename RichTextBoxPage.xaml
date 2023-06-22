@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
         <ScrollViewer>
-            <RichTextBox x:Name="ContentRichTextBox" IsReadOnly="True" FontSize="20" FontFamily="Times New Roman" Margin="20" />
+            <RichTextBox x:Name="ContentRichTextBox" IsReadOnly="True" FontSize="20" FontFamily="Times New Roman" Margin="0,0,70,5" />
         </ScrollViewer>
         <Button Content="Вернуться" Name="returnButton" Click="ReturnButton_Click" 
             Grid.Row="1" HorizontalAlignment="Center" Margin="0,15,100,0"  

@@ -3,31 +3,46 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:local="clr-namespace:Chemistry_app"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      Width="1020"
+      d:Height="665"
       Title="TrainingPage">
 
-    <Grid x:Name="TrainingGrid">
-        <StackPanel x:Name="TrainingStackPanel">
+    <Grid x:Name="TrainingGrid" Width="1020" Height="665">
+        <StackPanel x:Name="TrainingStackPanel" Width="1020" Height="665">
             <Slider x:Name="sld"
-                            Maximum="37"
+                            Maximum="36"
                             Minimum="1"
                             Value="18"
+                            Foreground="{DynamicResource ActiveElements}"
                             HorizontalAlignment="Left"
-                            MinWidth="280"
+                            MinWidth="1020"
+                            Height="100"
                             IsSnapToTickEnabled = "True"
                             TickFrequency = "1"
                             Panel.ZIndex="2"
-                            VerticalAlignment="Center"
-                            Margin="10,0,0,0"
-                            ></Slider>
-        <TextBlock Text="{Binding ElementName=sld, Path=Value, Mode=TwoWay}"
+                            Margin="0,100,0,0"
+                            />
+            <TextBlock Text="{Binding ElementName=sld, Path=Value, Mode=TwoWay}"
                                x:Name="textBoxAge"
-                                FontSize="40"
+                                FontSize="160"
                                HorizontalAlignment="Right"
-                               Margin="0,0,10,0"/>
-        <Button x:Name="StartTrainig" Click="StartTrainig_Click"/>
+                                Foreground="White"
+                               Margin="0,50,450,0"/>
+            <Button x:Name="StartTrainig" Click="StartTrainig_Click" 
+                Content="Начать тестирование"
+                Width="250"
+                Height="60"
+                Background="{DynamicResource ActiveElements}"
+                Foreground="White"
+                BorderThickness="0"
+                Padding="12,6"
+                FontSize="20"
+                FontWeight="Bold"
+                materialDesign:ButtonAssist.CornerRadius="10"
+                Margin="0,90,0,0"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Media.Effects;
 
 namespace Chemistry_app
 {
@@ -24,13 +25,29 @@ namespace Chemistry_app
     {
         QuestionSelector questionSelector { get; set; }
 
-        private List<Questions> questions;
+        private List<Questions> questions = new List<Questions>();
 
-        private int currentQuestionIndex;
+        class Result { 
+            public string text { get; set; }
+            public bool answer { get; set; }
+            public Result(string text,bool answer) { 
+                this.text = text;
+                this.answer = answer;
+            }
+        }
+        private List<Result> results = new List<Result>();
+
+        private int currentQuestionIndex = 0;
+        private int currentRadioButtonIndex;
+        private int countTrue = 0;
+        private StackPanel mainPanel = new StackPanel();
+        private Grid mainGrid = new Grid();
+        private ProgressBar progressBar = new ProgressBar() ;
+        private StackPanel resultPanel = new StackPanel();
+        private Grid resultGrid = new Grid();
         public TrainingPage()
         {
             InitializeComponent();
-            List<Questions> questions = new List<Questions>();
 
             #region Вопросы
             questions.Add(new Questions(
@@ -106,7 +123,7 @@ namespace Chemistry_app
             ));
             questions.Add(new Questions(
             "Что представляет собой балансировка химических уравнений?",
-            new List<string> { "Процесс приведения уравнения к виду, где число атомов каждого элемента на обеих сторонах будет совпадать", "Процесс преобразования молекул и ионов в другие соединения", "Процесс определения энергии, выделяющейся или поглощаемой при реакции", "Процесс изменения состояния вещества" },
+            new List<string> { "Процесс приведения уравнения к виду, где число атомов \nкаждого элемента на обеих сторонах будет совпадать", "Процесс преобразования молекул и ионов в другие соединения", "Процесс определения энергии, выделяющейся или поглощаемой при реакции", "Процесс изменения состояния вещества" },
             0 // индекс правильного ответа (в данном случае, "Процесс приведения уравнения к виду, где число атомов каждого элемента на обеих сторонах будет совпадать")
             ));
             questions.Add(new Questions(
@@ -116,7 +133,7 @@ namespace Chemistry_app
             ));
             questions.Add(new Questions(
             "Что представляет собой соединение в химии?",
-            new List<string> {  "Процесс окисления и восстановления", "Физическое смещение вещества","Химическое вещество, состоящее из атомов двух или более элементов", "Вещество, образованное растворением в воде" },
+            new List<string> {  "Процесс окисления и восстановления", "Физическое смещение вещества","Химическое вещество, состоящее\n из атомов двух или более элементов", "Вещество, образованное растворением в воде" },
             2 // индекс правильного ответа (в данном случае, "Химическое вещество, состоящее из атомов двух или более элементов")
             ));
             questions.Add(new Questions(
@@ -141,7 +158,7 @@ namespace Chemistry_app
             ));
             questions.Add(new Questions(
             "Что представляет собой разложение в химических реакциях?",
-            new List<string> {"Превращение газообразного вещества в твердое" , "Процесс слияния двух или более веществ","Процесс, в ходе которого одно вещество распадается на два или более продукта" , "Процесс образования нового вещества" },
+            new List<string> {"Превращение газообразного вещества в твердое" , "Процесс слияния двух или более веществ","Процесс, в ходе которого одно вещество\n распадается на два или более продукта" , "Процесс образования нового вещества" },
             2 // индекс правильного ответа (в данном случае, "Процесс, в ходе которого одно вещество распадается на два или более продукта")
             ));
             questions.Add(new Questions(
@@ -191,7 +208,7 @@ namespace Chemistry_app
             ));
             questions.Add(new Questions(
             "Что представляет собой химическая реакция обмена?",
-            new List<string> { "Процесс, при котором ионы одного соединения вытесняют ионы другого соединения, образуя два новых соединения", "Процесс, при котором происходит объединение ионов из двух соединений", "Процесс, при котором происходит разложение химического соединения на элементы", "Процесс, при котором происходит образование осадка" },
+            new List<string> { "Процесс, при котором ионы одного соединения вытесняют \nионы другого соединения, образуя два новых соединения", "Процесс, при котором происходит объединение ионов из двух соединений", "Процесс, при котором происходит разложение химического соединения на элементы", "Процесс, при котором происходит образование осадка" },
             0 // индекс правильного ответа (в данном случае, "Процесс, при котором ионы одного соединения вытесняют ионы другого соединения, образуя два новых соединения")
             ));
             questions.Add(new Questions(
@@ -215,65 +232,72 @@ namespace Chemistry_app
             0 // индекс правильного ответа (в данном случае, "Таблицу соответствий ионов, которая показывает, какие ионы способны вытеснять друг друга")
             ));
             #endregion
-            currentQuestionIndex = 0;
+            
+            mainGrid.Children.Add(mainPanel);
+            resultGrid.Children.Add(resultPanel);
             questionSelector = new QuestionSelector(questions);
         }
-        private void StartTrainig_Click(object sender, RoutedEventArgs e)
+
+        private void StartTrainig_Click(object sender, RoutedEventArgs e)//Выбрано кол-во вопросов, нажата кнопка начать
         {
             
             int countQuestions;
             countQuestions = int.Parse(textBoxAge.Text);
-            questions = questionSelector.SelectRandomQuestions(countQuestions);
-            TrainingStackPanel.Visibility = Visibility.Collapsed;
-            DisplayCurrentQuestion();
-        }
-        private void NextQuestionButton_Click(object sender, RoutedEventArgs e)
-        {
-            // Переключение на следующий вопрос
-            currentQuestionIndex++;
-            if (currentQuestionIndex >= questions.Count)
-            {
-                MessageBox.Show("Все");
-            }
-
-            // Отображение нового текущего вопроса
+            
+            
+            questions = questionSelector.SelectRandomQuestions(countQuestions);//выборка нужного кол-ва вопросов с перемешкой вариантов ответа
+            TrainingGrid.Visibility = Visibility.Collapsed;
+            this.Content = mainGrid;
+            mainGrid.Visibility = Visibility.Visible;
+            progressBar.Width = 1000;
+            progressBar.Height = 30;
+            progressBar.Minimum = 1;
+            progressBar.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C"));
+            progressBar.Margin = new Thickness(50,610,0,0);
+            progressBar.Maximum = countQuestions;
+            mainGrid.Children.Add(progressBar);
             DisplayCurrentQuestion();
         }
         
         private void DisplayCurrentQuestion()
         {
-            StackPanel mainPanel = new StackPanel();
-            // Получение текущего вопроса
-            Questions currentQuestion = questions[currentQuestionIndex];
+            int i = 0;
+            
+            Questions currentQuestion = questions[currentQuestionIndex];//текущий вопрос
 
-            // Очистка содержимого панели
+            
             mainPanel.Children.Clear();
 
-            // Создание элементов для вывода текущего вопроса и вариантов ответа
+            
             TextBlock questionTextBlock = new TextBlock
             {
-                Text = currentQuestion.Text,
+                Text = currentQuestionIndex + 1 +". " +currentQuestion.Text,
                 Foreground = Brushes.White,
-                Margin = new Thickness(10),
+                TextWrapping = TextWrapping.Wrap,
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Margin = new Thickness(0,150,0,20),
                 FontWeight = FontWeights.Bold,
-                FontSize = 20
+                FontSize = 25
             };
-
+            mainPanel.Children.Add(questionTextBlock);
             List<RadioButton> optionRadioButtons = new List<RadioButton>();
             foreach (string option in currentQuestion.Options)
             {
                 RadioButton optionRadioButton = new RadioButton
                 {
                     Content = option,
+                    Background = Brushes.White,
                     Foreground = Brushes.White,
-                    FontSize = 15,
-                    Margin = new Thickness(10)
+                    FontSize = 20,
+                    Margin = new Thickness(0,30,0,0)
                 };
+                optionRadioButton.Tag = i;
+                i++;
+                optionRadioButton.Checked += OptionRadioButton_Checked;
                 optionRadioButtons.Add(optionRadioButton);
             }
 
-            // Добавление элементов на панель
-            mainPanel.Children.Add(questionTextBlock);
             foreach (RadioButton optionRadioButton in optionRadioButtons)
             {
                 mainPanel.Children.Add(optionRadioButton);
@@ -281,20 +305,110 @@ namespace Chemistry_app
 
             Button nextQuestionButton = new Button
             {
-                Content = "Next Question",
-                Width = 300,
+                VerticalAlignment = VerticalAlignment.Center,
+                HorizontalAlignment = HorizontalAlignment.Center,
+                Content = "Следующий вопрос",
+                Width = 200,
                 Foreground = Brushes.White,
+                Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#66E39C")),
                 FontSize = 15,
                 Height = 50,
-                Margin = new Thickness(10),
+                Margin = new Thickness(0,120,0,0),
+                Effect = new DropShadowEffect {
+                    ShadowDepth = 2,
+                    BlurRadius = 4,
+                    Color = Color.FromArgb(0x40,0x00,0x00,0x00),
+                    Opacity = 0.5
+                },
+                Padding = new Thickness(12,6,12,6)
             };
             mainPanel.Children.Add(nextQuestionButton);
-
+            TextBlock currentQuestionNumber = new TextBlock
+            {
+                Text = progressBar.Value.ToString(),
+                Foreground = Brushes.White,
+                Margin = new Thickness(10),
+                FontWeight = FontWeights.Bold,
+                FontSize = 20
+            };
+            mainPanel.Children.Add(currentQuestionNumber);
             nextQuestionButton.Click += NextQuestionButton_Click;
-            Grid mainGrid = new Grid();
-            this.Content = mainGrid;
-            mainGrid.Children.Add(mainPanel);
             mainPanel.Visibility = Visibility.Visible;
+        }
+        void OptionRadioButton_Checked(object sender, RoutedEventArgs e)
+        {
+            RadioButton radioButton = sender as RadioButton;
+            if (radioButton != null && radioButton.IsChecked == true)
+            {
+                currentRadioButtonIndex = (int)radioButton.Tag;
+            }
+        }
+        private void NextQuestionButton_Click(object sender, RoutedEventArgs e)
+        {
+           
+            Questions currentQuestion = questions[currentQuestionIndex];
+
+            if (currentRadioButtonIndex == currentQuestion.CorrectAnswerIndex)
+            {
+                countTrue++;
+                results.Add(new Result(currentQuestion.Text, true));
+            }
+            else { results.Add(new Result(currentQuestion.Text, false));
+            }
+            progressBar.Value += 1;
+            currentQuestionIndex++;
+            if (currentQuestionIndex >= questions.Count)
+            {
+                mainGrid.Visibility = Visibility.Collapsed;
+                DisplayCurrentResult();
+            }
+            else DisplayCurrentQuestion();
+        }
+        private void DisplayCurrentResult()
+        {
+            resultPanel.Children.Clear();
+            string answer;
+            int numberAnswer = 1;
+            foreach(Result result in results){ 
+                TextBlock resultTextBlock = new TextBlock
+                {
+                    Text = numberAnswer +". "+ result.text,
+                    Foreground = Brushes.White,
+                    Margin = new Thickness(10),
+                    FontWeight = FontWeights.Bold,
+                    FontSize = 20
+                };
+                resultPanel.Children.Add(resultTextBlock);
+
+                if (result.answer)
+                    answer = "Ответ: верный";
+                else answer = "Ответ: неверный";
+
+                TextBlock resultAnswerTextBlock = new TextBlock
+                {
+                    Text = answer,
+                    Foreground = Brushes.White,
+                    Margin = new Thickness(10),
+                    FontWeight = FontWeights.Bold,
+                    FontSize = 20
+                };
+                resultPanel.Children.Add(resultAnswerTextBlock);
+                numberAnswer++;
+            }
+
+            string supCountTrue = "Правильно: " + countTrue.ToString();
+            TextBlock resultCountTrueTextBlock = new TextBlock
+            {
+                Text = supCountTrue,
+                Foreground = Brushes.White,
+                Margin = new Thickness(10),
+                FontWeight = FontWeights.Bold,
+                FontSize = 20
+            };
+            resultPanel.Children.Add(resultCountTrueTextBlock);
+
+            resultPanel.Visibility = Visibility.Visible;
+            this.Content = resultGrid;
         }
     }
 }
