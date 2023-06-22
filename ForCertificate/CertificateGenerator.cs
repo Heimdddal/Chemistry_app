@@ -93,24 +93,24 @@ namespace Chemistry_app
         {
             if (percentResult == 100)
             {
-                pathToMedalImage = "goldMedal.png";
-                pathToSignImage = "podpisGold.png";
+                pathToMedalImage = "Assert\\goldMedal.png";
+                pathToSignImage = "Assert\\podpisGold.png";
                 kindOfCerticicate = "\nЗолотой";
                 writer.PageEvent = new GoldBackGround();
             }
 
             else if (percentResult < 90)
             {
-                pathToMedalImage = "bronzeMedal.png";
-                pathToSignImage = "podpisBronze.png";
+                pathToMedalImage = "Assert\\bronzeMedal.png";
+                pathToSignImage = "Assert\\podpisBronze.png";
                 kindOfCerticicate = "\nБронзовый";
                 writer.PageEvent = new BronzeBackGround();
             }
 
             else
             {
-                pathToMedalImage = "silverMedal.png";
-                pathToSignImage = "podpisSilver.png";
+                pathToMedalImage = "Assert\\silverMedal.png";
+                pathToSignImage = "Assert\\podpisSilver.png";
                 kindOfCerticicate = "\nСеребряный";
                 writer.PageEvent = new SilverBackGround();
             }

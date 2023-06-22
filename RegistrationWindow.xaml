@@ -110,7 +110,7 @@ c:\users\emil\source\repos\chemistry_app\registrationwindow.xaml.cs
                              Margin="10" 
                              BorderBrush="{DynamicResource ActiveElements}"
                              Foreground="{DynamicResource TextColor}" 
-                             materialDesign:HintAssist.Hint ="Пароль (не менее 5 символов)" 
+                             materialDesign:HintAssist.Hint ="Пароль (не менее 6 символов)" 
                              PasswordChanged="Password_Changed"
                              CaretBrush="{DynamicResource ActiveElements}"
                              SelectionBrush="{DynamicResource UnderLineLight}"

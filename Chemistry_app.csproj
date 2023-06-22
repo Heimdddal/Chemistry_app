@@ -304,34 +304,34 @@
     <Resource Include="Assert\Обмена.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Assert\bronzeMedal.png">
+    <None Include="Assert\bronzeMedal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\goldMedal.png">
+    <None Include="Assert\goldMedal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assert\podpisBronze.png">
+    </None>
+    <None Include="Assert\podpisBronze.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assert\podpisGold.PNG">
+    </None>
+    <None Include="Assert\podpisGold.PNG">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assert\podpisSilver.png">
+    </None>
+    <None Include="Assert\podpisSilver.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assert\silverMedal.png">
+    </None>
+    <None Include="Assert\silverMedal.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Assert\ArrowLeft.png">
+    <None Include="Assert\ArrowLeft.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Assert\ArrowRight.png">
+    </None>
+    <None Include="Assert\ArrowRight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.4.9.0\build\MaterialDesignThemes.targets')" />
