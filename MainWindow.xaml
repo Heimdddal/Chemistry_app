@@ -140,7 +140,7 @@
                                 Height="35"
                                 Width="240"
                                 x:Name="ButtonMendeleevTable">
-                            <TextBlock Text="Таблица менделеева"
+                            <TextBlock Text="Таблица Менделеева"
                                        FontSize="14"
                                        Margin="5"/>
                         </Border>
