@@ -121,7 +121,6 @@ namespace Chemistry_app
         {
             FrameNavigator.MainFrame.Navigate(new PageForLeaderBoard());
             SetAllButtonBackgrounds("#363636");
-            SetButtonBackground(ButtonMetalActivityTable, "#66E39C");
         }
     }
 }

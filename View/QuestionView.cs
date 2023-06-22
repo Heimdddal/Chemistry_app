@@ -5,6 +5,7 @@ using System.Windows;
 using System;
 using System.Windows.Media;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
+using System.Windows.Shapes;
 
 namespace Chemistry_app
 {
@@ -24,7 +25,7 @@ namespace Chemistry_app
             {
                 Margin = new Thickness(5, 0, 0, 0),
                 Foreground = Brushes.White,
-                Content = trueAnswerText
+                Content = trueAnswerText,
             };
             RadioButtonFalse1 = new RadioButton()
             {
@@ -42,7 +43,7 @@ namespace Chemistry_app
             {
                 Margin = new Thickness(5, 0, 0, 0),
                 Foreground = Brushes.White,
-                Content = falseAnswer3Text
+                Content = falseAnswer3Text,
             };
 
             var radioButtonList = new List<RadioButton> { RadioButtonTrue, RadioButtonFalse1, RadioButtonFalse2, RadioButtonFalse3 };
@@ -56,6 +57,7 @@ namespace Chemistry_app
                 Foreground = Brushes.White,
                 FontSize = 20
             };
+         
 
             RadioButtonsGroup.Content = new StackPanel();
 
